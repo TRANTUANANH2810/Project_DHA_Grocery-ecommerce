@@ -8,9 +8,16 @@ html {
     font-size: 62.5%;
 }
 
+:root {
+    --text-color: #1a162e;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(10%)
+        saturate(3954%) hue-rotate(212deg) brightness(97%) contrast(96%);
+}
+
 body {
     font-size: 1.6rem;
     font-family: Gordita, sans-serif;
+    color: var(--text-color);
 }
 
 a {
@@ -18,8 +25,20 @@ a {
     text-decoration: none;
 }
 
+.icon {
+    filter: var(--icon-color);
+}
+
 button {
     border: none;
     outline: none;
     background: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    color: inherit;
 }
