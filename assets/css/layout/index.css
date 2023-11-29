@@ -4,7 +4,7 @@
 }
 
 .header {
-  background: #eee;
+  background: var(--header-bg);
 }
 
 .top-bar {
@@ -35,8 +35,8 @@
   min-width: 50px;
   height: 50px;
   border-radius: 8px;
-  background: #fff;
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  background: var(--top-act-group-bg);
+  box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
 }
 .top-act__group--single .top-act__btn {
   padding: 13px;
@@ -54,7 +54,7 @@
 .top-act__separate {
   width: 1px;
   height: 30px;
-  background: #ededf6;
+  background: var(--top-act-group-separate);
 }
 .top-act__avt {
   display: block;
