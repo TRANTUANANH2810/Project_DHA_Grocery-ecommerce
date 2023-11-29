@@ -1213,6 +1213,10 @@ html.dark {
   --top-act-group-bg: #292e39;
   --top-act-group-shadow: rgba(0, 0, 0, 0.2);
   --top-act-group-separate: #ededf6;
+  --dropdown-bg: #2f3441;
+  --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(4%)
+      saturate(3243%) hue-rotate(186deg) brightness(96%) contrast(87%);
 }
 
 html {
@@ -1224,6 +1228,8 @@ html {
   --top-act-group-bg: #fff;
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
   --top-act-group-separate: #ededf6;
+  --dropdown-bg: #fff;
+  --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1241,6 +1247,7 @@ html {
 }
 
 .top-bar {
+  position: relative;
   padding: 30px 0;
 }
 @media (max-width: 991.98px) {
@@ -1276,17 +1283,25 @@ html {
     display: none;
   }
 }
-.navbar__list {
-  gap: 30px;
-}
 .navbar__link {
   gap: 6px;
+  height: 50px;
+  padding: 0 15px;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.46; /* 146.667% */
 }
 .navbar__arrow {
   margin-top: 3px;
+}
+.navbar__item:first-child {
+  padding-left: 0;
+}
+.navbar__item:last-child {
+  padding-right: 0;
+}
+.navbar__item:hover .dropdown {
+  display: block;
 }
 
 .top-act {
@@ -1371,6 +1386,28 @@ html {
   .logo__img {
     width: 24px;
   }
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  padding-top: 54px;
+  display: none;
+}
+.dropdown__inner {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--dropdown-bg);
+  box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
+}
+.dropdown__inner::before {
+  content: url("../icons/dropdown-arrow.svg");
+  position: absolute;
+  top: -13px;
+  left: var(--arrow-left-pos);
+  translate: -50%;
+  filter: var(--dropdown-arrow-color);
 }
 
 /*# sourceMappingURL=main.css.map */
