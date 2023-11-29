@@ -3,10 +3,31 @@
   align-items: center;
   gap: 14px;
 }
+@media (max-width: 991.98px) {
+  .logo {
+    gap: 10px;
+    margin-left: 39px;
+  }
+}
+@media (max-width: 575.98px) {
+  .logo {
+    margin-left: 0;
+  }
+}
 .logo__title {
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.45; /* 145.455% */
+}
+@media (max-width: 991.98px) {
+  .logo__title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .logo__img {
+    width: 24px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
