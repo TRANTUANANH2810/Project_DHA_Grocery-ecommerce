@@ -29,7 +29,7 @@
     position: relative;
     &__main {
         width: var(--main-column-width);
-        max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -38,6 +38,10 @@
 .menu-column {
     display: flex;
     gap: 14px;
+
+    + .menu-column {
+        padding-top: var(--inner-padding);
+    }
     &__icon {
         width: 36px;
         height: 36px;
@@ -76,20 +80,31 @@
         margin-top: 19px;
     }
 
+    &__item:hover > &__link {
+        color: #0071dc;
+        font-weight: 500;
+    }
+
+    &__item {
+        &:hover .sub-menu {
+            display: grid;
+        }
+    }
+
     &__link {
         display: block;
         padding: 7px 0;
         font-size: 1.4rem;
         line-height: 1.42; /* 142.857% */
-
-        &:hover {
-            color: #0071dc;
-            font-weight: 500;
-        }
     }
 }
 
 .sub-menu {
     position: absolute;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--inner-padding);
     inset: 0 0 0 var(--main-column-width);
+    padding-left: var(--inner-padding);
+    overflow-y: auto;
 }
