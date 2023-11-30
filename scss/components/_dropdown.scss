@@ -1,9 +1,10 @@
+@use "../abstracts";
 .dropdown {
     position: absolute;
     left: 0;
     width: min(1240px, 100%);
     padding-top: 54px;
-    // display: none;
+    display: none;
     &__inner {
         --inner-padding: 30px;
         position: relative;
@@ -26,10 +27,12 @@
 
 .top-menu {
     --main-column-width: 292px;
+
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
     position: relative;
     &__main {
         width: var(--main-column-width);
-        height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -40,18 +43,22 @@
     gap: 14px;
 
     + .menu-column {
-        padding-top: var(--inner-padding);
+        margin-top: 22px;
     }
     &__icon {
         width: 36px;
         height: 36px;
         flex-shrink: 0;
         position: relative;
+
+        @include abstracts.breakpoint(xl) {
+            display: none;
+        }
     }
 
     &__icon-1 {
         width: 30px;
-        object-fit: cover;
+        object-fit: contain;
         height: 30px;
     }
 
@@ -61,7 +68,7 @@
         bottom: 0;
         height: 24px;
         width: 24px;
-        object-fit: cover;
+        object-fit: contain;
         filter: var(--menu-column-icon-color);
     }
 
@@ -80,15 +87,16 @@
         margin-top: 19px;
     }
 
-    &__item:hover > &__link {
-        color: #0071dc;
-        font-weight: 500;
-    }
-
     &__item {
-        &:hover .sub-menu {
+        &--active .sub-menu {
             display: grid;
         }
+    }
+
+    &__item:hover > &__link,
+    &__item--active:hover > &__link {
+        color: #0071dc;
+        font-weight: 500;
     }
 
     &__link {
@@ -107,4 +115,13 @@
     inset: 0 0 0 var(--main-column-width);
     padding-left: var(--inner-padding);
     overflow-y: auto;
+
+    &--not-main {
+        display: grid;
+        inset: initial;
+        position: initial;
+        grid-template-columns: repeat(4, 1fr);
+        height: var(--max-inner-height);
+        padding-left: 0;
+    }
 }
