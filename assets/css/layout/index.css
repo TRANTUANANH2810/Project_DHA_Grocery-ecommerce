@@ -41,17 +41,24 @@
     position: fixed;
     inset: 0 50% 0 0;
     z-index: 9;
-    background: #fff;
+    background: var(--sidevar-bg);
     margin-left: 0;
     translate: -100%;
     transition: translate 0.5s;
+    border-radius: 0px 20px 20px 0px;
   }
   .navbar.show {
+    box-shadow: var(--sidebar-shadow-bg);
     translate: 0;
   }
   .navbar.show ~ .navbar__overlay {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
   }
 }
 .navbar__overlay {
@@ -78,12 +85,22 @@
     padding: 10px 40px;
   }
 }
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding: 10px 20px;
+  }
+}
 @media (max-width: 991.98px) {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
     overflow: auto;
-    height: calc(100% - 26px);
+    height: calc(100% - 40px);
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar__list {
+    height: calc(100% - 380px);
   }
 }
 .navbar__link {
@@ -102,8 +119,22 @@
     line-height: 1.5; /* 150% */
   }
 }
+@media (max-width: 575.98px) {
+  .navbar__link {
+    padding: 0 20px;
+  }
+}
 .navbar__arrow {
   margin-top: 3px;
+}
+@media (max-width: 991.98px) {
+  .navbar__arrow {
+    rotate: -90deg;
+  }
+}
+.navbar__item--active .navbar__arrow {
+  rotate: 0deg;
+  transition: rotate 0.3s;
 }
 .navbar__item:hover .dropdown {
   display: block;
@@ -111,6 +142,12 @@
 @media (max-width: 991.98px) {
   .navbar__item {
     width: 100%;
+  }
+  .navbar__item:hover .dropdown {
+    display: none;
+  }
+  .navbar__item--active .dropdown {
+    display: block !important;
   }
 }
 
@@ -159,6 +196,27 @@
   height: 50px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.nav-btn {
+  padding: 0 40px;
+  height: 50px;
+  align-items: center;
+}
+@media (max-width: 575.98px) {
+  .nav-btn {
+    padding: 0 20px;
+    height: 44px;
+  }
+}
+.nav-btn__title, .nav-btn__qnt {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.47; /* 146.667% */
+  margin-left: 16px;
+}
+.nav-btn__qnt {
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=index.css.map */

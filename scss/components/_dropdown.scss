@@ -8,7 +8,7 @@
 
     @include abstracts.breakpoint(lg) {
         position: initial;
-        display: block;
+        // display: block;
         padding-top: 0;
     }
 
@@ -164,5 +164,10 @@
         grid-template-columns: repeat(4, 1fr);
         height: var(--max-inner-height);
         padding-left: 0;
+
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }

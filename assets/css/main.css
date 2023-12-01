@@ -1292,8 +1292,8 @@ textarea {
 }
 html.dark {
   --text-color: #ffffff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(7%)
-      saturate(0%) hue-rotate(106deg) brightness(107%) contrast(107%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(0%) hue-rotate(106deg) brightness(107%)
+      contrast(107%);
   --body-bg: #292e39;
   --header-bg: #171c28;
   --top-act-group-bg: #292e39;
@@ -1301,11 +1301,13 @@ html.dark {
   --top-act-group-separate: #ededf6;
   --dropdown-bg: #2f3441;
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(4%)
-      saturate(3243%) hue-rotate(186deg) brightness(96%) contrast(87%);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(4%) saturate(3243%) hue-rotate(186deg)
+      brightness(96%) contrast(87%);
   --top-menu-border-color: #171c28;
-  --menu-column-icon-color: brightness(0) saturate(100%) invert(85%) sepia(5%)
-      saturate(92%) hue-rotate(201deg) brightness(110%) contrast(106%);
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(85%) sepia(5%) saturate(92%) hue-rotate(201deg)
+      brightness(110%) contrast(106%);
+  --sidevar-bg: #292e39;
+  --sidebar-shadow-bg: 0px 40px 90px 20px rgba(23, 28, 40, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1315,8 +1317,8 @@ html.dark {
 
 html {
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(10%)
-      saturate(3954%) hue-rotate(212deg) brightness(97%) contrast(96%);
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(10%) saturate(3954%) hue-rotate(212deg) brightness(97%)
+      contrast(96%);
   --header-bg: #eee;
   --body-bg: #f6f6f6;
   --top-act-group-bg: #fff;
@@ -1325,6 +1327,8 @@ html {
   --dropdown-bg: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
   --top-menu-border-color: #d2d1d6;
+  --sidevar-bg: #fff;
+  --sidebar-shadow-bg: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1376,17 +1380,24 @@ html {
     position: fixed;
     inset: 0 50% 0 0;
     z-index: 9;
-    background: #fff;
+    background: var(--sidevar-bg);
     margin-left: 0;
     translate: -100%;
     transition: translate 0.5s;
+    border-radius: 0px 20px 20px 0px;
   }
   .navbar.show {
+    box-shadow: var(--sidebar-shadow-bg);
     translate: 0;
   }
   .navbar.show ~ .navbar__overlay {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
   }
 }
 .navbar__overlay {
@@ -1413,12 +1424,22 @@ html {
     padding: 10px 40px;
   }
 }
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding: 10px 20px;
+  }
+}
 @media (max-width: 991.98px) {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
     overflow: auto;
-    height: calc(100% - 26px);
+    height: calc(100% - 40px);
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar__list {
+    height: calc(100% - 380px);
   }
 }
 .navbar__link {
@@ -1437,8 +1458,22 @@ html {
     line-height: 1.5; /* 150% */
   }
 }
+@media (max-width: 575.98px) {
+  .navbar__link {
+    padding: 0 20px;
+  }
+}
 .navbar__arrow {
   margin-top: 3px;
+}
+@media (max-width: 991.98px) {
+  .navbar__arrow {
+    rotate: -90deg;
+  }
+}
+.navbar__item--active .navbar__arrow {
+  rotate: 0deg;
+  transition: rotate 0.3s;
 }
 .navbar__item:hover .dropdown {
   display: block;
@@ -1446,6 +1481,12 @@ html {
 @media (max-width: 991.98px) {
   .navbar__item {
     width: 100%;
+  }
+  .navbar__item:hover .dropdown {
+    display: none;
+  }
+  .navbar__item--active .dropdown {
+    display: block !important;
   }
 }
 
@@ -1496,6 +1537,27 @@ html {
   cursor: pointer;
 }
 
+.nav-btn {
+  padding: 0 40px;
+  height: 50px;
+  align-items: center;
+}
+@media (max-width: 575.98px) {
+  .nav-btn {
+    padding: 0 20px;
+    height: 44px;
+  }
+}
+.nav-btn__title, .nav-btn__qnt {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.47; /* 146.667% */
+  margin-left: 16px;
+}
+.nav-btn__qnt {
+  margin-left: auto;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -1538,7 +1600,6 @@ html {
 @media (max-width: 991.98px) {
   .dropdown {
     position: initial;
-    display: block;
     padding-top: 0;
   }
 }
@@ -1686,6 +1747,12 @@ html {
   grid-template-columns: repeat(4, 1fr);
   height: var(--max-inner-height);
   padding-left: 0;
+}
+@media (max-width: 991.98px) {
+  .sub-menu--not-main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
