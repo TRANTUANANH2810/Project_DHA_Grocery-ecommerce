@@ -82,6 +82,8 @@
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
+    overflow: auto;
+    height: calc(100% - 26px);
   }
 }
 .navbar__link {
@@ -109,9 +111,6 @@
 @media (max-width: 991.98px) {
   .navbar__item {
     width: 100%;
-  }
-  .navbar__item:hover .dropdown {
-    display: none;
   }
 }
 
