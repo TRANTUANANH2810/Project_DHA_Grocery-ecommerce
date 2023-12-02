@@ -1360,6 +1360,7 @@ html {
   --product-card-shadow-color: rgba(237, 237, 246, 0.2);
   --filter-form-bg: #fff;
   --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
+  --filter-form-tag-bg: #f8f8fb;
 }
 @media (max-width: 991.98px) {
   html {
@@ -2094,19 +2095,60 @@ html {
 .filter__form-slider::after {
   left: var(--max-value);
 }
+.filter__form-select-wrap, .filter__form-input {
+  border-radius: 6px;
+  border: 1px solid #d2d1d6;
+}
 .filter__form-input {
   height: 36px;
   padding: 0 12px;
   width: 121px;
-  border-radius: 6px;
-  border: 1px solid #d2d1d6;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 142.857%;
 }
+.filter__form-select-wrap {
+  display: flex;
+  align-items: center;
+  height: 45px;
+}
+.filter__form-select {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  min-width: var(--width, 108px);
+  padding: 0 14px;
+  height: calc(100% - 10px);
+}
+.filter__form-select + .filter__form-select {
+  border-left: 1px solid #d2d1d6;
+}
+.filter__form-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+.filter__form-tag {
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #9e9da8;
+  background: var(--filter-form-tag-bg);
+  transition: color 0.2s;
+}
+.filter__form-tag:hover {
+  color: var(--text-color);
+}
 .filter__row {
   display: flex;
-  flex: 1;
+}
+.filter__separate {
+  width: 1px;
+  background: #eee;
+  margin: 0 30px;
 }
 
 .home__container {
