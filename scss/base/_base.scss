@@ -33,13 +33,14 @@ button {
     padding: 0;
     cursor: pointer;
 }
-
+a,
 button,
 input,
 select,
 textarea {
     font-family: inherit;
     color: inherit;
+    outline: none;
 }
 
 .container {
