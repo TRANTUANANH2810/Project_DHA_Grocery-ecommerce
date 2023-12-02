@@ -22,7 +22,16 @@ html {
     --top-menu-border-color: #d2d1d6;
 
     // sidebar
-    --sidevar-bg: #fff;
+    --sidebar-bg: #fff;
 
     --sidebar-shadow-bg: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
+
+    // category
+    --cate-item-bg: #eee;
+    --cate-item-thumb-bg: #fff;
+    --cate-item-title-bg: #000;
+
+    @include abstracts.screen(md) {
+        -cate-item-bg: #fff;
+    }
 }
