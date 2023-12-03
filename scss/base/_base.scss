@@ -44,6 +44,10 @@ textarea {
     border: none;
 }
 
+input {
+    background: transparent;
+}
+
 .container {
     @include abstracts.screen(sm) {
         padding-left: 20px !important;

@@ -38,3 +38,46 @@
         margin-top: 6px;
     }
 }
+
+.btn {
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 6px;
+    background: #f8f8fb;
+    font-size: 1.8rem;
+    font-weight: 500;
+    user-select: none;
+
+    + .btn {
+        margin-left: 20px;
+    }
+
+    &--text {
+        color: #9e9da8;
+        background: transparent;
+        font-weight: 400;
+    }
+
+    &--primary {
+        color: #1a162e;
+        background: #ffb700;
+    }
+
+    &--outline {
+        background: transparent;
+        border: 1px solid #d2d1d6;
+    }
+    &[disabled],
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &--rounded {
+        border-radius: 99px;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
