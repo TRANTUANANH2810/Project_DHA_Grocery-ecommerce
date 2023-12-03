@@ -1,4 +1,8 @@
 .product-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
     padding: 16px;
     height: 100%;
     border-radius: 20px;
@@ -47,6 +51,7 @@
     &__row {
         display: flex;
         align-items: center;
+        margin-top: auto;
     }
 
     &__star {
