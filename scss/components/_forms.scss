@@ -11,6 +11,9 @@ $error-color: #ed4337;
     &__group {
         margin-top: 30px;
 
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
         &--inline {
             display: flex;
             align-items: center;
@@ -64,7 +67,7 @@ $error-color: #ed4337;
         }
 
         &::placeholder {
-            color: #d2d1d6;
+            color: var(--form-placeholder-color);
         }
         @include abstracts.screen(md) {
             font-size: 1.6rem;
@@ -97,7 +100,7 @@ $error-color: #ed4337;
         user-select: none;
 
         &-label {
-            padding-left: 20px;
+            padding-left: 26px;
             color: #9e9da8;
             font-size: 1.5rem;
             font-weight: 500;

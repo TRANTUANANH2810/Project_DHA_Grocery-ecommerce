@@ -703,6 +703,11 @@
 .form__group {
   margin-top: 30px;
 }
+@media (max-width: 767.98px) {
+  .form__group {
+    margin-top: 20px;
+  }
+}
 .form__group--inline {
   display: flex;
   align-items: center;
@@ -745,7 +750,7 @@
   margin-left: 12px;
 }
 .form__input::placeholder {
-  color: #d2d1d6;
+  color: var(--form-placeholder-color);
 }
 @media (max-width: 767.98px) {
   .form__input {
@@ -775,7 +780,7 @@
   user-select: none;
 }
 .form__checkbox-label {
-  padding-left: 20px;
+  padding-left: 26px;
   color: #9e9da8;
   font-size: 1.5rem;
   font-weight: 500;
