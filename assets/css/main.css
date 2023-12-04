@@ -2902,9 +2902,20 @@ html {
 .prod-preview {
   padding: 0 30px;
 }
+@media (max-width: 991.98px) {
+  .prod-preview {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
 .prod-preview__list {
   display: flex;
   overflow: hidden;
+}
+@media (max-width: 991.98px) {
+  .prod-preview__list {
+    flex: 1;
+  }
 }
 .prod-preview__item {
   position: relative;
@@ -2926,6 +2937,17 @@ html {
   justify-content: center;
   gap: 16px;
   padding: 30px;
+}
+@media (max-width: 991.98px) {
+  .prod-preview__thumbs {
+    flex-direction: column;
+    padding-left: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .prod-preview__thumbs {
+    display: none;
+  }
 }
 .prod-preview__thumb-img {
   width: 65px;
@@ -2949,6 +2971,17 @@ html {
 
 .prod-info {
   padding: 60px;
+  background: #f6f6f6;
+}
+@media (max-width: 1399.98px) {
+  .prod-info {
+    padding: 40px;
+  }
+}
+@media (max-width: 991.98px) {
+  .prod-info {
+    margin-top: 30px;
+  }
 }
 .prod-info__heading {
   font-size: 2.6rem;
@@ -2958,9 +2991,58 @@ html {
 .prod-info__label {
   margin-top: 30px;
 }
+.prod-info__tag {
+  background: #ededf6;
+}
+.prod-info__card {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #b9babe;
+}
+.prod-info__row {
+  display: flex;
+  align-items: center;
+}
+.prod-info__price {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.prod-info__tax {
+  padding: 2px 8px;
+  margin-left: 10px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+  color: #67b044;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
+.prod-info__total-price {
+  margin: 20px 0;
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 138.462%;
+}
+.prod-info__add-to-cart {
+  flex: 1;
+}
+.prod-info__like-btn {
+  width: 46px;
+  height: 46px;
+  margin-left: 20px;
+  border-radius: 6px;
+  border: 1px solid #d2d1d6;
+  background: transparent;
+}
 
 .prod-props {
   padding-left: 30px;
+}
+@media (max-width: 1399.98px) {
+  .prod-props {
+    padding-left: 10px;
+  }
 }
 
 .prod-prop {
