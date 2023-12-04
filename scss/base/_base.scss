@@ -4,6 +4,10 @@
 ::after {
     box-sizing: border-box;
 }
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
 html {
     font-size: 62.5%;
 }
@@ -38,6 +42,7 @@ select {
     border: none;
     -webkit-tap-highlight-color: transparent;
 }
+
 input {
     background: transparent;
 }
