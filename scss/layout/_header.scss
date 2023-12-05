@@ -210,6 +210,13 @@
         padding: 13px;
     }
 
+    &__btn-wrap {
+        position: relative;
+
+        &:hover .act-dropdown {
+            display: block;
+        }
+    }
     &__btn {
         @extend %flexItemCenter;
         gap: 10px;
@@ -258,5 +265,125 @@
     &__qnt {
         @extend .nav-btn__title;
         margin-left: auto;
+    }
+}
+
+.act-dropdown {
+    position: absolute;
+    top: 48px;
+    right: -60px;
+    width: min(500px, 100vw);
+    padding-top: 28px;
+    display: none;
+
+    &__inner {
+        position: relative;
+        padding: 30px;
+        border-radius: 20px;
+        background: var(--header-act-dropdown-bg);
+        box-shadow: 0px 40px 90px 20px var(--header-act-dropdown-shadow);
+    }
+
+    &__arrow {
+        position: absolute;
+        top: -17px;
+        right: 90px;
+        height: 20.5px;
+        filter: var(--dropdown-arrow-color);
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+    }
+
+    &__view-all {
+        color: #0071dc;
+        font-size: 1.8rem;
+        line-height: 145.455%;
+    }
+
+    &__bottom {
+        margin: 20px 0;
+        padding: 20px 0;
+        border-width: 1.5px 0;
+        border-color: var(--header-act-dropdown-border-color);
+        border-style: solid;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--bold {
+            font-weight: 500;
+        }
+    }
+
+    &__list {
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    &__row + &__row {
+        margin-top: 10px;
+    }
+
+    &__label,
+    &__value {
+        font-size: 1.8rem;
+        line-height: 145.455%;
+    }
+
+    &__checkout {
+        display: flex;
+        justify-content: flex-end;
+
+        &-btn {
+            min-width: 278px;
+        }
+    }
+}
+
+.cart-preview-item {
+    text-align: left;
+
+    &__img-wrap {
+        position: relative;
+        padding-top: 100%;
+        border: 1.5px solid var(--header-act-dropdown-border-color);
+        border-radius: 10px;
+    }
+
+    &__thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__title {
+        margin-top: 14px;
+        font-size: 1.4rem;
+        line-height: 142.857%;
+    }
+
+    &__price {
+        margin-top: 6px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
     }
 }
