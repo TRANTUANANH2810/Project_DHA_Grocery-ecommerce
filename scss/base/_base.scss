@@ -8,6 +8,7 @@
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -28,6 +29,7 @@ button {
     padding: 0;
     cursor: pointer;
 }
+
 a,
 img,
 button,
@@ -40,12 +42,22 @@ select {
     color: inherit;
     outline: none;
     border: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
-input {
+input,
+textarea {
     background: transparent;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:hover {
+    transition: background-color 1s 9999s;
+    -webkit-text-fill-color: var(--text-color);
+    caret-color: var(--text-color);
+}
+
 .icon {
     filter: var(--icon-color);
 }

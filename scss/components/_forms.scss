@@ -11,6 +11,14 @@ $error-color: #ed4337;
     &__row {
         display: flex;
         gap: 30px;
+        @include abstracts.screen(md) {
+            gap: 20px;
+        }
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            gap: 0;
+        }
 
         > * {
             flex: 1;
@@ -53,10 +61,6 @@ $error-color: #ed4337;
         border-radius: 10px;
         border: 1.5px solid #d2d1d6;
 
-        &--small {
-            border-radius: 8px;
-        }
-
         &:focus-within {
             border-color: #77dae6;
         }
@@ -67,12 +71,12 @@ $error-color: #ed4337;
         padding: 12px;
 
         &-input {
-            width: 100%;
             resize: none;
         }
     }
 
     &__text-input {
+        position: relative;
         height: 50px;
 
         &--small {
@@ -87,7 +91,7 @@ $error-color: #ed4337;
     &__text-area-input {
         flex: 1;
         height: 100%;
-
+        width: 100%;
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 144.444%;
@@ -103,6 +107,117 @@ $error-color: #ed4337;
     &__input {
         &-icon {
             margin-left: 12px;
+        }
+    }
+
+    &__select-dialog {
+        position: absolute;
+        bottom: 44px;
+        left: 10px;
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 8px;
+
+        transition: opacity, visibility, translate;
+        transition-duration: 0.2s;
+
+        min-width: 230px;
+        max-height: 310px;
+        padding-bottom: 10px;
+        border: 1px solid #d2d1d6;
+        border-radius: 10px;
+        box-shadow: 0 0 5px var(--form-select-dialog-shadow);
+
+        background: var(--form-select-dialog-bg);
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            translate: 0;
+        }
+
+        @include abstracts.screen(sm) {
+            position: fixed;
+            max-width: initial;
+            max-height: initial;
+            inset: 0;
+            border-radius: 0;
+        }
+    }
+
+    &__close-dialog {
+        font-size: 3rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 2px 18px;
+        opacity: 0.8;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        height: 38px;
+        padding: 0 20px;
+        border-bottom: 1px solid #d2d1d6;
+
+        &-input {
+            flex: 1;
+            height: 100%;
+            font-size: 1.6rem;
+        }
+
+        &-icon {
+            width: 16px;
+            margin-left: 10px;
+        }
+
+        @include abstracts.screen(lg) {
+            height: 42px;
+        }
+
+        @include abstracts.screen(sm) {
+            flex-direction: row-reverse;
+            margin-top: 30px;
+
+            &-icon {
+                margin-left: 0;
+            }
+
+            &-input {
+                padding-left: 8px;
+            }
+        }
+    }
+
+    &__options-list {
+        flex: 1;
+        margin-top: 10px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    &__option {
+        padding: 8px 20px;
+        font-size: 1.4rem;
+
+        &--current {
+            font-weight: 500;
+            background: rgba($color: #ffb700, $alpha: 0.6);
+        }
+
+        &:not(&--current):hover {
+            background: var(--form-option-hover-bg);
+            cursor: pointer;
+        }
+        @include abstracts.screen(lg) {
+            padding: 14px 20px;
         }
     }
 
