@@ -5,6 +5,8 @@
 
 .header {
   background: var(--header-bg);
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 991.98px) {
   .header {
@@ -294,7 +296,7 @@
 .act-dropdown__bottom {
   margin: 20px 0;
   padding: 20px 0;
-  border-width: 1.5px 0;
+  border-width: 1px 0;
   border-color: var(--header-act-dropdown-border-color);
   border-style: solid;
 }
@@ -337,7 +339,7 @@
 .cart-preview-item__img-wrap {
   position: relative;
   padding-top: 100%;
-  border: 1.5px solid var(--header-act-dropdown-border-color);
+  border: 1px solid var(--header-act-dropdown-border-color);
   border-radius: 10px;
 }
 .cart-preview-item__thumb {
