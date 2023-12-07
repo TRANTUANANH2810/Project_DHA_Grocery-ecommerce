@@ -907,6 +907,12 @@
   font-weight: 500;
   line-height: 145.455%;
 }
+.form__label--medium {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
 .form__label--small {
   margin-bottom: 10px;
   font-size: 1.4rem;
