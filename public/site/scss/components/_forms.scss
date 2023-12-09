@@ -59,7 +59,7 @@ $error-color: #ed4337;
 
         padding: 0 12px;
         border-radius: 10px;
-        border: 1.5px solid #d2d1d6;
+        border: 1px solid #d2d1d6;
 
         &:focus-within {
             border-color: #77dae6;
@@ -150,12 +150,19 @@ $error-color: #ed4337;
         }
     }
 
+    &__dialog-heading {
+        padding: 20px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
     &__close-dialog {
         font-size: 3rem;
         position: absolute;
         right: 0;
         top: 0;
-        padding: 2px 18px;
+        padding: 12px 18px;
         opacity: 0.8;
     }
 
@@ -179,20 +186,18 @@ $error-color: #ed4337;
         }
 
         @include abstracts.screen(lg) {
-            height: 42px;
+            height: 48px;
+
+            &-icon {
+                width: 20px;
+            }
         }
 
         @include abstracts.screen(sm) {
-            flex-direction: row-reverse;
-            margin-top: 30px;
-
-            &-icon {
-                margin-left: 0;
-            }
-
-            &-input {
-                padding-left: 8px;
-            }
+            padding: 0 14px;
+            border: 1px solid #d2d1d6;
+            margin: 10px 30px 0;
+            border-radius: 10px;
         }
     }
 
@@ -201,6 +206,10 @@ $error-color: #ed4337;
         margin-top: 10px;
         overflow-y: auto;
         overscroll-behavior: contain;
+
+        @supports (-webkit-touch-callout: none) {
+            padding-bottom: 300px;
+        }
     }
 
     &__option {
@@ -216,8 +225,10 @@ $error-color: #ed4337;
             background: var(--form-option-hover-bg);
             cursor: pointer;
         }
+
         @include abstracts.screen(lg) {
-            padding: 14px 20px;
+            padding: 18px 30px;
+            font-size: 1.6rem;
         }
     }
 
@@ -267,7 +278,7 @@ $error-color: #ed4337;
             width: 19px;
             height: 19px;
             border-radius: 5px;
-            border: 1.5px solid #9e9da8;
+            border: 1px solid #9e9da8;
         }
     }
 
@@ -293,6 +304,12 @@ $error-color: #ed4337;
         font-weight: 500;
         line-height: 145.455%;
 
+        &--medium {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+        }
         &--small {
             margin-bottom: 10px;
             font-size: 1.4rem;
