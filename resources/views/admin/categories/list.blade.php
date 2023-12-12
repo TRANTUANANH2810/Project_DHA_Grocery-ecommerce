@@ -59,10 +59,10 @@
 							</tbody>
 						</table>
 					</div>
-						<div class="btnAdd">
+						{{-- <div class="btnAdd">
 						<button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn xóa không ?')"><i
 									class="fa fa-trash-o"></i> Xóa mục đã chọn
-						</button>
+						</button> --}}
 					</div>
 			    </form>
 				

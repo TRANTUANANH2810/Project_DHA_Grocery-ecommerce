@@ -83,7 +83,7 @@
 						<div class="card-body">
 							<div class="form-group">
 								<div class="custom-control custom-checkbox">
-									<input class="custom-control-input" type="checkbox" name="is_active" id="showCheckbox1" value="{{$cate->is_active}}" {{$cate->is_active == 1 ? 'checked' : ''}}>
+									<input class="custom-control-input" type="checkbox" name="is_active" id="showCheckbox1" value="1" {{$cate->is_active == 1 ? 'checked' : ''}}>
 									<label for="showCheckbox1" class="custom-control-label">Hiển thị ở trang chủ</label>
 								</div>
 							</div>

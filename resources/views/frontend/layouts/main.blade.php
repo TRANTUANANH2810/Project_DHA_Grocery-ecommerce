@@ -7,10 +7,9 @@
         <title>Grocerymart</title>
 
         <!-- Icon  -->
-
         <link rel="apple-touch-icon" sizes="76x76" href="site/assets/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="site/assets/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="site/assets/favicon/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('site/assets/icons/logo.svg')}}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('site/assets/icons/logo.svg')}}" />
         <link rel="manifest" href="site/assets/favicon/site.webmanifest" />
         <link rel="mask-icon" href="site/assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />

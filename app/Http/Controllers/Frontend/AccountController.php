@@ -14,15 +14,27 @@ use Illuminate\Support\Facades\Hash;
 class AccountController extends Controller
 {
     public function getLogin(){
-        return view('frontend.pages.login');
+        if(!Auth::check()){
+            return view('frontend.pages.login');
+        }else{
+            return redirect()->route('home.index');
+        }
     }
 
     public function getRegister(){
-        return view('frontend.pages.register');
+        if(!Auth::check()){
+            return view('frontend.pages.register');
+        }else{
+            return redirect()->route('home.index');
+        }
     }
 
     public function getRegisterSeller(){
-        return view('frontend.pages.registerSeller');
+        if(!Auth::check()){
+            return view('frontend.pages.registerSeller');
+        }else{
+            return redirect()->route('home.index');
+        }
     }
 
     public function logout(){

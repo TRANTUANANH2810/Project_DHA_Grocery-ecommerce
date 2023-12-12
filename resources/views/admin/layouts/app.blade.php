@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link rel="icon" type="image/x-icon" href="">
+    <link rel="icon" type="image/x-icon" href="{{asset('site/assets/icons/logo.svg')}}">
     <title>Admin</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{url('backend/plugins/fontawesome/css/all.min.css')}}">

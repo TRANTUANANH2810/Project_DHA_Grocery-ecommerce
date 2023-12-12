@@ -46,11 +46,6 @@
                         <img src="{{asset('site/assets/icons/logo.svg')}}" alt="grocerymart" class="logo__img" />
                         <h2 class="logo__title">grocerymart</h2>
                     </a>
-                    <h1 class="auth__heading">Hello Again!</h1>
-                    <p class="auth__desc">
-                        Welcome back to sign in. As a returning customer, you have access to your previously saved all
-                        information.
-                    </p>
                     <form action="{{route('home.login.post')}}" method="POST" class="form auth__form">
                         @csrf
                         <div class="form__group">
@@ -90,21 +85,13 @@
                                 <input type="checkbox" name="" id="" class="form__checkbox-input d-none" />
                                 <span class="form__checkbox-label">Set as default card</span>
                             </label>
-                            <a href="{{route('home.resetPassword')}}" class="auth__link form__pull-right">Forgot password?</a>
+                            {{-- <a href="{{route('home.resetPassword')}}" class="auth__link form__pull-right">Forgot password?</a> --}}
                         </div>
                         <div class="form__group auth__btn-group">
                             <button class="btn btn--primary auth__btn form__submit-btn">Sign In</button>
-                            <button class="btn btn--outline auth__btn btn--no-margin">
-                                <img src="site/assets/icons/google.svg" alt="" class="btn__icon icon" />
-                                Sign in with Google
-                            </button>
                         </div>
                     </form>
 
-                    <p class="auth__text">
-                        Don’t have an account yet?
-                        <a href="{{route('home.register')}}" class="auth__link auth__text-link">Sign Up</a>
-                    </p>
                 </div>
             </div>
         </main>
