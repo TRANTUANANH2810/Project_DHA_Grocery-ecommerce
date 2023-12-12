@@ -1,0 +1,119 @@
+.btn-danger {
+    color: #fff;
+    background-color: #FF0000;
+    border-color: #FF0000;
+    box-shadow: none;
+}
+
+.login-footer{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.login-footer a{
+    font-weight: 500;
+}
+
+.login-page, .register-page {
+    background-color: #000000;
+}
+
+.dataTables_paginate.paging_full_numbers{
+    font-size: 14px;
+}
+
+.page-item.active .page-link {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.sidebar .nav .nav-item .nav-link{
+    padding-left: 12px;
+}
+
+.swal2-container.swal2-top-end > .swal2-popup, .swal2-container.swal2-top-right > .swal2-popup {
+    /* font-size: 1px; */
+    padding: 8px 16px;
+}
+
+.swal2-popup.swal2-toast .swal2-icon {
+    font-size: 14px;
+}
+
+.fs-14{
+    font-size: 14px!important;
+}
+
+.fs-15{
+    font-size: 15px!important;
+}
+
+.cl-green{
+    color: #198754;
+}
+
+.cl-red{
+    color: #dc3545;
+}
+
+.cl-orange{
+    color: #fd7e14;
+}
+
+.bg-green {
+    background: #198754;
+}
+
+.bg-red{
+    background: #dc3545;
+}
+
+.bg-orange{
+    background: #fd7e14;
+}
+
+table thead tr th{
+    white-space: nowrap;
+}
+.login-logo img{
+    max-width: 100%;
+}
+.title-kh{
+    background: #645e5e;
+    color: #ffffff;
+}
+.page-table label{
+    margin-bottom: 0px;
+}
+.banner-header{
+    height: 145px !important; 
+    max-width: 350px;
+}
+.banner-feature{
+    width: 90px !important;
+    height: 90px !important;
+}
+.feature{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.title-feature{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+}
+.form-groupp-flex{
+    display: flex;   
+    gap: 28px;
+}
+.form-groupp-with{
+    width: 100%;
+}
+.zalo-setting{
+    margin-left: -4px;
+    width: 25px;
+    margin-top: -5px;
+}
