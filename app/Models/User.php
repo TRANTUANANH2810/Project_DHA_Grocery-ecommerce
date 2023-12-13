@@ -21,6 +21,13 @@ class User extends Authenticatable
 
     protected $guarded = []; 
 
+    public function seller(){
+
+        // return $this->hasOne(\App\Models\Seller::class, 'id', 'user_id');
+        return $this->hasOne(Seller::class);
+
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

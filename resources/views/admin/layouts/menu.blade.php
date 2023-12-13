@@ -10,14 +10,14 @@
     </a>
 </li>
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="" class="nav-link {{ Request::segment(2) == 'users' ? 'active' : null }}">
         <i class="nav-icon fas fa-user-shield"></i>
         <p>
             Quản lý quản trị
         </p>
     </a>
-</li>
+</li> --}}
 
 <li class="nav-item">
     <a href=""
@@ -30,7 +30,7 @@
 </li>
 
 <li class="nav-item">
-    <a href=""
+    <a href="{{route('seller.index')}}"
         class="nav-link {{ Request::segment(2) == 'customer' ? 'active' : null }}" style="border-radius:0px !important">
         <i class="nav-icon fas fa-user"></i>
         <p>
@@ -66,7 +66,7 @@
     </ul>
 </li>
 
-<li class="nav-item {{ Request::segment(2) == 'product' ? 'menu-open' : null }}">
+{{-- <li class="nav-item {{ Request::segment(2) == 'product' ? 'menu-open' : null }}">
     <a href=""
         class="nav-link {{ Request::segment(2) == 'product' ? 'active' : null }}" style="border-radius:0px !important">
         <i class="nav-icon fab fa-product-hunt"></i>
@@ -91,7 +91,7 @@
             </a>
         </li>
     </ul>
-</li>
+</li> --}}
 
 
 

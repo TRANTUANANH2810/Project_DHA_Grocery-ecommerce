@@ -18,5 +18,8 @@
     "test": "tests"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.29"
+  }
 }

@@ -44,9 +44,9 @@
                 <div class="auth__content-inner">
                     <a href="./" class="logo">
                         <img src="{{asset('site/assets/icons/logo.svg')}}" alt="grocerymart" class="logo__img" />
-                        <h2 class="logo__title">grocerymart</h2>
+                        <h2 class="logo__title">grocerymart {{@Auth::guard('admin')->user()->user_name}}</h2>
                     </a>
-                    <form action="{{route('home.login.post')}}" method="POST" class="form auth__form">
+                    <form action="{{route('admin.login.post')}}" method="POST" class="form auth__form">
                         @csrf
                         <div class="form__group">
                             <div class="form__text-input">

@@ -65,9 +65,18 @@ Route::group(['namespace' => 'Frontend'], function(){
 
     Route::post('sellers/create', [AccountController::class, 'postSellerCreate'])->name('home.sellers.create.post');
 
-    // Dashboard
 
-    Route::get('dashboard', [DashboardController::class,'getDashboard'])->name('home.dashboard');
+    Route::group(['middleware' => 'checkFrontend'], function(){
+
+        // Dashboard
+        Route::get('dashboard', [DashboardController::class,'getDashboard'])->name('home.dashboard');
+
+        Route::get('profile', [DashboardController::class,'getProfile'])->name('home.profile');
+
+        Route::post('profile', [DashboardController::class,'postProfile'])->name('home.profile.post');
+
+        Route::post('change-password', [DashboardController::class,'postChangePassword'])->name('home.profile.password.post');
 
 
+    });
 });
