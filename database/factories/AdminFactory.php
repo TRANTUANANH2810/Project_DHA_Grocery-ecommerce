@@ -1,18 +1,18 @@
-<?php
+<?php 
 
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
-class UserFactory extends Factory
+class AdminFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = \App\Models\User::class;
+    protected $model = \App\Models\Admin::class;
 
     /**
      * Define the model's default state.
@@ -28,10 +28,7 @@ class UserFactory extends Factory
             'last_name' => $this->faker->lastName,
             'user_name' => $this->faker->userName,
             'password_hash' => Hash::make('password'), // You may want to generate a secure password using Hash::make
-            'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,
-            'image' => $this->faker->text,
         ];
     }
 }
-
