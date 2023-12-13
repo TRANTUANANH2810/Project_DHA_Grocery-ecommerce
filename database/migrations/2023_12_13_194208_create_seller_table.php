@@ -13,19 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->comment('User');
+        Schema::create('seller', function (Blueprint $table) {
+            $table->comment('Seller');
             $table->integer('id', true)->comment('Primary Key');
             $table->dateTime('created_at')->nullable()->useCurrent()->comment('Create At');
+            $table->integer('user_id')->nullable()->index('seller_user_id');
             $table->dateTime('updated_at')->nullable()->useCurrent()->comment('Updated At');
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('user_name')->nullable();
-            $table->string('password_hash')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone', 20)->nullable();
-            $table->text('image')->nullable();
-            $table->boolean('is_active')->nullable()->default(true);
+            $table->string('shop_name')->nullable();
+            $table->string('shop_address')->nullable();
+            $table->float('wallet', 10, 0)->nullable();
         });
     }
 
@@ -36,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('seller');
     }
 };

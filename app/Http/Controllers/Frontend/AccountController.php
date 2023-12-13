@@ -81,7 +81,6 @@ class AccountController extends Controller
         $user_seller = [
             'user_id' => $user_id->id,
             'shop_name' => $request->shop_name,
-            'confirm' => 0,
             'shop_address' => $request->address, 
         ]; 
 
