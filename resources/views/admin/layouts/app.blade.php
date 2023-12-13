@@ -62,9 +62,11 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown">
-                    <img src="" class="user-image img-circle elevation-2" alt="User Image">
+                    <img src="{{asset('backend/images/default.png')}}" class="user-image img-circle elevation-2" alt="User Image">
                     <div class="d-none d-md-inline">
-                        <span class="font-weight-bold"></span>
+                        <span class="font-weight-bold">
+                        {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
+                        </span>
                         <br>
                         <span class="fs-15"></span>
                     </div>
@@ -72,20 +74,20 @@
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-dark">
-                        <img src=""
+                        <img src="{{asset('backend/images/default.png')}}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
-                            <small>Thành viên từ</small>
+                        {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
+                            <small>Thành viên từ {{@Auth::guard('admin')->user()->created_at->format('d-m-Y')}}</small>
                         </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat float-right"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a href="{{route('admin.logout')}}" class="btn btn-default btn-flat float-right">
                             Sign out
                         </a>
-                        <form id="logout-form" action="" method="POST" class="d-none">
+                        <form id="logout-form" action="" method="GET" class="d-none">
                         </form>
                     </li>
                 </ul>

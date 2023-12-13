@@ -48,11 +48,7 @@ class AccountController extends Controller
             'password' => $request->password,
         ];
         if(auth()->attempt($arr)){
-            if(Auth::user('web')->is_seller == 1 ){
-                return view('frontend.pages.dashboard.infor');
-            }else{
-                return view('frontend.pages.home');
-            }
+            return redirect()->route('admin.home')->with('success','Đăng nhập thành công');
         }else{
             return redirect()->route('home.login')->with('error','Tài khoản hoặc mật khẩu không chính xác');
         }
