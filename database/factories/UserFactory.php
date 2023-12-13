@@ -27,10 +27,12 @@ class UserFactory extends Factory
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
             'user_name' => $this->faker->userName,
-            'password_hash' => Hash::make('password'), // You may want to generate a secure password using Hash::make
+            'password' => Hash::make('password'), // You may want to generate a secure password using Hash::make
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,
             'image' => $this->faker->text,
+            'is_active' => $this->faker->boolean,
+            'is_seller' => $this->faker->boolean
         ];
     }
 }

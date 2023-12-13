@@ -27,7 +27,7 @@ class AdminFactory extends Factory
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
             'user_name' => $this->faker->userName,
-            'password_hash' => Hash::make('password'), // You may want to generate a secure password using Hash::make
+            'password' => Hash::make('password'), // You may want to generate a secure password using Hash::make
             'phone' => $this->faker->phoneNumber,
         ];
     }
