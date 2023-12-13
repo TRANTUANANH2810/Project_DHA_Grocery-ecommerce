@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Frontend\AccountController;
+use App\Http\Controllers\Frontend\DashboardController;
+use App\Http\Controllers\Frontend\SinglePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','App\Http\Controllers\homeController@index')-> name('home.index');
 Route::get('/signin','App\Http\Controllers\homeController@signin')-> name('home.signin');
 Route::get('/SignUp','App\Http\Controllers\homeController@SignUp')-> name('home.SignUp');
 Route::get('/home','App\Http\Controllers\homeController@home')-> name('home.home');
@@ -27,12 +29,45 @@ Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('hom
 Route::get('/product-detail','App\Http\Controllers\homeController@productDetail')-> name('home.productDetail');
 
 
-Route::get('/reset-password-emailed',function(){
-    return view('reset-password-emailed');
-});
-Route::get('/reset-password',function(){
-    return view('reset-password');
-});
-Route::get('/shipping',function(){
-    return view('shipping');
+// Route::get('/reset-password-emailed',function(){
+//     return view('reset-password-emailed');
+// });
+// Route::get('/reset-password',function(){
+//     return view('reset-password');
+// });
+// Route::get('/shipping',function(){
+//     return view('shipping');
+// });
+
+Route::group(['namespace' => 'Frontend'], function(){
+
+    Route::get('/', [SinglePageController::class, 'getHome'])->name('home.index');
+
+    Route::get('login', [AccountController::class, 'getLogin'])->name('home.login');
+
+    Route::post('login', [AccountController::class, 'postLogin'])->name('home.login.post');
+
+    Route::get('logout', [AccountController::class, 'logout'])->name('home.logout');
+
+    Route::get('register', [AccountController::class, 'getRegister'])->name('home.register');
+
+    Route::post('register', [AccountController::class, 'postRegister'])->name('home.register.post');
+
+
+    // Seller
+    Route::get('registerSeller', [AccountController::class, 'getRegisterSeller'])->name('home.registerSeller');
+
+    Route::post('registerSeller', [AccountController::class, 'postRegisterSeller'])->name('home.registerSeller.post');
+
+
+   
+    Route::get('sellers/create', [AccountController::class, 'getSellerCreate'])->name('home.sellers.create');
+
+    Route::post('sellers/create', [AccountController::class, 'postSellerCreate'])->name('home.sellers.create.post');
+
+    // Dashboard
+
+    Route::get('dashboard', [DashboardController::class,'getDashboard'])->name('home.dashboard');
+
+
 });
