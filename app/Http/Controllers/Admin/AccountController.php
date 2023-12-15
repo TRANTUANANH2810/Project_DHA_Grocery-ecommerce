@@ -15,7 +15,7 @@ class AccountController extends Controller
         return view('admin.auth.login');
     }
 
-    public function postLogin(Request $request){
+        public function postLogin(Request $request){
         $admin = Admin::where('user_name',$request->user_name)->first();
         if(!empty($admin)){
             if(Hash::check($request->password, $admin->password)){

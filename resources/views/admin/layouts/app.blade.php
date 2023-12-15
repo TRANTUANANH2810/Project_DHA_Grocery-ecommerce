@@ -77,7 +77,10 @@
                         <img src="{{asset('backend/images/default.png')}}"
                              class="img-circle elevation-2"
                              alt="User Image">
-                        
+                        <p>
+                        {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
+                            <small>Thành viên từ {{@Auth::guard('admin')->user()->created_at || @Auth::user()->created_at}}</small>
+                        </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
