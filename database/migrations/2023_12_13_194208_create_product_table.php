@@ -20,8 +20,12 @@ return new class extends Migration
             $table->dateTime('updated_at')->nullable()->useCurrent()->comment('Updated At');
             $table->integer('category_id')->nullable()->index('product_category_id');
             $table->integer('seller_id')->nullable()->index('product_seller_id');
+            $table->string('sku')->nullable();
             $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->float('price', 10, 0)->nullable();
+            $table->float('price_old', 10, 0)->nullable();
+            $table->text('content')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_active')->nullable()->default(true);
             $table->integer('qty')->nullable();
