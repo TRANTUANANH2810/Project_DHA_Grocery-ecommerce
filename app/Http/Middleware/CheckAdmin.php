@@ -19,11 +19,6 @@ class CheckAdmin
         if(Auth::guard('admin')->check()){
             return $next($request);
         }
-        else if(Auth::check()){
-            if(Auth::user()->is_seller == 1){
-                return $next($request);
-            }
-        }
         return redirect()->route('admin.login');
     }
 }

@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.manage.layouts.app')
 
 @section('content')
 	<div class="content-header">
@@ -90,6 +90,28 @@
 		                    <div class="text-right">
 		                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-save"></i> Lưu lại</button>
 		                    </div>
+						</div>
+					</div>
+					<div class="card card-secondary card-outline">
+						<div class="card-header">
+							<h3 class="card-title">Banner</h3>
+						</div>
+						<div class="card-body">
+							<div class="" style="text-align: center;">
+								<div class="image">
+									<div class="image">
+										<div class="image__thumbnail">
+											<img src="{{ old('image',@$cate->image) ? old('image',@$cate->image) :  asset('backend/images/placeholder.png') }}"
+												data-init="{{ asset('backend/images/placeholder.png') }}">
+											<a href="javascript:void(0)" class="image__delete"
+												onclick="urlFileDelete(this)">
+												<i class="fa fa-times"></i></a>
+											<input type="hidden" value="{{ old('image',@$cate->image) }}" name="image" />
+											<div class="image__button" onclick="fileSelect(this)"></div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

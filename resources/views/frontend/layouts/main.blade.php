@@ -40,7 +40,7 @@
       
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
        
-        @include('admin.layouts.sweet-alert')
+        @include('admin.manage.layouts.sweet-alert')
 
         @yield('page_script')
     </body>

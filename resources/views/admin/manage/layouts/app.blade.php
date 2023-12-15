@@ -62,10 +62,14 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown">
-                    <img src="{{asset('backend/images/default.png')}}" class="user-image img-circle elevation-2" alt="User Image">
+                    <img src="{{ Auth::check() ? Auth::user()->image : asset('backend/images/default.png') }}" class="user-image img-circle elevation-2" alt="User Image">
                     <div class="d-none d-md-inline">
                         <span class="font-weight-bold">
-                        {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
+                            @if (Auth::guard('admin')->check())
+                                {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
+                            @else
+                                {{@Auth::user()->last_name}}  {{@Auth::user()->first_name}}
+                            @endif
                         </span>
                         <br>
                         <span class="fs-15"></span>
@@ -74,12 +78,12 @@
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-dark">
-                        <img src="{{asset('backend/images/default.png')}}"
+                        <img src="{{Auth::check() ? Auth::user()->image : asset('backend/images/default.png')}}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
                         {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
-                            <small>Thành viên từ {{@Auth::guard('admin')->user()->created_at || @Auth::user()->created_at}}</small>
+                            <small>Thành viên từ: {{@Auth::guard('admin')->check() ? @Auth::guard('admin')->user()->created_at->format('d-m-Y') : @Auth::user()->created_at->format('d-m-Y')}}</small>
                         </p>
                     </li>
                     <!-- Menu Footer-->
@@ -96,7 +100,7 @@
     </nav>
 
     <!-- Left side column. contains the logo and sidebar -->
-@include('admin.layouts.sidebar')
+@include('admin.manage.layouts.sidebar')
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -170,9 +174,9 @@
     })
 </script>
 <!-- Sweet Alert Config-->
-@include('admin.layouts.sweet-alert')
+@include('admin.manage.layouts.sweet-alert')
 
-@include('admin.layouts.modal-confim-delete')
+@include('admin.manage.layouts.modal-confim-delete')
 
 @yield('third_party_scripts')
 

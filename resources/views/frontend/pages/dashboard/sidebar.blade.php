@@ -2,7 +2,7 @@
     <aside class="profile__sidebar">
         <!-- User -->
         <div class="profile-user">
-            <img src="site/assets/img/avatar/avatar-3.png" alt="" class="profile-user__avatar" />
+            <img src="{{ Auth::user()->image ? Auth::user()->image : asset('backend/images/default.jpg')}}" alt="" class="profile-user__avatar" />
             <h1 class="profile-user__name">{{$user->last_name}} {{$user->first_name}}</h1>
             <p class="profile-user__desc">{{$user->created_at->format('d-m-Y')}}</p>
         </div>

@@ -1,16 +1,16 @@
-@extends('admin.layouts.app')
+@extends('admin.manage.layouts.app')
 
 @section('content')
 	<div class="content-header">
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h4 class="m-0">Tài khoản</h4>
+					<h4 class="m-0">Tài khoản người bán</h4>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="{{route('admin.home')}}">Trang tổng quan</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('seller.index')}}">Tài khoản</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('seller.index')}}">Tài khoản người bán</a></li>
                         <li class="breadcrumb-item active">Chỉnh sửa</li>
 					</ol>
 				</div>
@@ -22,18 +22,25 @@
             @csrf
             @method('put')
             <div class="row">
+          
                 <div class="col-md-4">
     
                     <div class="card card-dark card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
-                                @if (!empty($data->image))
-                                    <img class="profile-user-img img-fluid img-circle" src="{{ url('/frontend/avatar').'/'.$data->image }}"
-                                alt="User profile picture">
-                                @else
-                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('backend/images/default.jpg') }}"
-                                alt="User profile picture">
-                                @endif
+                                <div class="image">
+									<div class="image">
+										<div class="image__thumbnail" style="outline: 0 !important;">
+											<img src="{{ old('image',@$seller->image) ? old('image',@$seller->image) :  asset('backend/images/default.jpg') }}"
+												data-init="{{ asset('backend/images/default.jpg') }}" style="border-radius: 50%;" class="profile-user-img">
+											<a href="javascript:void(0)" class="image__delete"
+												onclick="urlFileDelete(this)">
+												<i class="fa fa-times"></i></a>
+											<input type="hidden" value="{{ old('image',@$seller->image) }}" name="image" />
+											<div class="image__button" onclick="fileSelect(this)" style="border-radius: 50%;"></div>
+										</div>
+									</div>
+								</div>
                             </div>
                             <h3 class="profile-username text-center">{{ @$seller->first_name}} {{ @$seller->last_name}}</h3>
                             <p class="text-center">{{@$seller->created_at->format('d-m-Y')}}</p>
@@ -49,6 +56,21 @@
                                         <b>Email</b> <a class="float-right">{{ @$seller->email }}</a>
                                     </li>
                                 @endif
+                                <li class="list-group-item">
+                                    <b>Trạng thái</b> 
+
+                                    @if ($seller->is_active == 1 )
+                                    <a class="float-right">
+                                        <span class="badge badge-success">Đang hoạt động</span>
+                                        </a>
+                                    </li>
+                                    @else
+                                    <a class="float-right">
+                                        <span class="badge badge-danger">Đang khóa</span>
+                                        </a>
+                                    </li>
+                                    @endif
+                                </li>
 
                             </ul>
                             <div class="text-right">
@@ -105,7 +127,7 @@
                         </div>
     
                     </div>
-    
+
                     <div class="card card-dark">
                         <div class="card-header">
                             <h3 class="card-title">Thông tin</h3>
@@ -130,7 +152,7 @@
                                     <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('shop_name')}}</span>    
                                     @endif
                                 </div> 
-                              
+                            
                                 <div class="form-group col-6">
                                     <label>user_name</label>
                                     <input type="text" class="form-control" name="user_name" value="{{$seller->user_name}}">
@@ -147,7 +169,7 @@
                                     <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('email')}}</span>    
                                     @endif
                                 </div>
-                                 <div class="form-group col-6">
+                                <div class="form-group col-6">
                                     <label>Phone</label>
                                     <input type="text" class="form-control" name="phone" value="{{old('phone',$seller->phone)}}">
                                     @if ($errors->has('phone'))
@@ -161,6 +183,9 @@
                             </div> 
                         </div>
                     </div>
+
+            
+
                 </div>
                 <!-- New Address Modal -->
                 {{-- <div class="modal fade" id="new-address-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -188,8 +213,48 @@
                     </div>
                     </div>
                 </div> --}}
+
             </div>
         </form>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <form action="{!! route('admin.seller.password', $seller->id) !!}" method="POST">
+                    @csrf
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="card-title">Đổi mật khẩu</h3>
+                        </div>
+    
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label>Mật khẩu</label>
+                                    <input type="password" class="form-control" name="password" value="">
+                                    @if ($errors->has('password'))
+                                    <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('password')}}</span>    
+                                    @endif
+                                </div> 
+                                <div class="form-group col-6">
+                                    <label>Nhập lại mật khẩu</label>
+                                    <input type="password" class="form-control" name="repassword" value="">
+                                    @if ($errors->has('repassword'))
+                                    <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('repassword')}}</span>    
+                                    @endif
+                                </div> 
+                                <div class="form-group col-12">
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-sm btn-danger ">Đổi mật khẩu</button>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
 
 @stop

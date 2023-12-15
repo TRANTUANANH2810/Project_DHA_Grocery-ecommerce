@@ -12,7 +12,7 @@ class AccountController extends Controller
 {
 
     public function getLogin(){
-        return view('admin.auth.login');
+        return view('admin.manage.auth.login');
     }
 
         public function postLogin(Request $request){
@@ -27,7 +27,13 @@ class AccountController extends Controller
     }
 
     public function logout(){
-        Auth::guard('admin')->logout(); 
-        return redirect()->route('admin.login');
+        if(Auth::check()){
+            Auth::logout(); 
+            return redirect()->route('home.login');
+        }
+        if(Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout(); 
+            return redirect()->route('admin.login');
+        }
     }
 }

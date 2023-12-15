@@ -1,11 +1,11 @@
-@extends('admin.layouts.app')
+@extends('admin.manage.layouts.app')
 
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4 class="m-0">Danh sách người bán</h4>
+                    <h4 class="m-0">Danh sách người dùng</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -23,23 +23,29 @@
 							<thead>
 							<tr>
 								<th width='5'>STT</th>
-								<th>Shop name</th>
+								<th>Ảnh</th>
+								<th>Tên người dùng</th>
+								<th>Email</th>
+								<th>Loại</th>
 								<th>Ngày tạo</th>
-								<th>Ngày cập nhật</th>
 								<th>Trạng thái</th>
 								<th>Thao tác</th>
 							</tr>
 							</thead>
 							<tbody>
-                                @foreach ($seller as $key => $item)
-                                <form action="{{ route( 'seller.destroy',  $item->id ) }}"  method="POST" >
+                                @foreach ($user as $key => $item)
+                                <form action="{{ route( 'user.destroy',  $item->id ) }}"  method="POST" >
                                     @csrf
                                     @method('delete')
                                     <tr class="odd">
-                                        <td>{{$key}}</td>
-                                        <td>{{$item->seller->shop_name}}</td>
+                                        <td>{{$key+1}}</td>
+                                        <td class="text-center">
+                                            <img src="{{$item->image ? $item->image : asset('backend/images/default.jpg') }}" width="50px">
+                                        </td>
+                                        <td>{{$item->last_name}} {{$item->first_name}}</td>
+                                        <td>{{$item->email}}</td>
+                                        <td><span class="badge badge-success">customer</span></td>
                                         <td>{{$item->created_at->format('d/m/Y')}}</td>
-                                        <td>{{$item->updated_at->format('d/m/Y')}}</td>
                                         <td>
                                             @if ($item->is_active == 1 )
                                                 <span class="badge badge-success">Đang hoạt động</span>
@@ -48,7 +54,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('seller.edit', $item->id ) }}" class="btn btn-xs btn-info btn-edit modalEditItem" title="Cập nhật">
+                                            <a href="{{ route('user.edit', $item->id ) }}" class="btn btn-xs btn-info btn-edit modalEditItem" title="Cập nhật">
                                                 <i class="far fa-edit"></i>
                                             </a> 
                                             @if ($item->is_active == 1 )
@@ -56,7 +62,7 @@
                                                     <i class="fas fa-toggle-off"></i>
                                                 </button>
                                             @else
-                                                <button class="btn btn-xs btn-primary">
+                                                <button class="btn btn-xs btn-success">
                                                     <i class="fas fa-toggle-on"></i>
                                                 </button>
                                             @endif

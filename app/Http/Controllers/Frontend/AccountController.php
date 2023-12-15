@@ -43,15 +43,27 @@ class AccountController extends Controller
     }
 
     public function postLogin(Request $request){
-        $arr = [
-            'user_name' => $request->user_name,
-            'password' => $request->password,
-        ];
-        if(auth()->attempt($arr)){
-            return redirect()->route('admin.home')->with('success','Đăng nhập thành công');
-        }else{
-            return redirect()->route('home.login')->with('error','Tài khoản hoặc mật khẩu không chính xác');
+        $user = User::where('user_name',$request->user_name)->first();
+        if(!empty($user)){
+            if(Hash::check($request->password, $user->password)){
+                Auth::login($user);
+                if($user->is_seller == 1){
+                    return redirect()->route('admin.seller.home')->with('success','Đăng nhập thành công');
+                }else{
+                    return redirect()->route('home.index')->with('success','Đăng nhập thành công');
+                }
+            }
         }
+        return redirect()->route('home.login')->with('error','Tài khoản hoặc mật khẩu không chính xác');
+        // $arr = [
+        //     'user_name' => $request->user_name,
+        //     'password' => $request->password,
+        // ];
+        // if(auth()->attempt($arr)){
+        //     return redirect()->route('admin.home')->with('success','Đăng nhập thành công');
+        // }else{
+        //     return redirect()->route('home.login')->with('error','Tài khoản hoặc mật khẩu không chính xác');
+        // }
     }
 
     public function postRegister(PostRegisterRequest $request){
