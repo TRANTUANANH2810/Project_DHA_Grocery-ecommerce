@@ -19,12 +19,8 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::post('login',[AccountController::class, 'postLogin'])->name('admin.login.post');
 
+    Route::get('logout',[AccountController::class, 'logout'])->name('admin.logout');
 
-    Route::group(['middleware' => ['checkAdmin','checkSeller']], function(){
-    
-        Route::get('logout',[AccountController::class, 'logout'])->name('admin.logout');
-
-    });
 
     Route::group(['middleware' => 'checkAdmin'], function(){
     

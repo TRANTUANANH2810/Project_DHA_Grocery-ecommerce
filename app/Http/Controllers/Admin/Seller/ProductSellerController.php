@@ -115,6 +115,9 @@ class ProductSellerController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        if(!empty($product->image)){
+            File::delete(public_path($product->image));
+        }
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Xóa sản phẩm thành công');
     }

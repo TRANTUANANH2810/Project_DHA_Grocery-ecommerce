@@ -94,8 +94,8 @@
 </li>
 
 <li class="nav-item">
-    <a href=""
-        class="nav-link {{ Request::segment(2) == 'customer' ? 'active' : null }}" style="border-radius:0px !important">
+    <a href="{{route('orders.index')}}"
+        class="nav-link {{ Request::segment(2) == 'orders' ? 'active' : null }}" style="border-radius:0px !important">
         <i class="nav-icon fas fa-user"></i>
         <p>
             Quản lý đơn hàng

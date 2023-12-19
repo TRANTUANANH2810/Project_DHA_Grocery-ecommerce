@@ -62,28 +62,21 @@ class AccountSellerController extends Controller
     {
         $seller = User::find($id);
 
+        if(!empty($seller->image)){
+            File::delete(public_path($seller->image));
+        }
+
         if(empty($request->image_default)){
-            if($seller->image){
-                $get_image = $seller->image;
-                File::delete(public_path($get_image));
-            }
-            $data_image = null;
-            
+            $image_seller = null;
         }
         else if($request->file('image')){
-            if($seller->image){
-                $get_image = $seller->image;
-                File::delete(public_path($get_image));
-            }
+       
             $image = $request->file('image');
-            $customer_image = $image->getClientOriginalName();
-            $destinationPath = public_path('/ckfinder/uploads/images/seller/');
-            $image->move($destinationPath,$customer_image);
+            $seller_image = $image->getClientOriginalName();
+            $destinationPath = public_path('/backend/images/sellers/');
+            $image->move($destinationPath,$seller_image);
 
-            $data_image = '/ckfinder/uploads/images/seller/'.$customer_image;
-        }
-        else{
-            $data_image = $seller->image;
+            $image_seller = '/backend/images/sellers/'.$seller_image;
         }
   
         $seller->update([
@@ -92,7 +85,7 @@ class AccountSellerController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'user_name' => $request->user_name,
-            'image' => $data_image,
+            'image' => $image_seller,
         ]);
         $seller->seller->update([
             'shop_name' => $request->shop_name,
