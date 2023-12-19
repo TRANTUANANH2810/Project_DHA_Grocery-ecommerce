@@ -46,11 +46,15 @@ class AccountController extends Controller
         $user = User::where('user_name',$request->user_name)->first();
         if(!empty($user)){
             if(Hash::check($request->password, $user->password)){
-                Auth::login($user);
-                if($user->is_seller == 1){
-                    return redirect()->route('admin.seller.home')->with('success','Đăng nhập thành công');
+                if($user->is_active == 1){
+                    Auth::login($user);
+                    if($user->is_seller == 1){
+                        return redirect()->route('admin.seller.home')->with('success','Đăng nhập thành công');
+                    }else{
+                        return redirect()->route('home.index')->with('success','Đăng nhập thành công');
+                    }
                 }else{
-                    return redirect()->route('home.index')->with('success','Đăng nhập thành công');
+                    return redirect()->route('home.login')->with('warning','Tài khoản đã bị khóa');
                 }
             }
         }

@@ -60,18 +60,31 @@ class SellerController extends Controller
     public function update(PostUpdateSellerRequest $request, $id)
     {
         $seller = User::find($id);
-        if(empty($request->image)){
-            if(!empty($seller->image)){
-                File::delete(public_path($seller->image));
-            }
-        } 
+
+        if(!empty($seller->image)){
+            File::delete(public_path($seller->image));
+        }
+
+        if(empty($request->image_default)){
+            $image_seller = null;
+        }
+        else if($request->file('image')){
+       
+            $image = $request->file('image');
+            $seller_image = $image->getClientOriginalName();
+            $destinationPath = public_path('/backend/images/sellers/');
+            $image->move($destinationPath,$seller_image);
+
+            $image_seller = '/backend/images/sellers/'.$seller_image;
+        }
+
         $seller->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'phone' => $request->phone,
             'user_name' => $request->user_name,
-            'image' => $request->image,
+            'image' => $image_seller,
         ]);
         $seller->seller->update([
             'shop_name' => $request->shop_name,

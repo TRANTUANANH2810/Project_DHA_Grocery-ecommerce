@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Seller\AccountSellerController;
 use App\Http\Controllers\Admin\Seller\HomeSellerController;
+use App\Http\Controllers\Admin\Seller\OrderController;
 use App\Http\Controllers\Admin\Seller\ProductSellerController;
 use App\Http\Controllers\Admin\SellerController;
 use App\Http\Controllers\Admin\UserController;
@@ -40,13 +41,14 @@ Route::group(['prefix' => 'admin'], function(){
 
     });
 
-    Route::group(['middleware' => 'checkSeller'], function(){
+    Route::group(['middleware' => ['checkSeller','checkActive']], function(){
 
         Route::get('/seller-home', [HomeSellerController::class, 'index'])->name('admin.seller.home');
 
         Route::resources([
             'information' => AccountSellerController::class,
             'products' => ProductSellerController::class,
+            'orders' => OrderController::class,
         ]);
 
         Route::post('seller-infor-change-password', [AccountSellerController::class, 'postSellerPassword'])->name('admin.infor.password');

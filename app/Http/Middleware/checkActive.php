@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckFrontend
+class checkActive
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,12 @@ class CheckFrontend
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()){
-            return $next($request);
+        if(@Auth::check()){
+            if(@Auth::user()->is_active == 0){
+                Auth::logout(); 
+                return redirect()->route('home.login');
+            }
         }
-        return redirect()->route('home.login');
+        return $next($request);
     }
 }

@@ -11,5 +11,11 @@ class Category extends Model
 
     protected $table = 'category'; 
     
-    protected $guarded = []; 
+    protected $fillable = ['image','name','is_active']; 
+
+    public function product(){
+
+        return $this->hasOne(Product::class);
+
+    }
 }
