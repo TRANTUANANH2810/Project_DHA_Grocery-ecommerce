@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin\Seller;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreProductRequest;
+use App\Http\Requests\Admin\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ProductSellerController extends Controller
 {
@@ -37,18 +39,16 @@ class ProductSellerController extends Controller
         $data = $request->all();
 
         if(empty($request->image_default)){
-
             $data['image'] = null;
-
         }
         else if($request->file('image')){
        
             $image = $request->file('image');
-            $customer_image = $image->getClientOriginalName();
-            $destinationPath = public_path('/ckfinder/uploads/images/product/');
-            $image->move($destinationPath,$customer_image);
+            $seller_image = $image->getClientOriginalName();
+            $destinationPath = public_path('/backend/images/products/');
+            $image->move($destinationPath,$seller_image);
 
-            $data['image'] = '/ckfinder/uploads/images/product/'.$customer_image;
+            $data['image'] = '/backend/images/products/'.$seller_image;
         }
 
         Product::create($data);
@@ -73,15 +73,40 @@ class ProductSellerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::all();
+        $product = Product::where('id',$id)->with('category')->first();
+        return view('admin.seller.product.edit',compact('product','category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $product = Product::find($id);
+
+        if(!empty($product->image)){
+            File::delete(public_path($product->image));
+        }
+
+        if(empty($request->image_default)){
+            $data['image']  = null;
+        }
+        else if($request->file('image')){
+       
+            $image = $request->file('image');
+            $seller_image = $image->getClientOriginalName();
+            $destinationPath = public_path('/backend/images/products/');
+            $image->move($destinationPath,$seller_image);
+
+            $data['image']  = '/backend/images/products/'.$seller_image;
+        }
+
+        $product->update($data);
+
+        return redirect()->route('products.index')->with('success', 'Cập nhật sản phẩm thành công');
+
     }
 
     /**
