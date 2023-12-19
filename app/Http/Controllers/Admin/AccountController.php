@@ -12,10 +12,14 @@ class AccountController extends Controller
 {
 
     public function getLogin(){
-        return view('admin.auth.login');
+        if(!Auth::guard('admin')->check()){
+            return view('admin.manage.auth.login');
+        }else{
+            return redirect()->route('admin.home');
+        }
     }
 
-    public function postLogin(Request $request){
+        public function postLogin(Request $request){
         $admin = Admin::where('user_name',$request->user_name)->first();
         if(!empty($admin)){
             if(Hash::check($request->password, $admin->password)){
@@ -27,7 +31,13 @@ class AccountController extends Controller
     }
 
     public function logout(){
-        Auth::guard('admin')->logout(); 
-        return redirect()->route('admin.login');
+        if(Auth::check()){
+            Auth::logout(); 
+            return redirect()->route('home.login');
+        }
+        if(Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout(); 
+            return redirect()->route('admin.login');
+        }
     }
 }

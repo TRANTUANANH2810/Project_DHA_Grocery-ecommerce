@@ -23,7 +23,6 @@ class User extends Authenticatable
 
     public function seller(){
 
-        // return $this->hasOne(\App\Models\Seller::class, 'id', 'user_id');
         return $this->hasOne(Seller::class);
 
     }

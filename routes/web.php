@@ -39,7 +39,7 @@ Route::get('/product-detail','App\Http\Controllers\homeController@productDetail'
 //     return view('shipping');
 // });
 
-Route::group(['namespace' => 'Frontend'], function(){
+Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function(){
 
     Route::get('/', [SinglePageController::class, 'getHome'])->name('home.index');
 

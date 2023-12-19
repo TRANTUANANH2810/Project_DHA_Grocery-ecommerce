@@ -4575,208 +4575,216 @@
                             <img src="site/assets/icons/search.svg" alt="" class="icon top-act__icon" />
                         </button>
                     </div> --}}
+                    @if (Auth::user()->is_seller == 1)
+                        <a  href="{{route('admin.seller.home')}}" >
+                            <div class="top-act__user">
+                                <img src="{{Auth::user()->image}}" alt="" class="top-act__avt" />
+                            </div>
+                        </a>
+                    @else
+                        <div class="top-act__group d-md-none">
+                            <div class="top-act__btn-wrap">
+                                <button class="top-act__btn">
+                                    <img src="site/assets/icons/love.svg" alt="" class="icon top-act__icon" />
+                                    <span class="top-act__title">03</span>
+                                </button>
 
-                    <div class="top-act__group d-md-none">
-                        <div class="top-act__btn-wrap">
-                            <button class="top-act__btn">
-                                <img src="site/assets/icons/love.svg" alt="" class="icon top-act__icon" />
-                                <span class="top-act__title">03</span>
-                            </button>
+                                <!-- Dropdown -->
+                                <div class="act-dropdown">
+                                    <div class="act-dropdown__inner">
+                                        <img src="site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
+                                        <div class="act-dropdown__top">
+                                            <h2 class="act-dropdown__title">You have 3 item(s)</h2>
+                                            <a href="./favourite.html" class="act-dropdown__view-all">See All</a>
+                                        </div>
+                                        <div class="row row-cols-3 gx-2 act-dropdown__list">
+                                            <!-- Cart preview item 1 -->
+                                            <div class="col">
+                                                <article class="cart-preview-item">
+                                                    <div class="cart-preview-item__img-wrap">
+                                                        <img
+                                                            src="site/assets/img/products/item1.png"
+                                                            alt=""
+                                                            class="cart-preview-item__thumb"
+                                                        />
+                                                    </div>
+                                                    <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
+                                                    <p class="cart-preview-item__price">$329.00</p>
+                                                </article>
+                                            </div>
+
+                                            <!-- Cart preview item 2 -->
+                                            <div class="col">
+                                                <article class="cart-preview-item">
+                                                    <div class="cart-preview-item__img-wrap">
+                                                        <img
+                                                            src="site/assets/img/products/item2.png"
+                                                            alt=""
+                                                            class="cart-preview-item__thumb"
+                                                        />
+                                                    </div>
+                                                    <h3 class="cart-preview-item__title">Coffee Beans Espresso</h3>
+                                                    <p class="cart-preview-item__price">$39.99</p>
+                                                </article>
+                                            </div>
+
+                                            <!-- Cart preview item 3 -->
+                                            <div class="col">
+                                                <article class="cart-preview-item">
+                                                    <div class="cart-preview-item__img-wrap">
+                                                        <img
+                                                            src="site/assets/img/products/item3.png"
+                                                            alt=""
+                                                            class="cart-preview-item__thumb"
+                                                        />
+                                                    </div>
+                                                    <h3 class="cart-preview-item__title">Qualità Oro Mountain</h3>
+                                                    <p class="cart-preview-item__price">$47.00</p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                        <div class="act-dropdown__separate"></div>
+                                        <div class="act-dropdown__checkout">
+                                            <a
+                                                href="{{route('home.checkout')}}"
+                                                class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
+                                            >
+                                                Check Out All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="top-act__separate"></div>
+
+                            <div class="top-act__btn-wrap">
+                                <button class="top-act__btn">
+                                    <img src="site/assets/icons/cart.svg" alt="" class="icon top-act__icon" />
+                                    <span class="top-act__title">$65.42</span>
+                                </button>
+                                <!-- Dropdown -->
+                                <div class="act-dropdown">
+                                    <div class="act-dropdown__inner">
+                                        <img src="site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
+
+                                        <div class="act-dropdown__top">
+                                            <h2 class="act-dropdown__title">You have 3 item(s)</h2>
+                                            <a href="{{route('home.checkout')}}" class="act-dropdown__view-all">See All</a>
+                                        </div>
+                                        <div class="row row-cols-3 gx-2 act-dropdown__list">
+                                            <!-- Cart preview item 1 -->
+                                            <div class="col">
+                                                <article class="cart-preview-item">
+                                                    <div class="cart-preview-item__img-wrap">
+                                                        <img
+                                                            src="site/assets/img/Products/item1.png"
+                                                            alt=""
+                                                            class="cart-preview-item__thumb"
+                                                        />
+                                                    </div>
+                                                    <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
+                                                    <p class="cart-preview-item__price">$329.00</p>
+                                                </article>
+                                            </div>
+
+                                            <!-- Cart preview item 2 -->
+                                            <div class="col">
+                                                <article class="cart-preview-item">
+                                                    <div class="cart-preview-item__img-wrap">
+                                                        <img
+                                                            src="site/assets/img/Products/item2.png"
+                                                            alt=""
+                                                            class="cart-preview-item__thumb"
+                                                        />
+                                                    </div>
+                                                    <h3 class="cart-preview-item__title">Coffee Beans Espresso</h3>
+                                                    <p class="cart-preview-item__price">$39.99</p>
+                                                </article>
+                                            </div>
+
+                                            <!-- Cart preview item 3 -->
+                                            <div class="col">
+                                                <article class="cart-preview-item">
+                                                    <div class="cart-preview-item__img-wrap">
+                                                        <img
+                                                            src="site/assets/img/Products/item3.png"
+                                                            alt=""
+                                                            class="cart-preview-item__thumb"
+                                                        />
+                                                    </div>
+                                                    <h3 class="cart-preview-item__title">Qualità Oro Mountain</h3>
+                                                    <p class="cart-preview-item__price">$47.00</p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                        <div class="act-dropdown__bottom">
+                                            <div class="act-dropdown__row">
+                                                <span class="act-dropdown__label">Subtotal</span>
+                                                <span class="act-dropdown__value">$415.99</span>
+                                            </div>
+                                            <div class="act-dropdown__row">
+                                                <span class="act-dropdown__label">Texes</span>
+                                                <span class="act-dropdown__value">Free</span>
+                                            </div>
+                                            <div class="act-dropdown__row">
+                                                <span class="act-dropdown__label">Shipping</span>
+                                                <span class="act-dropdown__value">$10.00</span>
+                                            </div>
+                                            <div class="act-dropdown__row act-dropdown__row--bold">
+                                                <span class="act-dropdown__label">Total Price</span>
+                                                <span class="act-dropdown__value">$425.99</span>
+                                            </div>
+                                        </div>
+                                        <div class="act-dropdown__checkout">
+                                            <a
+                                                href="{{route('home.checkout')}}"
+                                                class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
+                                            >
+                                                Check Out All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="top-act__user">
+                            <img src="{{ Auth::user()->image ? Auth::user()->image : asset('backend/images/default.jpg')}}" alt="" class="top-act__avt" />
 
                             <!-- Dropdown -->
-                            <div class="act-dropdown">
-                                <div class="act-dropdown__inner">
-                                    <img src="site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
-                                    <div class="act-dropdown__top">
-                                        <h2 class="act-dropdown__title">You have 3 item(s)</h2>
-                                        <a href="./favourite.html" class="act-dropdown__view-all">See All</a>
-                                    </div>
-                                    <div class="row row-cols-3 gx-2 act-dropdown__list">
-                                        <!-- Cart preview item 1 -->
-                                        <div class="col">
-                                            <article class="cart-preview-item">
-                                                <div class="cart-preview-item__img-wrap">
-                                                    <img
-                                                        src="site/assets/img/products/item1.png"
-                                                        alt=""
-                                                        class="cart-preview-item__thumb"
-                                                    />
-                                                </div>
-                                                <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
-                                                <p class="cart-preview-item__price">$329.00</p>
-                                            </article>
-                                        </div>
+                            <div class="act-dropdown top-act__dropdown">
+                                <div class="act-dropdown__inner user-menu">
+                                    <img
+                                        src="site/assets/icons/arrow-up.png"
+                                        alt=""
+                                        class="act-dropdown__arrow top-act__dropdown-arrow"
+                                    />
 
-                                        <!-- Cart preview item 2 -->
-                                        <div class="col">
-                                            <article class="cart-preview-item">
-                                                <div class="cart-preview-item__img-wrap">
-                                                    <img
-                                                        src="site/assets/img/products/item2.png"
-                                                        alt=""
-                                                        class="cart-preview-item__thumb"
-                                                    />
-                                                </div>
-                                                <h3 class="cart-preview-item__title">Coffee Beans Espresso</h3>
-                                                <p class="cart-preview-item__price">$39.99</p>
-                                            </article>
+                                    <div class="user-menu__top">
+                                        <img src="{{ Auth::user()->image ? Auth::user()->image : asset('backend/images/default.jpg')}}" alt="" class="user-menu__avatar" />
+                                        <div>
+                                            <p class="user-menu__name">{{@Auth::user()->last_name}} {{@Auth::user()->first_name}}</p>
+                                            <p>{{@Auth::user()->email}}</p>
                                         </div>
+                                    </div>
 
-                                        <!-- Cart preview item 3 -->
-                                        <div class="col">
-                                            <article class="cart-preview-item">
-                                                <div class="cart-preview-item__img-wrap">
-                                                    <img
-                                                        src="site/assets/img/products/item3.png"
-                                                        alt=""
-                                                        class="cart-preview-item__thumb"
-                                                    />
-                                                </div>
-                                                <h3 class="cart-preview-item__title">Qualità Oro Mountain</h3>
-                                                <p class="cart-preview-item__price">$47.00</p>
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="act-dropdown__separate"></div>
-                                    <div class="act-dropdown__checkout">
-                                        <a
-                                            href="{{route('home.checkout')}}"
-                                            class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
-                                        >
-                                            Check Out All
-                                        </a>
-                                    </div>
+                                    <ul class="user-menu__list">
+                                        <li>
+                                            <a href="{{route('home.dashboard')}}" class="user-menu__link">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('home.profile')}}" class="user-menu__link">Settings</a>
+                                        </li>
+                                        <li class="user-menu__separate">
+                                            <a href="{{route('home.logout')}}" class="user-menu__link">Logout</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="top-act__separate"></div>
-
-                        <div class="top-act__btn-wrap">
-                            <button class="top-act__btn">
-                                <img src="site/assets/icons/cart.svg" alt="" class="icon top-act__icon" />
-                                <span class="top-act__title">$65.42</span>
-                            </button>
-                            <!-- Dropdown -->
-                            <div class="act-dropdown">
-                                <div class="act-dropdown__inner">
-                                    <img src="site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
-
-                                    <div class="act-dropdown__top">
-                                        <h2 class="act-dropdown__title">You have 3 item(s)</h2>
-                                        <a href="{{route('home.checkout')}}" class="act-dropdown__view-all">See All</a>
-                                    </div>
-                                    <div class="row row-cols-3 gx-2 act-dropdown__list">
-                                        <!-- Cart preview item 1 -->
-                                        <div class="col">
-                                            <article class="cart-preview-item">
-                                                <div class="cart-preview-item__img-wrap">
-                                                    <img
-                                                        src="site/assets/img/Products/item1.png"
-                                                        alt=""
-                                                        class="cart-preview-item__thumb"
-                                                    />
-                                                </div>
-                                                <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
-                                                <p class="cart-preview-item__price">$329.00</p>
-                                            </article>
-                                        </div>
-
-                                        <!-- Cart preview item 2 -->
-                                        <div class="col">
-                                            <article class="cart-preview-item">
-                                                <div class="cart-preview-item__img-wrap">
-                                                    <img
-                                                        src="site/assets/img/Products/item2.png"
-                                                        alt=""
-                                                        class="cart-preview-item__thumb"
-                                                    />
-                                                </div>
-                                                <h3 class="cart-preview-item__title">Coffee Beans Espresso</h3>
-                                                <p class="cart-preview-item__price">$39.99</p>
-                                            </article>
-                                        </div>
-
-                                        <!-- Cart preview item 3 -->
-                                        <div class="col">
-                                            <article class="cart-preview-item">
-                                                <div class="cart-preview-item__img-wrap">
-                                                    <img
-                                                        src="site/assets/img/Products/item3.png"
-                                                        alt=""
-                                                        class="cart-preview-item__thumb"
-                                                    />
-                                                </div>
-                                                <h3 class="cart-preview-item__title">Qualità Oro Mountain</h3>
-                                                <p class="cart-preview-item__price">$47.00</p>
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="act-dropdown__bottom">
-                                        <div class="act-dropdown__row">
-                                            <span class="act-dropdown__label">Subtotal</span>
-                                            <span class="act-dropdown__value">$415.99</span>
-                                        </div>
-                                        <div class="act-dropdown__row">
-                                            <span class="act-dropdown__label">Texes</span>
-                                            <span class="act-dropdown__value">Free</span>
-                                        </div>
-                                        <div class="act-dropdown__row">
-                                            <span class="act-dropdown__label">Shipping</span>
-                                            <span class="act-dropdown__value">$10.00</span>
-                                        </div>
-                                        <div class="act-dropdown__row act-dropdown__row--bold">
-                                            <span class="act-dropdown__label">Total Price</span>
-                                            <span class="act-dropdown__value">$425.99</span>
-                                        </div>
-                                    </div>
-                                    <div class="act-dropdown__checkout">
-                                        <a
-                                            href="{{route('home.checkout')}}"
-                                            class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
-                                        >
-                                            Check Out All
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="top-act__user">
-                        <img src="site/assets/img/avt.jpg" alt="" class="top-act__avt" />
-
-                        <!-- Dropdown -->
-                        <div class="act-dropdown top-act__dropdown">
-                            <div class="act-dropdown__inner user-menu">
-                                <img
-                                    src="site/assets/icons/arrow-up.png"
-                                    alt=""
-                                    class="act-dropdown__arrow top-act__dropdown-arrow"
-                                />
-
-                                <div class="user-menu__top">
-                                    <img src="site/assets/img/avt.jpg" alt="" class="user-menu__avatar" />
-                                    <div>
-                                        <p class="user-menu__name">{{@Auth::user()->last_name}} {{@Auth::user()->first_name}}</p>
-                                        <p>{{@Auth::user()->email}}</p>
-                                    </div>
-                                </div>
-
-                                <ul class="user-menu__list">
-                                    <li>
-                                        <a href="{{route('home.dashboard')}}" class="user-menu__link">Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('home.profile')}}" class="user-menu__link">Settings</a>
-                                    </li>
-                                    <li class="user-menu__separate">
-                                        <a href="{{route('home.logout')}}" class="user-menu__link">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @endif
+               
                 </div>
             @endif
          

@@ -18,8 +18,7 @@ class CheckFrontend
     {
         if(Auth::check()){
             return $next($request);
-        }else{
-            return redirect()->route('home.login');
         }
+        return redirect()->route('home.login');
     }
 }
