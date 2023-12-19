@@ -1,9 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Blog;
+use App\Models\product;
 
 class HomeController extends Controller{
     public function index(){
+        $ShowProduct = product::all();
+        dd($ShowProduct);
          return view('welcome');
     }
     public function signin(){
