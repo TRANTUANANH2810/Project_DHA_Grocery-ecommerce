@@ -62,13 +62,13 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown">
-                    <img src="{{ Auth::check() ? Auth::user()->image : asset('backend/images/default.png') }}" class="user-image img-circle elevation-2" alt="User Image">
+                    <img src="{{ @Auth::user()->image ? @Auth::user()->image : asset('backend/images/default.png') }}" class="user-image img-circle elevation-2" alt="User Image">
                     <div class="d-none d-md-inline">
                         <span class="font-weight-bold">
-                            @if (Auth::guard('admin')->check())
-                                {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
-                            @else
+                            @if (Auth::check())
                                 {{@Auth::user()->last_name}}  {{@Auth::user()->first_name}}
+                            @else
+                                {{@Auth::guard('admin')->user()->last_name}}  {{@Auth::guard('admin')->user()->first_name}}
                             @endif
                         </span>
                         <br>
@@ -78,7 +78,7 @@
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-dark">
-                        <img src="{{Auth::check() ? Auth::user()->image : asset('backend/images/default.png')}}"
+                        <img src="{{@Auth::user()->image ? @Auth::user()->image : asset('backend/images/default.png')}}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
@@ -121,6 +121,10 @@
         reserved.
     </footer>
 </div>
+
+<script>
+    var APP_URL = '{{ url('') }}';
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="

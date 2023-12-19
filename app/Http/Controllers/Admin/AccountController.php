@@ -12,7 +12,11 @@ class AccountController extends Controller
 {
 
     public function getLogin(){
-        return view('admin.manage.auth.login');
+        if(!Auth::guard('admin')->check()){
+            return view('admin.manage.auth.login');
+        }else{
+            return redirect()->route('admin.home');
+        }
     }
 
         public function postLogin(Request $request){

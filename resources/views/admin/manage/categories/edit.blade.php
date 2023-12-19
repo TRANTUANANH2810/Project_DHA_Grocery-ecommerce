@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-       	<form action="{!! route('category.update', $cate->id) !!}" method="POST">
+       	<form action="{!! route('category.update', $cate->id) !!}" method="POST" enctype="multipart/form-data">
 			@csrf
             @method('put')
 			<div class="row">
@@ -38,7 +38,7 @@
 								
 									<div class="form-group">
 										<label>Tên danh mục</label>
-										<input type="text" class="form-control" name="name" id="name" value="{{$cate->name}}">
+										<input type="text" class="form-control" name="name" id="name" value="{{$cate->name}}" required>
 									</div>
 								
 									{{-- <div class="form-group">
@@ -96,23 +96,21 @@
 						<div class="card-header">
 							<h3 class="card-title">Banner</h3>
 						</div>
-						<div class="card-body">
-							<div class="" style="text-align: center;">
-								<div class="image">
-									<div class="image">
-										<div class="image__thumbnail">
-											<img src="{{ old('image',@$cate->image) ? old('image',@$cate->image) :  asset('backend/images/placeholder.png') }}"
-												data-init="{{ asset('backend/images/placeholder.png') }}">
-											<a href="javascript:void(0)" class="image__delete"
-												onclick="urlFileDelete(this)">
-												<i class="fa fa-times"></i></a>
-											<input type="hidden" value="{{ old('image',@$cate->image) }}" name="image" />
-											<div class="image__button" onclick="fileSelect(this)"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						<div class="card-body box-profile">
+                            <div class="text-center">
+                                <div class="image">
+                                        <div class="image__thumbnail">
+                                            <img src="{{ old('image',@$cate->image) ? old('image',@$cate->image) :  asset('backend/images/placeholder.png')}}"
+                                                data-init="{{ asset('backend/images/placeholder.png') }}" class="profile-user-img" id="imageUpload">
+                                            <a href="javascript:void(0)" class="image__delete"
+                                                onclick="urlFileDelete(this)">
+                                                <i class="fa fa-times"></i></a>
+                                            <input type="hidden" value="{{old('image',@$cate->image)}}" name="image_default" id="image_default"/>
+                                            <input type="file" id="upload" name="image" onchange="onFileSelected(event)" class="image__button" style="opacity: 0;">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -120,3 +118,24 @@
 	</div>
 
 @stop
+
+@section('page_scripts')
+<script type="text/javascript">
+   function onFileSelected(event) {
+    var selectedFile = event.target.files[0];
+    var reader = new FileReader();
+
+    var imgAvatar = document.getElementById("imageUpload");
+    imgAvatar.title = selectedFile.name;
+    var imgDefault = document.getElementById("image_default");
+
+
+    reader.onload = function (event) {
+        imgAvatar.src = event.target.result;
+        imgDefault.value = event.target.result;
+    };
+
+    reader.readAsDataURL(selectedFile);
+    }
+</script>
+@endsection

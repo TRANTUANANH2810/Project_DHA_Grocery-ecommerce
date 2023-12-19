@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Seller\AccountSellerController;
+use App\Http\Controllers\Admin\Seller\Ajax;
 use App\Http\Controllers\Admin\Seller\HomeSellerController;
 use App\Http\Controllers\Admin\Seller\OrderController;
 use App\Http\Controllers\Admin\Seller\ProductSellerController;
@@ -19,12 +20,8 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::post('login',[AccountController::class, 'postLogin'])->name('admin.login.post');
 
+    Route::get('logout',[AccountController::class, 'logout'])->name('admin.logout');
 
-    Route::group(['middleware' => ['checkAdmin','checkSeller']], function(){
-    
-        Route::get('logout',[AccountController::class, 'logout'])->name('admin.logout');
-
-    });
 
     Route::group(['middleware' => 'checkAdmin'], function(){
     
@@ -53,7 +50,14 @@ Route::group(['prefix' => 'admin'], function(){
 
         Route::post('seller-infor-change-password', [AccountSellerController::class, 'postSellerPassword'])->name('admin.infor.password');
 
+        Route::get('seller/editDelivery/get', [OrderController::class,'getOrderEditDelivery'])->name('admin.order_edit_get');
+        Route::post('seller/editDelivery/post', [OrderController::class,'postOrderEditDelivery'])->name('admin.order_edit_post');
+
+        Route::get('seller/orderDetail/get', [OrderController::class,'getOrderDetail'])->name('admin.order_detail_get');
+
     });
+
+
 })
 
 ?>

@@ -18,7 +18,7 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-        <form action="{!! route('seller.update', $seller->id) !!}" method="POST">
+        <form action="{!! route('seller.update', $seller->id) !!}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="row">
@@ -32,15 +32,16 @@
 									<div class="image">
 										<div class="image__thumbnail" style="outline: 0 !important;">
 											<img src="{{ old('image',@$seller->image) ? old('image',@$seller->image) :  asset('backend/images/default.jpg') }}"
-												data-init="{{ asset('backend/images/default.jpg') }}" style="border-radius: 50%;" class="profile-user-img">
+												data-init="{{ asset('backend/images/default.jpg') }}" style="border-radius: 50%;" class="profile-user-img" id="imageUpload">
 											<a href="javascript:void(0)" class="image__delete"
 												onclick="urlFileDelete(this)">
 												<i class="fa fa-times"></i></a>
-											<input type="hidden" value="{{ old('image',@$seller->image) }}" name="image" />
-											<div class="image__button" onclick="fileSelect(this)" style="border-radius: 50%;"></div>
+											<input type="hidden" value="{{ old('image',@$seller->image) }}" name="image_default" id="image_default" />
+											<input  type="file" id="upload" name="image" onchange="onFileSelected(event)" class="image__button"  style="border-radius: 50%;opacity: 0;"/>
 										</div>
 									</div>
 								</div>
+
                             </div>
                             <h3 class="profile-username text-center">{{ @$seller->first_name}} {{ @$seller->last_name}}</h3>
                             <p class="text-center">{{@$seller->created_at->format('d-m-Y')}}</p>
@@ -258,3 +259,25 @@
     </div>
 
 @stop
+
+
+@section('page_scripts')
+<script type="text/javascript">
+   function onFileSelected(event) {
+    var selectedFile = event.target.files[0];
+    var reader = new FileReader();
+
+    var imgAvatar = document.getElementById("imageUpload");
+    imgAvatar.title = selectedFile.name;
+    var imgDefault = document.getElementById("image_default");
+
+
+    reader.onload = function (event) {
+        imgAvatar.src = event.target.result;
+        imgDefault.value = event.target.result;
+    };
+
+    reader.readAsDataURL(selectedFile);
+    }
+</script>
+@endsection

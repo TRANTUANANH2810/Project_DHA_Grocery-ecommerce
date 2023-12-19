@@ -56,21 +56,54 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PostUpdateUserRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $user = User::find($id); 
-        if(empty($request->image)){
-            if(!empty($user->image)){
-                File::delete(public_path($user->image));
-            }
+
+        if($request->phone && $request->email){
+            $request->validate([
+                'user_name' => 'bail|min:8|unique:user,user_name,'.$user->id, 
+                'email' => 'bail|email|unique:user,email,'.$user->id,
+                'phone' => 'bail|numeric|unique:user,phone,'.$user->id,
+            ]);  
         }
+        if($request->phone){
+            $request->validate([
+                'user_name' => 'bail|min:8|unique:user,user_name,'.$user->id, 
+                'phone' => 'bail|numeric|unique:user,phone,'.$user->id,
+            ]); 
+        }
+        if($request->email){
+            $request->validate([
+                'user_name' => 'bail|min:8|unique:user,user_name,'.$user->id, 
+                'phone' => 'bail|numeric|unique:user,email,'.$user->id,
+            ]); 
+        }
+        
+        if(!empty($user->image)){
+            File::delete(public_path($user->image));
+        }
+
+        if(empty($request->image_default)){
+            $image_user = null;
+        }
+        else if($request->file('image')){
+       
+            $image = $request->file('image');
+            $seller_image = $image->getClientOriginalName();
+            $destinationPath = public_path('/backend/images/users/');
+            $image->move($destinationPath,$seller_image);
+
+            $image_user = '/backend/images/users/'.$seller_image;
+        }
+
         $user->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'phone' => $request->phone,
             'user_name' => $request->user_name,
-            'image' => $request->image,
+            'image' => $image_user,
         ]);
         return redirect()->route('user.edit',$id)->with('success', 'Cập nhật thành công');
     }

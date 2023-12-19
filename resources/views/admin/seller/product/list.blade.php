@@ -54,9 +54,10 @@
                                             <a href="{{ route('products.edit', $item->id ) }}" class="btn btn-xs btn-info btn-edit modalEditItem" title="Cập nhật">
                                                 <i class="far fa-edit"></i>
                                             </a> 
-                                            <button class="btn btn-xs btn-danger">
+                                            <a href="javascript:void(0);" class="btn btn-xs btn-danger btn-destroy" data-href="{{ route( 'products.destroy',  $item->id ) }}"
+                                                data-toggle="modal" data-target="#confim" title="Xóa">
                                                 <i class="far fa-trash-alt"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 </form>

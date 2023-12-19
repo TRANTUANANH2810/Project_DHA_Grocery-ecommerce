@@ -18,7 +18,7 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-        <form action="{!! route('user.update', $user->id) !!}" method="POST">
+        <form action="{!! route('user.update', $user->id) !!}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="row">
@@ -32,12 +32,12 @@
 									<div class="image">
 										<div class="image__thumbnail" style="outline: 0 !important;">
 											<img src="{{ old('image',@$user->image) ? old('image',@$user->image) :  asset('backend/images/default.jpg') }}"
-												data-init="{{ asset('backend/images/default.jpg') }}" style="border-radius: 50%;" class="profile-user-img">
+												data-init="{{ asset('backend/images/default.jpg') }}" style="border-radius: 50%;" class="profile-user-img" id="imageUpload">
 											<a href="javascript:void(0)" class="image__delete"
 												onclick="urlFileDelete(this)">
 												<i class="fa fa-times"></i></a>
-											<input type="hidden" value="{{ old('image',@$user->image) }}" name="image" />
-											<div class="image__button" onclick="fileSelect(this)" style="border-radius: 50%;"></div>
+											<input type="hidden" value="{{ old('image',@$user->image) }}" name="image_default" id="image_default" />
+											<input  type="file" id="upload" name="image" onchange="onFileSelected(event)" class="image__button"  style="border-radius: 50%;opacity: 0;"/>
 										</div>
 									</div>
 								</div>
@@ -113,17 +113,17 @@
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label>First name</label>
-                                    <input type="text" class="form-control" name="first_name" value="{{$user->first_name}}">
+                                    <input type="text" class="form-control" name="first_name" value="{{old('first_name',$user->first_name)}}">
                                 </div> 
                                 <div class="form-group col-6">
                                     <label>Last name</label>
-                                    <input type="text" class="form-control" name="last_name" value="{{$user->last_name}}">
+                                    <input type="text" class="form-control" name="last_name" value="{{old('last_name',$user->last_name)}}">
                                 </div> 
                             </div>
                             <div class="row">
                                 <div class="form-group col-4">
                                     <label>user_name</label>
-                                    <input type="text" class="form-control" name="user_name" value="{{$user->user_name}}">
+                                    <input type="text" class="form-control" name="user_name" value="{{old('user_name',$user->user_name)}}">
                                     @if ($errors->has('user_name'))
                                     <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('user_name')}}</span>    
                                     @endif
@@ -182,7 +182,7 @@
             <div class="col-md-4">
             </div>
             <div class="col-md-8">
-                <form action="{!! route('admin.user.password', $user->id) !!}" method="POST">
+                <form action="{!! route('admin.user.password', $user->id) !!}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card card-dark">
                         <div class="card-header">
@@ -220,3 +220,24 @@
     </div>
 
 @stop
+
+@section('page_scripts')
+<script type="text/javascript">
+   function onFileSelected(event) {
+    var selectedFile = event.target.files[0];
+    var reader = new FileReader();
+
+    var imgAvatar = document.getElementById("imageUpload");
+    imgAvatar.title = selectedFile.name;
+    var imgDefault = document.getElementById("image_default");
+
+
+    reader.onload = function (event) {
+        imgAvatar.src = event.target.result;
+        imgDefault.value = event.target.result;
+    };
+
+    reader.readAsDataURL(selectedFile);
+    }
+</script>
+@endsection

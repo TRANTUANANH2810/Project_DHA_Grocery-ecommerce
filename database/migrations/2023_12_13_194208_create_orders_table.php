@@ -20,6 +20,7 @@ return new class extends Migration
             $table->dateTime('updated_at')->nullable()->useCurrent()->comment('Updated At');
             $table->integer('cart_id')->nullable()->index('orders_cart_id');
             $table->integer('user_id')->nullable()->index('orders_user_id');
+            $table->integer('seller_id')->nullable()->index('orders_seller_id');
             $table->string('status')->nullable();
             $table->float('total_price', 10, 0)->nullable();
             $table->integer('qty')->nullable();

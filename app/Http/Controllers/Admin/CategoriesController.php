@@ -108,6 +108,10 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         $cate = Category::find($id);
+
+        if(!empty($cate->image)){
+            File::delete(public_path($cate->image));
+        }
         if(!empty($cate->product->id)){
             return redirect()->route('category.index')->with('error', 'Danh mục đang tồn tại sản phẩm');
         }

@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4">
             <div class="info-box">
-                <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-users-cog"></i></span>
+                <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-wallet"></i></span>
                 <div class="info-box-content">
                     <span class="info-box-text">Ví</span>
                     <span class="info-box-number">
@@ -30,7 +30,7 @@
 
         <div class="col-12 col-sm-12 col-md-4">
             <div class="info-box mb-3">
-                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+                <span class="info-box-icon bg-warning elevation-1"><i class="fab fa-product-hunt"></i></span>
                 <div class="info-box-content">
                     <span class="info-box-text">Sản phẩm đang bán</span>
                     <span class="info-box-number"></span>
@@ -40,9 +40,9 @@
 
         <div class="col-12 col-sm-12 col-md-4">
             <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class="fab fa-app-store"></i></span>
+                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Hóa đơn</span>
+                    <span class="info-box-text">Đơn hàng</span>
                     <span class="info-box-number"></span>
                 </div>
             </div>
