@@ -12,4 +12,8 @@ class SinglePageController extends Controller
         $ShowProducts = product::where('id', '<', '9')->get();
         return view('frontend.pages.home', compact('ShowProducts'));
     }
+    public function getDetail($slug){
+        $products = product::where('slug',$slug)->first();
+        return view('frontend.pages.detail', compact('products'));
+    }
 }

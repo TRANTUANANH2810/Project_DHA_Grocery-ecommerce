@@ -1,5 +1,21 @@
-@extends('layouts.site_loginer')
-@section('home')
+@extends('frontend.layouts.main')
+
+@section('content')
+<head>  
+    <link rel="apple-touch-icon" sizes="76x76" href="../../site/assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../{{asset('site/assets/icons/logo.svg')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../{{asset('site/assets/icons/logo.svg')}}" />
+    <link rel="manifest" href="../../site/assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="../../site/assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+           <!-- Font  -->
+    <link rel="stylesheet" href="../../site/assets/fonts/stylesheet.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../site/assets/css/main.css" />
+
+    <!-- Scripts -->
+    <script src="../../site/assets/js/script.js"></script>
+</head>
 <main class="product-page">
             <div class="container">
                 <!-- Search bar -->
@@ -17,19 +33,19 @@
                         <li>
                             <a href="#!" class="breadcrumbs__link">
                                 Departments
-                                <img src="site/assets/icons/arrow-right.svg" alt="" />
+                                <img src="../../site/assets/icons/arrow-right.svg" alt="" />
                             </a>
                         </li>
                         <li>
                             <a href="#!" class="breadcrumbs__link">
                                 Coffee
-                                <img src="site/assets/icons/arrow-right.svg" alt="" />
+                                <img src="../../site/assets/icons/arrow-right.svg" alt="" />
                             </a>
                         </li>
                         <li>
                             <a href="#!" class="breadcrumbs__link">
                                 Coffee Beans
-                                <img src="site/assets/icons/arrow-right.svg" alt="" />
+                                <img src="../../site/assets/icons/arrow-right.svg" alt="" />
                             </a>
                         </li>
                         <li>
@@ -45,40 +61,29 @@
                             <div class="prod-preview">
                                 <div class="prod-preview__list">
                                     <div class="prod-preview__item">
-                                        <img src="site/assets/img/products/item1.png" alt="" class="prod-preview__img" />
+                                        <img src="{{$products->image}}" alt="" class="prod-preview__img" />
                                     </div>
                                     <div class="prod-preview__item">
-                                        <img src="site/assets/img/products/item2.png" alt="" class="prod-preview__img" />
+                                        <img src="../../site/assets/img/products/item2.png" alt="" class="prod-preview__img" />
                                     </div>
                                     <div class="prod-preview__item">
-                                        <img src="site/assets/img/products/item3.png" alt="" class="prod-preview__img" />
+                                        <img src="../../site/assets/img/products/item3.png" alt="" class="prod-preview__img" />
                                     </div>
                                     <div class="prod-preview__item">
-                                        <img src="site/assets/img/products/item4.png" alt="" class="prod-preview__img" />
+                                        <img src="../../site/assets/img/products/item4.png" alt="" class="prod-preview__img" />
                                     </div>
                                 </div>
-                                <div class="prod-preview__thumbs">
-                                    <img
-                                        src="site/assets/img/products/item1.png"
-                                        alt=""
-                                        class="prod-preview__thumb-img prod-preview__thumb-img--current"
-                                    />
-                                    <img src="site/assets/img/products/item2.png" alt="" class="prod-preview__thumb-img" />
-                                    <img src="site/assets/img/products/item3.png" alt="" class="prod-preview__thumb-img" />
-                                    <img src="site/assets/img/products/item4.png" alt="" class="prod-preview__thumb-img" />
-                                </div>
+                               
                             </div>
                         </div>
                         <div class="col-7 col-xl-6 col-lg-12">
                             <form action="" class="form">
                                 <section class="prod-info">
-                                    <h1 class="prod-info__heading">
-                                        Coffee Beans - Espresso Arabica and Robusta Beans
-                                    </h1>
+                                    <h1 class="prod-info__heading">{{$products->name}}</h1>
                                     <div class="row">
                                         <div class="col-5 col-xxl-6 col-xl-12">
                                             <div class="prod-prop">
-                                                <img src="site/assets/icons/star.svg" alt="" class="prod-prop__icon" />
+                                                <img src="../../site/assets/icons/star.svg" alt="" class="prod-prop__icon" />
                                                 <h4 class="prod-prop__title">(3.5) 1100 reviews</h4>
                                             </div>
                                             <label for="" class="form__label prod-info__label">Size/Weight</label>
@@ -87,7 +92,7 @@
                                                     <div class="form__select" style="--width: 140px">
                                                         500g
                                                         <img
-                                                            src="site/assets/icons/select-arrow.svg"
+                                                            src="../../site/assets/icons/select-arrow.svg"
                                                             alt=""
                                                             class="form__select-arrow icon"
                                                         />
@@ -95,7 +100,7 @@
                                                     <div class="form__select">
                                                         Gram
                                                         <img
-                                                            src="site/assets/icons/select-arrow.svg"
+                                                            src="../../site/assets/icons/select-arrow.svg"
                                                             alt=""
                                                             class="form__select-arrow icon"
                                                         />
@@ -114,7 +119,7 @@
                                             <div class="prod-props">
                                                 <div class="prod-prop">
                                                     <img
-                                                        src="site/assets/icons/document.svg"
+                                                        src="../../site/assets/icons/document.svg"
                                                         alt=""
                                                         class="icon prod-prop__icon"
                                                     />
@@ -122,7 +127,7 @@
                                                 </div>
                                                 <div class="prod-prop">
                                                     <img
-                                                        src="site/assets/icons/cart.svg"
+                                                        src="../../site/assets/icons/cart.svg"
                                                         alt=""
                                                         class="icon prod-prop__icon"
                                                     />
@@ -133,7 +138,7 @@
                                                 </div>
                                                 <div class="prod-prop">
                                                     <img
-                                                        src="site/assets/icons/bag.svg"
+                                                        src="../../site/assets/icons/bag.svg"
                                                         alt=""
                                                         class="icon prod-prop__icon"
                                                     />
@@ -145,22 +150,22 @@
 
                                                 <div class="prod-info__card">
                                                     <div class="prod-info__row">
-                                                        <span class="prod-info__price">$500.00</span>
+                                                        <span class="prod-info__price">${{$products->price_old}}</span>
                                                         <span class="prod-info__tax">10%</span>
                                                     </div>
-                                                    <p class="prod-info__total-price">$540.00</p>
+                                                    <p class="prod-info__total-price">${{$products->price}}</p>
                                                     <div class="prod-info__row">
                                                         <button class="btn btn--primary prod-info__add-to-cart">
                                                             Add to cart
                                                         </button>
                                                         <button class="like-btn prod-info__like-btn">
                                                             <img
-                                                                src="site/assets/icons/love.svg"
+                                                                src="../../site/assets/icons/love.svg"
                                                                 alt=""
                                                                 class="like-btn__icon icon"
                                                             />
                                                             <img
-                                                                src="site/assets/icons/love-red.svg"
+                                                                src="../../site/assets/icons/love-red.svg"
                                                                 alt=""
                                                                 class="like-btn__icon--liked icon"
                                                             />
@@ -205,7 +210,7 @@
                                                 rem voluptas nam! Voluptatem.
                                             </p>
                                             <p>
-                                                <img src="site/assets/img/product/item-1.png" alt="" />
+                                                <img src="../../site/assets/img/product/item-1.png" alt="" />
                                                 <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
                                             </p>
                                             <blockquote>
@@ -241,7 +246,7 @@
                                                 rem voluptas nam! Voluptatem.
                                             </p>
                                             <p>
-                                                <img src="site/assets/img/product/item-1.png" alt="" />
+                                                <img src="../../site/assets/img/product/item-1.png" alt="" />
                                                 <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
                                             </p>
                                             <p>
@@ -273,7 +278,7 @@
                                                 rem voluptas nam! Voluptatem.
                                             </p>
                                             <p>
-                                                <img src="site/assets/img/product/item-1.png" alt="" />
+                                                <img src="../../site/assets/img/product/item-1.png" alt="" />
                                                 <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
                                             </p>
                                             <p>
@@ -295,7 +300,7 @@
                                             <div class="review-card">
                                                 <div class="review-card__content">
                                                     <img
-                                                        src="site/assets/img/avatar/avatar-1.png"
+                                                        src="../../site/assets/img/avatar/avatar-1.png"
                                                         alt=""
                                                         class="review-card__avatar"
                                                     />
@@ -309,27 +314,27 @@
                                                 <div class="review-card__rating">
                                                     <div class="review-card__star-list">
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star-half.svg"
+                                                            src="../../site/assets/icons/star-half.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star-blank.svg"
+                                                            src="../../site/assets/icons/star-blank.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
@@ -344,7 +349,7 @@
                                             <div class="review-card">
                                                 <div class="review-card__content">
                                                     <img
-                                                        src="site/assets/img/avatar/avatar-2.png"
+                                                        src="../../site/assets/img/avatar/avatar-2.png"
                                                         alt=""
                                                         class="review-card__avatar"
                                                     />
@@ -358,27 +363,27 @@
                                                 <div class="review-card__rating">
                                                     <div class="review-card__star-list">
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star-half.svg"
+                                                            src="../../site/assets/icons/star-half.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star-blank.svg"
+                                                            src="../../site/assets/icons/star-blank.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
@@ -393,7 +398,7 @@
                                             <div class="review-card">
                                                 <div class="review-card__content">
                                                     <img
-                                                        src="site/assets/img/avatar/avatar-3.png"
+                                                        src="../../site/assets/img/avatar/avatar-3.png"
                                                         alt=""
                                                         class="review-card__avatar"
                                                     />
@@ -407,27 +412,27 @@
                                                 <div class="review-card__rating">
                                                     <div class="review-card__star-list">
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star.svg"
+                                                            src="../../site/assets/icons/star.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star-half.svg"
+                                                            src="../../site/assets/icons/star-half.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/star-blank.svg"
+                                                            src="../../site/assets/icons/star-blank.svg"
                                                             alt=""
                                                             class="review-card__star"
                                                         />
@@ -451,19 +456,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item1.png"
+                                                            src="../../site/assets/img/products/item1.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -478,7 +483,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$47.00</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -493,19 +498,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item2.png"
+                                                            src="../../site/assets/img/products/item2.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -520,7 +525,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$53.00</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -535,19 +540,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item3.png"
+                                                            src="../../site/assets/img/products/item3.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn like-btn--liked product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -562,7 +567,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$99.99</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -577,19 +582,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item4.png"
+                                                            src="../../site/assets/img/products/item4.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -604,7 +609,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$38.65</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -619,19 +624,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item1.png"
+                                                            src="../../site/assets/img/products/item1.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -646,7 +651,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$47.00</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -661,19 +666,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item2.png"
+                                                            src="../../site/assets/img/products/item2.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -688,7 +693,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$53.00</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -703,19 +708,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item3.png"
+                                                            src="../../site/assets/img/products/item3.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn like-btn--liked product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -730,7 +735,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$99.99</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -745,19 +750,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item4.png"
+                                                            src="../../site/assets/img/products/item4.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -772,7 +777,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$38.65</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -787,19 +792,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item1.png"
+                                                            src="../../site/assets/img/products/item1.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -814,7 +819,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$47.00</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -829,19 +834,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item2.png"
+                                                            src="../../site/assets/img/products/item2.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -856,7 +861,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$53.00</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -871,19 +876,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item3.png"
+                                                            src="../../site/assets/img/products/item3.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn like-btn--liked product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -898,7 +903,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$99.99</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -913,19 +918,19 @@
                                                 <div class="product-card__img-wrap">
                                                     <a href="./product-detail.html">
                                                         <img
-                                                            src="site/assets/img/products/item4.png"
+                                                            src="../../site/assets/img/products/item4.png"
                                                             alt=""
                                                             class="product-card__thumb"
                                                         />
                                                     </a>
                                                     <button class="like-btn product-card__like-btn">
                                                         <img
-                                                            src="site/assets/icons/love.svg"
+                                                            src="../../site/assets/icons/love.svg"
                                                             alt=""
                                                             class="like-btn__icon icon"
                                                         />
                                                         <img
-                                                            src="site/assets/icons/love-red.svg"
+                                                            src="../../site/assets/icons/love-red.svg"
                                                             alt=""
                                                             class="like-btn__icon--liked"
                                                         />
@@ -940,7 +945,7 @@
                                                 <div class="product-card__row">
                                                     <span class="product-card__price">$38.65</span>
                                                     <img
-                                                        src="site/assets/icons/star.svg"
+                                                        src="../../site/assets/icons/star.svg"
                                                         alt=""
                                                         class="product-card__star"
                                                     />
@@ -956,4 +961,5 @@
                 </div>
             </div>
         </main>
+
 @stop();

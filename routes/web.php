@@ -26,7 +26,7 @@ Route::get('/checkout','App\Http\Controllers\homeController@checkout')-> name('h
 Route::get('/edit-personal-info','App\Http\Controllers\homeController@EditPersonalInfo')-> name('home.EditPersonalInfo');
 Route::get('/forget-password','App\Http\Controllers\homeController@resetPassword')-> name('home.resetPassword');
 Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('home.payment');
-Route::get('/product-detail','App\Http\Controllers\homeController@productDetail')-> name('home.productDetail');
+// Route::get('/detail/{slug}','App\Http\Controllers\homeController@detail')-> name('home.detail');
 
 
 // Route::get('/reset-password-emailed',function(){
@@ -42,6 +42,8 @@ Route::get('/product-detail','App\Http\Controllers\homeController@productDetail'
 Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function(){
 
     Route::get('/', [SinglePageController::class, 'getHome'])->name('home.index');
+
+    Route::get('/detail/{slug}',[SinglePageController::class, 'getDetail'])-> name('detail');
 
     Route::get('login', [AccountController::class, 'getLogin'])->name('home.login');
 

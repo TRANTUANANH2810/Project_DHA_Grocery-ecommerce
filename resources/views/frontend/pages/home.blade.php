@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <main class="container home">
             <div class="home__container">
                 <!-- SlideShow -->
@@ -208,7 +209,7 @@
                     <div class="col">
                         <article class="product-card">
                             <div class="product-card__img-wrap">
-                                <a href="{{route('home.productDetail')}}">
+                                <a href="">
                                     <img class="product-card__thumb" src="site/assets/img/products/item1.png" alt="" />
                                 </a>
                                 <button class="like-btn like-btn--liked product-card__like-btn">
@@ -217,7 +218,7 @@
                                 </button>
                             </div>
                             <h3 class="product-card__title">
-                                <a href="{{route('home.productDetail')}}">Coffee Beans - Espresso Arabica and Robusta Beans</a>
+                                <a href="">Coffee Beans - Espresso Arabica and Robusta Beans</a>
                             </h3>
                             <p class="product-card__brand">Lavazza</p>
                             <div class="product-card__row">
@@ -233,7 +234,7 @@
                     <div class="col">
                         <article class="product-card">
                             <div class="product-card__img-wrap">
-                                <a href="{{route('home.productDetail')}}">
+                                <a href="{{route('detail',$item->slug)}}">
                                     <img class="product-card__thumb" src="{{$item->image}}" alt="" />
                                 </a>
                                 <button class="like-btn product-card__like-btn">
@@ -242,7 +243,7 @@
                                 </button>
                             </div>
                             <h3 class="product-card__title">
-                                <a href="{{route('home.productDetail')}}">{{$item->name}}</a>
+                                <a href="{{route('detail', $item->slug)}}">{{$item->name}}</a>
                             </h3>
                             <p class="product-card__brand">{{$item->seller->shop_name}}</p>
                             <div class="product-card__row">
