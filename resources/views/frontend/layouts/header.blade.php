@@ -3,27 +3,27 @@
         <div class="top-bar">
             <!-- more -->
             <button class="top-bar__more d-none d-lg-block js-toggle" toggle-target="#navbar">
-                <img src="/site/assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
+                <img src="../../site/assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
             </button>
             <!-- logo -->
-            <a href="./" class="logo top-bar__logo">
-                <img src="site/assets/icons/logo.svg" alt="grocerymart" class="logo__img top-bar__logo-img" />
+            <a href="{{route('home.index')}}" class="logo top-bar__logo">
+                <img src="../../site/assets/icons/logo.svg" alt="grocerymart" class="logo__img top-bar__logo-img" />
                 <h1 class="logo__title top-bar__logo-title">grocerymart</h1>
             </a>
 
             <!-- navbar -->
             <nav id="navbar" class="navbar hiden">
                 <button class="icon navbar__close-btn js-toggle" toggle-target="#navbar">
-                    <img class="icon" src="site/assets/icons/arrow-left.svg" alt="arrow-left" />
+                    <img class="icon" src="../../site/assets/icons/arrow-left.svg" alt="arrow-left" />
                 </button>
 
                 <a href="#!" class="icon nav-btn d-none d-md-flex">
-                    <img src="site/assets/icons/cart.svg" alt="" class="nav-btn__icon" />
+                    <img src="../../site/assets/icons/cart.svg" alt="" class="nav-btn__icon" />
                     <span class="nav-btn__title">Card</span>
                     <span class="nav-btn__qnt">3</span>
                 </a>
                 <a href="#!" class="icon nav-btn d-none d-md-flex">
-                    <img src="site/assets/icons/love.svg" alt="" class="nav-btn__icon" />
+                    <img src="../../site/assets/icons/love.svg" alt="" class="nav-btn__icon" />
                     <span class="nav-btn__title">Favorites</span>
                     <span class="nav-btn__qnt">3</span>
                 </a>
@@ -32,7 +32,7 @@
                     <li class="navbar__item">
                         <a href="#!" class="navbar__link">
                             Departments
-                            <img src="site/assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
+                            <img src="../../site/assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                         </a>
 
                         <!-- dropdown -->
@@ -44,12 +44,12 @@
                                         <div class="menu-column">
                                             <div class="menu-column__icon d-lg-none">
                                                 <img
-                                                    src="site/assets/img/categoris/cate-1.1.svg"
+                                                    src="../../site/assets/img/categoris/cate-1.1.svg"
                                                     alt=""
                                                     class="menu-column__icon-1"
                                                 />
                                                 <img
-                                                    src="site/assets/img/categoris/cate-1.2.svg"
+                                                    src="../../site/assets/img/categoris/cate-1.2.svg"
                                                     alt=""
                                                     class="menu-column__icon-2"
                                                 />
@@ -69,12 +69,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -117,12 +117,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -177,12 +177,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -257,12 +257,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -315,12 +315,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -370,12 +370,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -428,12 +428,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -478,12 +478,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -563,12 +563,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -601,12 +601,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -673,12 +673,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -721,12 +721,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -771,12 +771,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -824,12 +824,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -879,12 +879,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -936,12 +936,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -984,12 +984,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1035,12 +1035,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1086,12 +1086,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1134,12 +1134,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1189,12 +1189,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1237,12 +1237,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1288,12 +1288,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1336,12 +1336,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1387,12 +1387,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1442,12 +1442,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1517,12 +1517,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1565,12 +1565,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1615,12 +1615,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1663,12 +1663,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1718,12 +1718,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1765,12 +1765,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1815,12 +1815,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1863,12 +1863,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1913,12 +1913,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -1993,12 +1993,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2041,12 +2041,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2101,12 +2101,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2181,12 +2181,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2239,12 +2239,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2294,12 +2294,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2352,12 +2352,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2402,12 +2402,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2487,12 +2487,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2525,12 +2525,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2595,12 +2595,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2643,12 +2643,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2693,12 +2693,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2746,12 +2746,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2801,12 +2801,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2856,12 +2856,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2904,12 +2904,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -2954,12 +2954,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3004,12 +3004,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3052,12 +3052,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3107,12 +3107,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3155,12 +3155,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3205,12 +3205,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3253,12 +3253,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3303,12 +3303,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3360,12 +3360,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3435,12 +3435,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-1.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-1.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3483,12 +3483,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3533,12 +3533,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3581,12 +3581,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3636,12 +3636,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-6.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-6.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3684,12 +3684,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-5.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-5.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3734,12 +3734,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-4.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-4.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3782,12 +3782,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-3.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-3.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-10.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-10.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3832,12 +3832,12 @@
                                                                 <div class="menu-column">
                                                                     <div class="menu-column__icon">
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.1.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.1.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-1"
                                                                         />
                                                                         <img
-                                                                            src="site/assets/img/categoris/cate-2.2.svg"
+                                                                            src="../../site/assets/img/categoris/cate-2.2.svg"
                                                                             alt=""
                                                                             class="menu-column__icon-2"
                                                                         />
@@ -3914,7 +3914,7 @@
                     <li class="navbar__item">
                         <a href="#!" class="navbar__link">
                             Grocery
-                            <img src="site/assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
+                            <img src="../../site/assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                         </a>
                         <div class="dropdown js-dropdown">
                             <div class="dropdown__inner">
@@ -3925,12 +3925,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-7.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-7.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-7.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-7.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -3957,12 +3957,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-8.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-8.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-8.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-8.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4011,12 +4011,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-9.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-9.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-9.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-9.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4060,12 +4060,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-10.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-10.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-10.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-10.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4096,12 +4096,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-11.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-11.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-11.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-11.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4136,12 +4136,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-12.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-12.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-12.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-12.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4182,12 +4182,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-13.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-13.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-13.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-13.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4217,12 +4217,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-14.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-14.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-14.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-14.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4270,7 +4270,7 @@
                     <li class="navbar__item">
                         <a href="#!" class="navbar__link">
                             Beauty
-                            <img src="site/assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
+                            <img src="../../site/assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                         </a>
                         <div class="dropdown js-dropdown">
                             <div class="dropdown__inner">
@@ -4281,12 +4281,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-7.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-7.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-7.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-7.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4327,12 +4327,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-15.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-15.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-15.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-15.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4371,12 +4371,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-16.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-16.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-16.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-16.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4420,12 +4420,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-17.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-17.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-17.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-17.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4454,12 +4454,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-18.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-18.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-18.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-18.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4502,12 +4502,12 @@
                                             <div class="menu-column">
                                                 <div class="menu-column__icon">
                                                     <img
-                                                        src="site/assets/img/categoris/cate-19.1.svg"
+                                                        src="../../site/assets/img/categoris/cate-19.1.svg"
                                                         alt=""
                                                         class="menu-column__icon-1"
                                                     />
                                                     <img
-                                                        src="site/assets/img/categoris/cate-19.2.svg"
+                                                        src="../../site/assets/img/categoris/cate-19.2.svg"
                                                         alt=""
                                                         class="menu-column__icon-2"
                                                     />
@@ -4572,7 +4572,7 @@
                 <div class="top-act">
                     {{-- <div class="top-act__group top-act__group--single">
                         <button class="top-act__btn">
-                            <img src="site/assets/icons/search.svg" alt="" class="icon top-act__icon" />
+                            <img src="../../site/assets/icons/search.svg" alt="" class="icon top-act__icon" />
                         </button>
                     </div> --}}
                     @if (Auth::user()->is_seller == 1)
@@ -4585,14 +4585,14 @@
                         <div class="top-act__group d-md-none">
                             <div class="top-act__btn-wrap">
                                 <button class="top-act__btn">
-                                    <img src="site/assets/icons/love.svg" alt="" class="icon top-act__icon" />
+                                    <img src="../../site/assets/icons/love.svg" alt="" class="icon top-act__icon" />
                                     <span class="top-act__title">03</span>
                                 </button>
 
                                 <!-- Dropdown -->
                                 <div class="act-dropdown">
                                     <div class="act-dropdown__inner">
-                                        <img src="site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
+                                        <img src="../../site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
                                         <div class="act-dropdown__top">
                                             <h2 class="act-dropdown__title">You have 3 item(s)</h2>
                                             <a href="./favourite.html" class="act-dropdown__view-all">See All</a>
@@ -4603,7 +4603,7 @@
                                                 <article class="cart-preview-item">
                                                     <div class="cart-preview-item__img-wrap">
                                                         <img
-                                                            src="site/assets/img/products/item1.png"
+                                                            src="../../site/assets/img/products/item1.png"
                                                             alt=""
                                                             class="cart-preview-item__thumb"
                                                         />
@@ -4618,7 +4618,7 @@
                                                 <article class="cart-preview-item">
                                                     <div class="cart-preview-item__img-wrap">
                                                         <img
-                                                            src="site/assets/img/products/item2.png"
+                                                            src="../../site/assets/img/products/item2.png"
                                                             alt=""
                                                             class="cart-preview-item__thumb"
                                                         />
@@ -4633,7 +4633,7 @@
                                                 <article class="cart-preview-item">
                                                     <div class="cart-preview-item__img-wrap">
                                                         <img
-                                                            src="site/assets/img/products/item3.png"
+                                                            src="../../site/assets/img/products/item3.png"
                                                             alt=""
                                                             class="cart-preview-item__thumb"
                                                         />
@@ -4660,13 +4660,13 @@
 
                             <div class="top-act__btn-wrap">
                                 <button class="top-act__btn">
-                                    <img src="site/assets/icons/cart.svg" alt="" class="icon top-act__icon" />
+                                    <img src="../../site/assets/icons/cart.svg" alt="" class="icon top-act__icon" />
                                     <span class="top-act__title">$65.42</span>
                                 </button>
                                 <!-- Dropdown -->
                                 <div class="act-dropdown">
                                     <div class="act-dropdown__inner">
-                                        <img src="site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
+                                        <img src="../../site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
 
                                         <div class="act-dropdown__top">
                                             <h2 class="act-dropdown__title">You have 3 item(s)</h2>
@@ -4678,7 +4678,7 @@
                                                 <article class="cart-preview-item">
                                                     <div class="cart-preview-item__img-wrap">
                                                         <img
-                                                            src="site/assets/img/Products/item1.png"
+                                                            src="../../site/assets/img/Products/item1.png"
                                                             alt=""
                                                             class="cart-preview-item__thumb"
                                                         />
@@ -4693,7 +4693,7 @@
                                                 <article class="cart-preview-item">
                                                     <div class="cart-preview-item__img-wrap">
                                                         <img
-                                                            src="site/assets/img/Products/item2.png"
+                                                            src="../../site/assets/img/Products/item2.png"
                                                             alt=""
                                                             class="cart-preview-item__thumb"
                                                         />
@@ -4708,7 +4708,7 @@
                                                 <article class="cart-preview-item">
                                                     <div class="cart-preview-item__img-wrap">
                                                         <img
-                                                            src="site/assets/img/Products/item3.png"
+                                                            src="../../site/assets/img/Products/item3.png"
                                                             alt=""
                                                             class="cart-preview-item__thumb"
                                                         />
@@ -4756,7 +4756,7 @@
                             <div class="act-dropdown top-act__dropdown">
                                 <div class="act-dropdown__inner user-menu">
                                     <img
-                                        src="site/assets/icons/arrow-up.png"
+                                        src="../../site/assets/icons/arrow-up.png"
                                         alt=""
                                         class="act-dropdown__arrow top-act__dropdown-arrow"
                                     />

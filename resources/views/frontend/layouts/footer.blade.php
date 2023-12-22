@@ -5,7 +5,7 @@
             <div class="footer__col">
                 <!-- Logo -->
                 <a href="./" class="logo footer__logo">
-                    <img src="site/assets/icons/logo.svg" alt="grocerymart" class="logo__img" />
+                    <img src="../../site/assets/icons/logo.svg" alt="grocerymart" class="logo__img" />
                     <h1 class="logo__title">grocerymart</h1>
                 </a>
                 <p class="footer__desc">
@@ -110,19 +110,19 @@
 
             <div class="footer__socials">
                 <a href="#!" class="footer__social-link footer__social-link--facebook">
-                    <img src="site/assets/icons/facebook.svg" alt="" class="footer__social-icon" />
+                    <img src="../../site/assets/icons/facebook.svg" alt="" class="footer__social-icon" />
                 </a>
                 <a href="#!" class="footer__social-link footer__social-link--youtube">
-                    <img src="site/assets/icons/youtube.svg" alt="" class="footer__social-icon" />
+                    <img src="../../site/assets/icons/youtube.svg" alt="" class="footer__social-icon" />
                 </a>
                 <a href="#!" class="footer__social-link footer__social-link--tiktok">
-                    <img src="site/assets/icons/tiktok.svg" alt="" class="footer__social-icon" />
+                    <img src="../../site/assets/icons/tiktok.svg" alt="" class="footer__social-icon" />
                 </a>
                 <a href="#!" class="footer__social-link footer__social-link--twitter">
-                    <img src="site/assets/icons/twitter.svg" alt="" class="footer__social-icon" />
+                    <img src="../../site/assets/icons/twitter.svg" alt="" class="footer__social-icon" />
                 </a>
                 <a href="#!" class="footer__social-link footer__social-link--linkedin">
-                    <img src="site/assets/icons/linkedin.svg" alt="" class="footer__social-icon" />
+                    <img src="../../site/assets/icons/linkedin.svg" alt="" class="footer__social-icon" />
                 </a>
             </div>
         </div>

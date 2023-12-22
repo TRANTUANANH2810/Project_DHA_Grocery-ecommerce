@@ -8,11 +8,11 @@
 
         <!-- Icon  -->
 
-        <link rel="apple-touch-icon" sizes="76x76" href="site/assets/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('site/assets/icons/logo.svg')}}" />
-        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('site/assets/icons/logo.svg')}}" />
-        <link rel="manifest" href="site/assets/favicon/site.webmanifest" />
-        <link rel="mask-icon" href="site/assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../../site/assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../../{{asset('site/assets/icons/logo.svg')}}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../../{{asset('site/assets/icons/logo.svg')}}" />
+        <link rel="manifest" href="../../site/assets/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="../../site/assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
 
 
         <meta name="msapplication-TileColor" content="#da532c" />
@@ -20,13 +20,13 @@
 
 
         <!-- Font  -->
-        <link rel="stylesheet" href="site/assets/fonts/stylesheet.css" />
+        <link rel="stylesheet" href="../../site/assets/fonts/stylesheet.css" />
 
         <!-- Styles -->
-        <link rel="stylesheet" href="site/assets/css/main.css" />
+        <link rel="stylesheet" href="../../site/assets/css/main.css" />
 
         <!-- Scripts -->
-        <script src="site/assets/js/script.js"></script>
+        <script src="../../site/assets/js/script.js"></script>
     </head>
     <body>
 

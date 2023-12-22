@@ -9,7 +9,7 @@ use App\Models\product;
 class SinglePageController extends Controller
 {
     public function getHome(){
-        $ShowProducts = product::where('id', '<', '9')->get();
+        $ShowProducts = product::orderBy('created_at','DESC')->take(20)->get();
         return view('frontend.pages.home', compact('ShowProducts'));
     }
     public function getDetail($slug){
