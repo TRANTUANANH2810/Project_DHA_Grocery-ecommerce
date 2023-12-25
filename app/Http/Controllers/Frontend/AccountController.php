@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AccountController extends Controller
 {
@@ -47,12 +48,16 @@ class AccountController extends Controller
         if(!empty($user)){
             if(Hash::check($request->password, $user->password)){
                 if($user->is_active == 1){
-                    Auth::login($user);
-                    if($user->is_seller == 1){
-                        return redirect()->route('admin.seller.home')->with('success','Đăng nhập thành công');
-                    }else{
-                        return redirect()->route('home.index')->with('success','Đăng nhập thành công');
-                    }
+                    if ($user->confirm == null) {
+                        Auth::login($user);
+                        if($user->is_seller == 1){
+                            return redirect()->route('admin.seller.home')->with('success','Đăng nhập thành công');
+                        }else{
+                            return redirect()->route('home.index')->with('success','Đăng nhập thành công');
+                        }
+                    } else {
+                        return redirect()->route('home.login')->with('warning','Tài khoản chưa xác thực');
+                    }                    
                 }else{
                     return redirect()->route('home.login')->with('warning','Tài khoản đã bị khóa');
                 }
@@ -91,9 +96,13 @@ class AccountController extends Controller
             'is_seller' => 1,
             'email' => $request->email,
             'phone' => $request->phone,
+            'confirm' => Str::random(20),
         ];
 
         $user_id = User::create($user);
+        $currentHost = url()->current();
+        $confirmUrl = $currentHost.'/'.'confirmEmail/'.$user_id->confirm;
+        sendMailRegister('Xác nhận đăng ký tài khoản', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user_id->email);
         $user_seller = [
             'user_id' => $user_id->id,
             'shop_name' => $request->shop_name,
@@ -102,6 +111,19 @@ class AccountController extends Controller
 
         Seller::create($user_seller);
 
-        return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng đăng nhập tài khoản');
+        return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng kiểm tra email để xác nhận');
+    }
+
+    /**
+     * confirm email for user
+     */
+    public function confirmEmail(Request $request, $confirm){
+        $user = User::where('confirm', $confirm)->first();
+        if ($user == null) {
+            return redirect()->route('home.login')->with('success','Thất bại');
+        }
+        $data['confirm'] = null;
+        $user->update($data);
+        return redirect()->route('home.login')->with('success','Đã xác nhận email thành công. Vui lòng đăng nhập tài khoản');
     }
 }
