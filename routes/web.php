@@ -61,7 +61,7 @@ Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function
 
     Route::post('registerSeller', [AccountController::class, 'postRegisterSeller'])->name('home.registerSeller.post');
 
-
+    Route::get('registerSeller/confirmEmail/{confirm}', [AccountController::class, 'confirmEmail'])->name('home.confirmEmail');
    
     Route::get('sellers/create', [AccountController::class, 'getSellerCreate'])->name('home.sellers.create');
 

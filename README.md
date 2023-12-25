@@ -25,3 +25,15 @@ php artisan migrate
 ```
 php artisan serve
 ```
+
+## v.2
+```
+cp .env.example .env
+```
+delete all tables
+```
+php artisan migrate
+```
+```
+composer dump-autoload
+```
