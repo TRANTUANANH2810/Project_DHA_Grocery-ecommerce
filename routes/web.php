@@ -79,4 +79,5 @@ Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function
 
 
     });
+
 });
