@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('phone', 20)->nullable();
             $table->text('image')->nullable();
+            $table->string('confirm')->nullable();
             $table->boolean('is_active')->nullable()->default(true);
             $table->boolean('is_seller')->nullable()->default(false);
         });

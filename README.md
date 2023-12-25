@@ -25,3 +25,8 @@ php artisan migrate
 ```
 php artisan serve
 ```
+
+## Dump AutoLoad
+```
+composer dump-autoload
+```
