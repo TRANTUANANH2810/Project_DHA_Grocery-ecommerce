@@ -34,7 +34,7 @@ class DashboardController extends Controller
     
         if($request->email){
             $request->validate([
-                'phone' => 'bail|numeric|unique:user,email,'.$user_id,
+                'email' => 'bail|email|unique:user,email,'.$user_id,
             ]); 
         }
 

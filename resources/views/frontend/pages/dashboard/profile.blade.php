@@ -85,10 +85,9 @@
                                             </label>
                                             <div class="form__text-input">
                                                 <input
-                                                    type="text"
+                                                    type="number"
                                                     name="phone"
                                                     value="{{old('phone',$user->phone)}}"
-                                                    id="card-number"
                                                     placeholder="Phone Number"
                                                     class="form__input"
                                                 />
