@@ -161,7 +161,7 @@
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label>Email</label>
-                                        <input type="text" class="form-control" name="email" value="{{old('email',$seller->email)}}">
+                                        <input type="text" class="form-control" name="email" value="{{old('email',$seller->email)}}" readonly>
                                         @if ($errors->has('email'))
                                         <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('email')}}</span>    
                                         @endif

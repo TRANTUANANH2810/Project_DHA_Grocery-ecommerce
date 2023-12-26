@@ -25,17 +25,11 @@ class DashboardController extends Controller
 
     public function postProfile(Request $request){
         $user_id = Auth::user()->id;
-        if($request->phone && $request->email){
+
+        if($request->phone){
             $request->validate([
-                'email' => 'bail|email|unique:user,email,'.$user_id,
-                'phone' => 'bail|numeric|unique:user,phone,'.$user_id,
+                'phone' => 'bail|between:9,11|numeric|unique:user,phone,'.$user_id,
             ]);  
-        }
-    
-        if($request->email){
-            $request->validate([
-                'email' => 'bail|email|unique:user,email,'.$user_id,
-            ]); 
         }
 
         $user = User::find($user_id);

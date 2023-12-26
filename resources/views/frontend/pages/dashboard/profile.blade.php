@@ -109,6 +109,7 @@
                                                     placeholder="Email address"
                                                     class="form__input"
                                                     required
+                                                    readonly
                                                 />
                                        
                                             </div>
