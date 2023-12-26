@@ -217,38 +217,50 @@
                 <div class="col-md-4">
                 </div>
                 <div class="col-md-8">
-                    <form action="{!! route('admin.infor.password') !!}" method="POST">
-                        @csrf
-                        <div class="card card-dark">
-                            <div class="card-header">
-                                <h3 class="card-title">Đổi mật khẩu</h3>
-                            </div>
-        
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="form-group col-6">
-                                        <label>Mật khẩu</label>
-                                        <input type="password" class="form-control" name="password" value="">
-                                        @if ($errors->has('password'))
-                                        <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('password')}}</span>    
-                                        @endif
-                                    </div> 
-                                    <div class="form-group col-6">
-                                        <label>Nhập lại mật khẩu</label>
-                                        <input type="password" class="form-control" name="repassword" value="">
-                                        @if ($errors->has('repassword'))
-                                        <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('repassword')}}</span>    
-                                        @endif
-                                    </div> 
-                                    <div class="form-group col-12">
-                                        <div class="text-right">
-                                            <button type="submit" class="btn btn-sm btn-danger ">Đổi mật khẩu</button>
-                                        </div>
-                                    </div> 
+                    @if (Auth::user()->confirm == 1)
+                        <form action="{!! route('admin.infor.password') !!}" method="POST">
+                            @csrf
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h3 class="card-title">Đổi mật khẩu</h3>
+                                </div>
+            
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <label>Mật khẩu</label>
+                                            <input type="password" class="form-control" name="password" value="">
+                                            @if ($errors->has('password'))
+                                            <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('password')}}</span>    
+                                            @endif
+                                        </div> 
+                                        <div class="form-group col-6">
+                                            <label>Nhập lại mật khẩu</label>
+                                            <input type="password" class="form-control" name="repassword" value="">
+                                            @if ($errors->has('repassword'))
+                                            <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('repassword')}}</span>    
+                                            @endif
+                                        </div> 
+                                        <div class="form-group col-12">
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-sm btn-danger ">Đổi mật khẩu</button>
+                                            </div>
+                                        </div> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    @else
+                        <form action="{{route('admin.sendMail.password')}}" method="POST">
+                            @csrf
+                            <div class="form-group col-12">
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-sm btn-danger ">Đổi mật khẩu</button>
+                                </div>
+                            </div> 
+                        </form>
+                    @endif
+                
                 </div>
             </div>
     
