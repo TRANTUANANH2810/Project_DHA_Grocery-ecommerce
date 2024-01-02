@@ -1,21 +1,6 @@
+
 @extends('frontend.layouts.main')
-
 @section('content')
-<head>  
-    <link rel="apple-touch-icon" sizes="76x76" href="../../site/assets/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../../{{asset('site/assets/icons/logo.svg')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../../{{asset('site/assets/icons/logo.svg')}}" />
-    <link rel="manifest" href="../../site/assets/favicon/site.webmanifest" />
-    <link rel="mask-icon" href="../../site/assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-           <!-- Font  -->
-    <link rel="stylesheet" href="../../site/assets/fonts/stylesheet.css" />
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="../../site/assets/css/main.css" />
-
-    <!-- Scripts -->
-    <script src="../../site/assets/js/script.js"></script>
-</head>
 <main class="product-page">
             <div class="container">
                 <!-- Search bar -->
@@ -86,34 +71,23 @@
                                                 <img src="../../site/assets/icons/star.svg" alt="" class="prod-prop__icon" />
                                                 <h4 class="prod-prop__title">(3.5) 1100 reviews</h4>
                                             </div>
-                                            <label for="" class="form__label prod-info__label">Size/Weight</label>
+                                            <label for="" class="form__label prod-info__label">Quantity</label>
                                             <div class="filter__form-group">
-                                                <div class="form__select-wrap">
-                                                    <div class="form__select" style="--width: 140px">
-                                                        500g
-                                                        <img
-                                                            src="../../site/assets/icons/select-arrow.svg"
-                                                            alt=""
-                                                            class="form__select-arrow icon"
-                                                        />
-                                                    </div>
-                                                    <div class="form__select">
-                                                        Gram
-                                                        <img
-                                                            src="../../site/assets/icons/select-arrow.svg"
-                                                            alt=""
-                                                            class="form__select-arrow icon"
-                                                        />
-                                                    </div>
-                                                </div>
+                                              
+                                    
+                                                <form action="{{route('cart.add')}}" method="post">
+                                                   @csrf
+                                                    <input type="hidden" name="id" value="{{$products->id}}">
+                                                   <div>
+                                                       <input class="ipqty" type="number" name="quantity"  min="1" step="1" value="1">                         
+
+                                                   </div>
+                                                
+                                                    <button type="submit">Add to cart</button>
+                                                </form>			
+                                            
                                             </div>
-                                            <div class="filter__form-group">
-                                                <div class="form__tags">
-                                                    <button class="form__tag prod-info__tag">Small</button>
-                                                    <button class="form__tag prod-info__tag">Medium</button>
-                                                    <button class="form__tag prod-info__tag">Large</button>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                         <div class="col-7 col-xxl-6 col-xl-12">
                                             <div class="prod-props">
@@ -149,13 +123,17 @@
                                                 </div>
 
                                                 <div class="prod-info__card">
+                                                    @if($products->price_old > 0)
                                                     <div class="prod-info__row">
                                                         <span class="prod-info__price">${{$products->price_old}}</span>
-                                                        <span class="prod-info__tax">10%</span>
+                                                        <span class="prod-info__tax">{{percent($products->price,$products->price_old)}}%</span>
                                                     </div>
                                                     <p class="prod-info__total-price">${{$products->price}}</p>
+                                                    @else
+                                                    <p class="prod-info__total-price">${{$products->price}}</p>
+                                                    @endif
                                                     <div class="prod-info__row">
-                                                        <button class="btn btn--primary prod-info__add-to-cart">
+                                                        <button type="submit" class="btn btn--primary prod-info__add-to-cart">
                                                             Add to cart
                                                         </button>
                                                         <button class="like-btn prod-info__like-btn">
@@ -194,99 +172,8 @@
                                 <div class="row">
                                     <div class="col-8 offset-2 col-xl-10 offset-xl-1 col-lg-12 offset-lg-0">
                                         <div class="text-content">
-                                            <h2>Lorem ipsum dolor sit amet.</h2>
-                                            <p>
-                                                Lorem ipsum dolor sit amet <a href="#!">consectetur</a> adipisicing
-                                                elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
-                                                voluptates dignissimos similique animi assumenda
-                                                <a href="#!">praesentium</a> et! Illum dolorem est rem voluptas nam!
-                                                Voluptatem.
-                                            </p>
-                                            <h3>Lorem ipsum dolor sit amet.</h3>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-                                            <p>
-                                                <img src="../../site/assets/img/product/item-1.png" alt="" />
-                                                <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
-                                            </p>
-                                            <blockquote>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet <em>consectetur</em>
-                                                    <u>adipisicing</u> elit. Aliquid, cupiditate. Modi, quidem, ullam
-                                                    sint dolorum recusandae voluptates dignissimos similique animi
-                                                    assumenda praesentium et! Illum dolorem est rem voluptas nam!
-                                                    Voluptatem.
-                                                </p>
-                                            </blockquote>
-                                            <h3>Lorem ipsum dolor sit amet.</h3>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-
-                                            <hr />
-
-                                            <h2>Lorem ipsum dolor sit amet.</h2>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-                                            <p>
-                                                <img src="../../site/assets/img/product/item-1.png" alt="" />
-                                                <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-
-                                            <hr />
-
-                                            <h2>Lorem ipsum dolor sit amet.</h2>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
-                                            <p>
-                                                <img src="../../site/assets/img/product/item-1.png" alt="" />
-                                                <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-                                                cupiditate. Modi, quidem, ullam sint dolorum recusandae voluptates
-                                                dignissimos similique animi assumenda praesentium et! Illum dolorem est
-                                                rem voluptas nam! Voluptatem.
-                                            </p>
+                                            {!!$products->content!!}
+                                            {!!$products->description!!}    
                                         </div>
                                     </div>
                                 </div>
@@ -961,5 +848,4 @@
                 </div>
             </div>
         </main>
-
 @stop();

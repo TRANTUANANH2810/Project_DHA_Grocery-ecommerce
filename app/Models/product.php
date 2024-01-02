@@ -19,6 +19,12 @@ class Product extends Model
         return $this->hasOne(Category::class,'id','category_id');
 
     }
+    
+    public function seller(){
+
+        return $this->belongsTO(Seller::class);
+
+    }
 
     public function sluggable(): array
     {

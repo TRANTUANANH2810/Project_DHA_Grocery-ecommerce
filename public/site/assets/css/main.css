@@ -4579,3 +4579,34 @@ html {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+.quantity{
+  display:flex;
+  width:160px;
+}
+
+/* it will support chrome and firefox */
+
+.qty {
+	display: flex;
+
+}
+	.ipqty {
+		width: 100px; height: 3rem;	
+		font-size: 1.3rem;
+		text-align: center;
+		border: 1px solid #ccc;
+	}
+	.qtybt {
+		width: 3rem; height: 3rem;
+		color: #fff;
+		font-size: 2rem;
+		background: #ccc;
+	}
+	button.qtyminus {
+		margin-right: 0.3rem;
+	}
+	button.qtyplus {
+		margin-left: 0.3rem;
+	}
+
