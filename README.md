@@ -34,6 +34,7 @@ delete all tables
 ```
 php artisan migrate
 ```
+## Dump AutoLoad
 ```
 composer dump-autoload
 ```

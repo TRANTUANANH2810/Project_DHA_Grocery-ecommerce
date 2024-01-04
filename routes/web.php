@@ -59,7 +59,7 @@ Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function
 
     Route::post('registerSeller', [AccountController::class, 'postRegisterSeller'])->name('home.registerSeller.post');
 
-    Route::get('registerSeller/confirmEmail/{confirm}', [AccountController::class, 'confirmEmail'])->name('home.confirmEmail');
+    Route::get('confirm-email/{confirm}', [AccountController::class, 'confirmEmail'])->name('home.confirm.email');
    
     Route::get('sellers/create', [AccountController::class, 'getSellerCreate'])->name('home.sellers.create');
 
@@ -77,6 +77,9 @@ Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function
 
         Route::post('change-password', [DashboardController::class,'postChangePassword'])->name('home.profile.password.post');
 
+        Route::post('sendMail-password', [DashboardController::class, 'sendMailPassword'])->name('home.sendMail.password');
 
+        Route::get('confirm-password/{confirm}', [DashboardController::class, 'confirmEmail'])->name('home.confirm.password');
     });
+
 });

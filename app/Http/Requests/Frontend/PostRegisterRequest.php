@@ -22,6 +22,7 @@ class PostRegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'email' => 'bail|email|unique:user,email',
             'user_name' => 'bail|min:8|unique:user,user_name', 
             'password' => 'min:8',
             'repassword' => 'bail|same:password',
