@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Str;
 
 class AccountSellerController extends Controller
 {
@@ -110,8 +111,36 @@ class AccountSellerController extends Controller
             'repassword' => 'bail|same:password',
         ]); 
 
-        $user->update(['password' => Hash::make($request->password)]);
+        $user->update(['password' => Hash::make($request->password), 'confirm' => null ]);
 
         return redirect()->route('information.edit',Auth::user()->id)->with('success','Đổi mật khẩu thành công'); 
+    }
+
+    public function sendMailPassword(Request $request){
+        $user = User::find(Auth::user()->id);
+
+        $confirm = Str::random(20);
+
+        $user->update(['confirm' => $confirm]);
+
+        $confirmUrl = route('admin.confirm.password',$confirm);
+
+        sendMailRegister('Xác nhận đổi mật khẩu', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user->email);
+
+        return redirect()->route('information.edit',$user->id)->with('success','Vui lòng kiểm tra email để xác nhận đổi mật khẩu');
+
+    }
+
+    public function confirmEmail($confirm){
+        $user = User::where('confirm', $confirm)->first();
+        
+        if ($user == null) {
+            return redirect()->route('admin.seller.home');
+        }
+
+        $user->update(['confirm' => 1]);
+
+        return redirect()->route('information.edit',$user->id)->with('success','Đã xác nhận email thành công. Vui lòng nhập mật khẩu');
+
     }
 }

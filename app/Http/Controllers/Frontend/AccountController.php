@@ -76,19 +76,25 @@ class AccountController extends Controller
     }
 
     public function postRegister(PostRegisterRequest $request){
-        User::create([
+        $user = User::create([
             'first_name' => $request->first_name, 
             'last_name' => $request->last_name, 
+            'email' => $request->email,
             'user_name' => $request->user_name, 
             'password' => Hash::make($request->password),
+            'confirm' => Str::random(20),
         ]);
 
+        $confirmUrl = route('home.confirm.email',$user->confirm);
+
+        sendMailRegister('Xác nhận đăng ký tài khoản', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user->email);
+        
         return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng đăng nhập tài khoản');
     }
 
     public function postRegisterSeller(PostRegisterSellerRequest $request){
 
-        $user = [
+        $user = User::create([
             'first_name' => $request->first_name, 
             'last_name' => $request->last_name, 
             'user_name' => $request->user_name, 
@@ -97,14 +103,14 @@ class AccountController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'confirm' => Str::random(20),
-        ];
+        ]);
+        
+        $confirmUrl = route('home.confirm.email',$user->confirm);
 
-        $user_id = User::create($user);
-        $currentHost = url()->current();
-        $confirmUrl = $currentHost.'/'.'confirmEmail/'.$user_id->confirm;
-        sendMailRegister('Xác nhận đăng ký tài khoản', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user_id->email);
+        sendMailRegister('Xác nhận đăng ký tài khoản', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user->email);
+        
         $user_seller = [
-            'user_id' => $user_id->id,
+            'user_id' => $user->id,
             'shop_name' => $request->shop_name,
             'shop_address' => $request->address, 
         ]; 
