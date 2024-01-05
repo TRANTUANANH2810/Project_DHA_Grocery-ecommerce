@@ -93,6 +93,26 @@
                         <div class="form__group">
                             <div class="form__text-input">
                                 <input
+                                    type="email"
+                                    name="email"
+                                    value="{{old('email')}}"
+                                    id=""
+                                    placeholder="Email"
+                                    class="form__input"
+                                    required
+                                    autofocus
+                                />
+                                <img src="site/assets/icons/message.svg" alt="" class="form__input-icon" />
+                                <img src="site/assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
+                            </div>
+                            @error('email')
+                            <span class="form__error fr-error d-block mt-2"><i class="fas fa-exclamation-circle"></i>{{$errors->first('email')}}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
                                     type="text"
                                     name="user_name"
                                     value="{{old('user_name')}}"

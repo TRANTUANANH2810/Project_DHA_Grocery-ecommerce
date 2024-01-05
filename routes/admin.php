@@ -50,10 +50,17 @@ Route::group(['prefix' => 'admin'], function(){
 
         Route::post('seller-infor-change-password', [AccountSellerController::class, 'postSellerPassword'])->name('admin.infor.password');
 
+        Route::post('sendMail-password', [AccountSellerController::class, 'sendMailPassword'])->name('admin.sendMail.password');
+
+        Route::get('confirm-password/{confirm}', [AccountSellerController::class, 'confirmEmail'])->name('admin.confirm.password');
+
         Route::get('seller/editDelivery/get', [OrderController::class,'getOrderEditDelivery'])->name('admin.order_edit_get');
         Route::post('seller/editDelivery/post', [OrderController::class,'postOrderEditDelivery'])->name('admin.order_edit_post');
 
         Route::get('seller/orderDetail/get', [OrderController::class,'getOrderDetail'])->name('admin.order_detail_get');
+
+      
+
 
     });
 

@@ -85,10 +85,9 @@
                                             </label>
                                             <div class="form__text-input">
                                                 <input
-                                                    type="text"
+                                                    type="number"
                                                     name="phone"
                                                     value="{{old('phone',$user->phone)}}"
-                                                    id="card-number"
                                                     placeholder="Phone Number"
                                                     class="form__input"
                                                 />
@@ -109,6 +108,8 @@
                                                     id="expiration-date"
                                                     placeholder="Email address"
                                                     class="form__input"
+                                                    required
+                                                    readonly
                                                 />
                                        
                                             </div>
@@ -123,46 +124,61 @@
                                     </div>
                                 </form>
 
-                                <form action="{{route('home.profile.password.post')}}" method="POST" class="form form-card">
-                                    @csrf
+                                @if (@$user->confirm == 1)
+                                    <form action="{{route('home.profile.password.post')}}" method="POST" class="form form-card">
+                                        @csrf
 
-                                    <div class="form__group">
-                                        <label for="set-default-card" class="form__label form-card__label">
-                                            Đổi mật khẩu
-                                        </label>
-                                        <div class="form__text-input mb-5">
-                                            <input
-                                                type="password"
-                                                name="password"
-                                                id="phone-number"
-                                                placeholder="Password"
-                                                class="form__input"
-                                            />
+                                        <div class="form__group">
+                                            <label for="set-default-card" class="form__label form-card__label">
+                                                Đổi mật khẩu
+                                            </label>
+                                            <div class="form__text-input mb-5">
+                                                <input
+                                                    type="password"
+                                                    name="password"
+                                                    id="phone-number"
+                                                    placeholder="Password"
+                                                    class="form__input"
+                                                />
+                                            </div>
+                                            @error('password')
+                                            <span class="form__error fr-error d-block mt-2"><i class="fas fa-exclamation-circle"></i>{{$errors->first('password')}}</span>
+                                            @enderror
                                         </div>
-                                        @error('password')
-                                        <span class="form__error fr-error d-block mt-2"><i class="fas fa-exclamation-circle"></i>{{$errors->first('password')}}</span>
-                                        @enderror
-                                    </div>
 
-                                    <div class="form__group">
-                                        <div class="form__text-input mb-5">
-                                            <input
-                                                type="password"
-                                                name="repassword"
-                                                id="phone-number"
-                                                placeholder="Confirm password"
-                                                class="form__input"
-                                            />
+                                        <div class="form__group">
+                                            <div class="form__text-input mb-5">
+                                                <input
+                                                    type="password"
+                                                    name="repassword"
+                                                    id="phone-number"
+                                                    placeholder="Confirm password"
+                                                    class="form__input"
+                                                />
+                                            </div>
+                                            @error('repassword')
+                                            <span class="form__error fr-error d-block mt-2"><i class="fas fa-exclamation-circle"></i>{{$errors->first('repassword')}}</span>
+                                            @enderror
                                         </div>
-                                        @error('repassword')
-                                        <span class="form__error fr-error d-block mt-2"><i class="fas fa-exclamation-circle"></i>{{$errors->first('repassword')}}</span>
-                                        @enderror
-                                    </div>
 
-                                    <div class="form-card__bottom">
-                                        <button class="btn btn--primary btn--rounded">Save</button>
-                                    </div>
-                                </form>
+                                        <div class="form-card__bottom">
+                                            <button class="btn btn--primary btn--rounded">Save</button>
+                                        </div>
+                                    </form>
+                                @else
+                                    <form action="{{route('home.sendMail.password')}}" class="form form-card" method="POST">
+                                        @csrf
+                                        <div class="form__group">
+                                            <label for="set-default-card" class="form__label form-card__label">
+                                                Đổi mật khẩu
+                                            </label>
+                                        </div>
+                                        <div class="form-card__bottom">
+                                            <button class="btn btn--primary btn--rounded">Change Password</button>
+                                        </div>
+                                    </form>
+                                @endif
+                             
                             </div>
                         </div>
                     </div>
