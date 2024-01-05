@@ -28,8 +28,6 @@ Route::get('/edit-personal-info','App\Http\Controllers\homeController@EditPerson
 Route::get('/forget-password','App\Http\Controllers\homeController@resetPassword')-> name('home.resetPassword');
 Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('home.payment');
 // Route::get('/detail/{slug}','App\Http\Controllers\homeController@detail')-> name('home.detail');
-Route::post('/add_cart',[CartController::class, 'add'])-> name('cart.add');
-    Route::get('/cart',[CartController::class, 'index'])-> name('cart.index');
 
 // Route::get('/reset-password-emailed',function(){
 //     return view('reset-password-emailed');
@@ -40,14 +38,14 @@ Route::post('/add_cart',[CartController::class, 'add'])-> name('cart.add');
 // Route::get('/shipping',function(){
 //     return view('shipping');
 // });
-
 Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function(){
 
     Route::get('/', [SinglePageController::class, 'getHome'])->name('home.index');
 
     Route::get('/detail/{slug}',[SinglePageController::class, 'getDetail'])-> name('detail');
 
-
+    Route::get('/cart',[CartController::class, 'index'])-> name('cart.index');
+    Route::post('/cart_add',[CartController::class, 'add'])-> name('cart.add');
 
     Route::get('login', [AccountController::class, 'getLogin'])->name('home.login');
 

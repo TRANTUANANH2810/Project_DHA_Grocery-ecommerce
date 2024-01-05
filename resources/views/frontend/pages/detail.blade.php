@@ -75,15 +75,13 @@
                                             <div class="filter__form-group">
                                               
                                     
-                                                <form action="{{route('cart.add')}}" method="post">
+                                                <form action="{{route('cart.add')}}" method="POST">
                                                    @csrf
-                                                    <input type="hidden" name="id" value="{{$products->id}}">
                                                    <div>
+                                                       <input type="hidden" name="id" value="{{$products->id}}">
                                                        <input class="ipqty" type="number" name="quantity"  min="1" step="1" value="1">                         
-
                                                    </div>
-                                                
-                                                    <button type="submit">Add to cart</button>
+                                                    <input type="submit" value="Add to cart">
                                                 </form>			
                                             
                                             </div>
