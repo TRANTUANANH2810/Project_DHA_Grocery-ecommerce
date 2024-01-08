@@ -138,6 +138,10 @@ class ProductSellerController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        $attributeValue = AttributeValue::where('product_id', $product->id)->get();
+        foreach ($attributeValue as $key => $value) {
+            $value->delete();
+        }
         if(!empty($product->image)){
             File::delete(public_path($product->image));
         }
