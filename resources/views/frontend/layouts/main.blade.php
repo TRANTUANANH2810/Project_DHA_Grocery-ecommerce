@@ -26,6 +26,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../../site/assets/css/main.css" />
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    @vite(['resources/js/cart.js']) 
+    @vite(['resources/js/script.js']) 
+
     {{-- <!-- Scripts -->
     <script src="../../site/assets/js/script.js"></script> --}}
 
@@ -34,8 +38,7 @@
 
     @yield('page_css')
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    @vite(['resources/js/cart.js']) 
+    
 
     @yield('third_party_scripts')
 
