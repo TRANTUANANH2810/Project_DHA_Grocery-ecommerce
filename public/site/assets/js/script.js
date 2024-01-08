@@ -234,6 +234,7 @@ const isDark = localStorage.dark === "true";
 document.querySelector("html").classList.toggle("dark", isDark);
 
 
+
 /*
 * @Adilade Input Quantity Increment
 * 

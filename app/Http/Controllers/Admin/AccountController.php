@@ -30,6 +30,7 @@ class AccountController extends Controller
         return redirect()->route('admin.login')->with('error','Tài khoản hoặc mật khẩu không chính xác');
     }
 
+    
     public function logout(){
         if(Auth::check()){
             Auth::logout(); 

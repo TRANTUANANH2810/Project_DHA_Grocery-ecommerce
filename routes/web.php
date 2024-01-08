@@ -29,6 +29,8 @@ Route::get('/forget-password','App\Http\Controllers\homeController@resetPassword
 Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('home.payment');
 // Route::get('/detail/{slug}','App\Http\Controllers\homeController@detail')-> name('home.detail');
 
+Route::get('/Add-Cart/{id}',[CartController::class, 'AddCart'])-> name('cart.AddCart');
+
 // Route::get('/reset-password-emailed',function(){
 //     return view('reset-password-emailed');
 // });

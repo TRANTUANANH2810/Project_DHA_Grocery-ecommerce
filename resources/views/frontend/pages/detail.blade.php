@@ -131,9 +131,9 @@
                                                     <p class="prod-info__total-price">${{$products->price}}</p>
                                                     @endif
                                                     <div class="prod-info__row">
-                                                        <button type="submit" class="btn btn--primary prod-info__add-to-cart">
+                                                        <a onclick="AddCart({{$products->id}})" href="javascript:" class="btn btn--primary prod-info__add-to-cart">
                                                             Add to cart
-                                                        </button>
+                                                        </a>
                                                         <button class="like-btn prod-info__like-btn">
                                                             <img
                                                                 src="../../site/assets/icons/love.svg"
@@ -155,6 +155,22 @@
                             </form>
                         </div>
                     </div>
+
+                         <!-- infomartion Shop -->
+                         <div style="margin-top: 30px" class="name-shop">
+                        <!-- category -item 1 -->
+                        <a href="#!">
+                            <article class="name-shop cate-item">
+                                <img src="{{$products->seller->image}}" alt="" class="cate-item__thumb" />
+
+                                <div class="cate-item__info">
+                                    <h3 class="cate-item__title">{{$products->seller->shop_name}}</h3>
+                                    <p class="cate-item__desc">{{$products->seller->shop_address}}t</p>
+                                </div>
+                            </article></a
+                        >
+                    </div>
+                </div>
                 </div>
 
                 <!-- Product content -->
@@ -846,4 +862,19 @@
                 </div>
             </div>
         </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- Javascrip -->
+        <script>
+            function AddCart(id){
+                $.ajax({
+                    url: "Add-Cart/"+id,
+                    type: 'GET',
+                }).done(function(response) {
+                    console.log(response);
+                    $("#change-item-cart").empty();
+                    $("#change-item-cart").html(response);
+                });
+            }
+
+        </script>
 @stop();

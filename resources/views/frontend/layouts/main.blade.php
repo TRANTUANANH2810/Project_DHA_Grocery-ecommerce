@@ -27,6 +27,7 @@
 
         <!-- Scripts -->
         <script src="../../site/assets/js/script.js"></script>
+
     </head>
     <body>
 
