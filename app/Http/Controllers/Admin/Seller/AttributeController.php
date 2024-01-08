@@ -94,9 +94,9 @@ class AttributeController extends Controller
         } else {
             if ($data) {
                 foreach ($data as &$attribute) {
-                    $dataValue = AttributeValue::where('product_id', $productId)->where('attribute_id', $attribute->id)->get();
+                    $dataValue = AttributeValue::where('product_id', $productId)->where('attribute_id', $attribute->id)->first();
                     if ($dataValue) {
-                        $attribute->values = $dataValue[0]->value;
+                        $attribute->values = $dataValue->value;
                     }
                 }
             }
