@@ -59,6 +59,33 @@
         </li>
     </ul>
 </li>
+
+<li class="nav-item {{ Request::segment(2) == 'attribute' ? 'menu-open' : null }}">
+    <a href=""
+        class="nav-link {{ Request::segment(2) == 'attribute' ? 'active' : null }}" style="border-radius:0px !important">
+        <i class="nav-icon fab fa-product-hunt"></i>
+        <p>
+            Quản lý thuộc tính
+        </p>
+        <i class="right fas fa-angle-left"></i>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="{{route('attribute.index')}}"
+                class="nav-link {{ Request::segment(3) !== 'create' && Request::segment(2) == 'attribute'  ? 'active' : null }} ">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách thuộc tính</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('attribute.create')}}"
+                class="nav-link {{ Request::segment(3) == 'create' && Request::segment(2) == 'attribute' ? 'active' : null }}">
+                <i class="fas fa-plus-circle nav-icon"></i>
+                <p>Thêm thuộc tính</p>
+            </a>
+        </li>
+    </ul>
+</li>
 @endif
 @if (@Auth::user()->is_seller == 1)
 <li class="nav-header">TRANG NGƯỜI BÁN HÀNG</li>
@@ -115,6 +142,33 @@
                 class="nav-link {{ Request::segment(3) == 'create' && Request::segment(2) == 'products' ? 'active' : null }}">
                 <i class="fas fa-plus-circle nav-icon"></i>
                 <p>Thêm sản phẩm</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item {{ Request::segment(2) == 'attribute' ? 'menu-open' : null }}">
+    <a href=""
+        class="nav-link {{ Request::segment(2) == 'attribute' ? 'active' : null }}" style="border-radius:0px !important">
+        <i class="nav-icon fab fa-product-hunt"></i>
+        <p>
+            Quản lý thuộc tính
+        </p>
+        <i class="right fas fa-angle-left"></i>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="{{route('attribute.index')}}"
+                class="nav-link {{ Request::segment(3) !== 'create' && Request::segment(2) == 'attribute'  ? 'active' : null }} ">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách thuộc tính</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('attribute.create')}}"
+                class="nav-link {{ Request::segment(3) == 'create' && Request::segment(2) == 'attribute' ? 'active' : null }}">
+                <i class="fas fa-plus-circle nav-icon"></i>
+                <p>Thêm thuộc tính</p>
             </a>
         </li>
     </ul>

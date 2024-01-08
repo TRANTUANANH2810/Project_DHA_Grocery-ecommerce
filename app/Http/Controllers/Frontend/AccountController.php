@@ -7,6 +7,7 @@ use App\Http\Requests\Frontend\PostRegisterRequest;
 use App\Http\Requests\Frontend\PostRegisterSellerRequest;
 use App\Models\Seller;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -40,7 +41,8 @@ class AccountController extends Controller
 
     public function logout(){
         Auth::logout();
-        return view('frontend.pages.home');
+        $ShowProducts = product::orderBy('created_at','DESC')->take(20)->get();
+        return view('frontend.pages.home', compact('ShowProducts'));
     }
 
     public function postLogin(Request $request){
@@ -89,7 +91,7 @@ class AccountController extends Controller
 
         sendMailRegister('Xác nhận đăng ký tài khoản', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user->email);
         
-        return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng đăng nhập tài khoản');
+        return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng xác nhận email tài khoản');
     }
 
     public function postRegisterSeller(PostRegisterSellerRequest $request){
