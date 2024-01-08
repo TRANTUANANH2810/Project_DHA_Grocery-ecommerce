@@ -89,7 +89,7 @@ class AccountController extends Controller
 
         sendMailRegister('Xác nhận đăng ký tài khoản', 'Vui lòng nhấn vào Link bên dưới', $confirmUrl, $user->email);
         
-        return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng đăng nhập tài khoản');
+        return redirect()->route('home.login')->with('success','Đã đăng ký thành công. Vui lòng xác nhận email tài khoản');
     }
 
     public function postRegisterSeller(PostRegisterSellerRequest $request){
