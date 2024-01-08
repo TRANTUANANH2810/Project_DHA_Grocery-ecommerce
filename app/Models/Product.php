@@ -20,6 +20,12 @@ class Product extends Model
 
     }
 
+    public function seller(){
+
+        return $this->hasOne(Seller::class,'id','seller_id');
+
+    }
+
     public function sluggable(): array
     {
         return [
