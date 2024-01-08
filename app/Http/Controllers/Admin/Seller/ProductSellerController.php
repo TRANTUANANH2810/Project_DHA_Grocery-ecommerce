@@ -7,6 +7,8 @@ use App\Http\Requests\Admin\StoreProductRequest;
 use App\Http\Requests\Admin\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\AttributeValue;
+use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -51,7 +53,18 @@ class ProductSellerController extends Controller
             $data['image'] = '/backend/images/products/'.$seller_image;
         }
 
-        Product::create($data);
+        $product = Product::create($data);
+
+        $index = 0;
+        foreach ($data['attribute_id'] as $key => $value) {
+            $dataAttribute = [
+                'product_id' => $product->id,
+                'attribute_id' => $value,
+                'value' => $data['attribute_value'][$index]
+            ];
+            AttributeValue::create($dataAttribute);
+            $index ++;
+        }
     
         return redirect()->route('products.index')->with('success', 'Thêm sản phẩm thành công');
 
@@ -104,6 +117,16 @@ class ProductSellerController extends Controller
         }
 
         $product->update($data);
+
+        $index = 0;
+        foreach ($data['attribute_id'] as $key => $value) {
+            $dataAttribute = [
+                'value' => $data['attribute_value'][$index]
+            ];
+            $attributeValue = AttributeValue::where('product_id', $product->id)->where('attribute_id', $value)->first();
+            $attributeValue->update($dataAttribute);
+            $index ++;
+        }
 
         return redirect()->route('products.index')->with('success', 'Cập nhật sản phẩm thành công');
 

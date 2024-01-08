@@ -100,17 +100,22 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Danh mục</label>
-                                                <select class="custom-select" name="category_id">
+                                                <select class="custom-select" name="category_id" id="category-select">
                                                     <option value="">Chọn</option>
                                                     @foreach($category as $item)
                                                     <option value="{{$item->id}}" {{old('category',$product->category->id) == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
                                                     @endforeach
                                                 </select>
+                                                <span id="url-fetch-data-attribute" data-url="{!! route('admin.data.attribute', ['categoryId' => 'editText', 'productId' => 'NULL']) !!}" data-id="{{ $product->id }}"></span>
                                                 @if ($errors->has('category_id'))
                                                 <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('category_id')}}</span>    
                                                 @endif
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div id="attribute">
+                                        
                                     </div>
 
                                     <hr>
@@ -192,6 +197,9 @@
 @stop
 
 @section('page_scripts')
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+@vite(['resources/js/product.js']) 
+
 <script type="text/javascript">
    function onFileSelected(event) {
     var selectedFile = event.target.files[0];

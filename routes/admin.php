@@ -3,12 +3,14 @@
 
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\AttributeController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Seller\AccountSellerController;
 use App\Http\Controllers\Admin\Seller\Ajax;
 use App\Http\Controllers\Admin\Seller\HomeSellerController;
 use App\Http\Controllers\Admin\Seller\OrderController;
 use App\Http\Controllers\Admin\Seller\ProductSellerController;
+use App\Http\Controllers\Admin\Seller\AttributeController as AttributeControllerSeller;
 use App\Http\Controllers\Admin\SellerController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +33,7 @@ Route::group(['prefix' => 'admin'], function(){
             'category' => CategoriesController::class,
             'seller' => SellerController::class,
             'user' => UserController::class,
+            'attribute' => AttributeController::class,
         ]);
 
         Route::post('seller-change-password/{id}', [SellerController::class, 'postSellerPassword'])->name('admin.seller.password');
@@ -46,7 +49,10 @@ Route::group(['prefix' => 'admin'], function(){
             'information' => AccountSellerController::class,
             'products' => ProductSellerController::class,
             'orders' => OrderController::class,
+            'attribute' => AttributeControllerSeller::class,
         ]);
+
+        Route::get('/fetch-data-attribute/{categoryId}/{productId}', [AttributeControllerSeller::class, 'fetchDataAttribute'])->name('admin.data.attribute');
 
         Route::post('seller-infor-change-password', [AccountSellerController::class, 'postSellerPassword'])->name('admin.infor.password');
 
