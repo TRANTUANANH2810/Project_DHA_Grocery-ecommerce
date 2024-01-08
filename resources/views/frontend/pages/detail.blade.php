@@ -154,7 +154,7 @@
                     <!-- category -item 1 -->
                     <a href="#!">
                         <article class="name-shop cate-item">
-                            <img src="{{ $products->seller->image }}" alt="" class="cate-item__thumb" />
+                            <img src="{{$products->seller->user->image}}" alt="" class="cate-item__thumb" />
 
                             <div class="cate-item__info">
                                 <h3 class="cate-item__title">{{ $products->seller->shop_name }}</h3>
