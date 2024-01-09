@@ -120,15 +120,18 @@ class ProductSellerController extends Controller
 
         $product->update($data);
 
-        $index = 0;
-        foreach ($data['attribute_id'] as $key => $value) {
-            $dataAttribute = [
-                'value' => $data['attribute_value'][$index]
-            ];
-            $attributeValue = AttributeValue::where('product_id', $product->id)->where('attribute_id', $value)->first();
-            $attributeValue->update($dataAttribute);
-            $index ++;
+        if (isset($data['attribute_id']) && $data['attribute_id']) {
+            $index = 0;
+            foreach ($data['attribute_id'] as $key => $value) {
+                $dataAttribute = [
+                    'value' => $data['attribute_value'][$index]
+                ];
+                $attributeValue = AttributeValue::where('product_id', $product->id)->where('attribute_id', $value)->first();
+                $attributeValue->update($dataAttribute);
+                $index ++;
+            }
         }
+    
 
         return redirect()->route('products.index')->with('success', 'Cập nhật sản phẩm thành công');
 

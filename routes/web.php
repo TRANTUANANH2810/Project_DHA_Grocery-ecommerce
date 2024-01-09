@@ -59,7 +59,6 @@ Route::group(['namespace' => 'Frontend','middleware' => 'checkActive'], function
 
     Route::post('register', [AccountController::class, 'postRegister'])->name('home.register.post');
 
-
     // Seller
     Route::get('registerSeller', [AccountController::class, 'getRegisterSeller'])->name('home.registerSeller');
 
