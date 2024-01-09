@@ -1,20 +1,31 @@
 @if($newCart != null)
 <p>ok</p>
 @endif
-<!-- Cart preview item 1 -->
-<div class="col">
-    <article class="cart-preview-item">
-        <div class="cart-preview-item__img-wrap">
-            <img src="../../site/assets/img/Products/item1.png" alt="" class="cart-preview-item__thumb" />
-        </div>
-        <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
-        <p class="cart-preview-item__price">$329.00</p>
-    </article>
+<div class="row row-cols-3 gx-2 act-dropdown__list">
+    <!-- Cart preview item 1 -->
+    <div class="col">
+        <article class="cart-preview-item">
+            <div class="cart-preview-item__img-wrap">
+                <img src="../../site/assets/img/Products/item1.png" alt="" class="cart-preview-item__thumb" />
+            </div>
+            <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
+            <p class="cart-preview-item__price">$329.00</p>
+        </article>
+    </div>
+
+    <!-- Cart preview item 2 -->
+    <div class="col">
+        <article class="cart-preview-item">
+            <div class="cart-preview-item__img-wrap">
+                <img src="../../site/assets/img/Products/item2.png" alt="" class="cart-preview-item__thumb" />
+            </div>
+            <h3 class="cart-preview-item__title">Coffee Beans Espresso</h3>
+            <p class="cart-preview-item__price">$39.99</p>
+        </article>
+    </div>
+
+
 </div>
-
-<!-- Cart preview item 2 -->
-
-
 <div class="act-dropdown__bottom">
     <div class="act-dropdown__row">
         <span class="act-dropdown__label">Subtotal</span>
