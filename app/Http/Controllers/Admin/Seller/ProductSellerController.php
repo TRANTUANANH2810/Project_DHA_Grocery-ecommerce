@@ -55,15 +55,17 @@ class ProductSellerController extends Controller
 
         $product = Product::create($data);
 
-        $index = 0;
-        foreach ($data['attribute_id'] as $key => $value) {
-            $dataAttribute = [
-                'product_id' => $product->id,
-                'attribute_id' => $value,
-                'value' => $data['attribute_value'][$index]
-            ];
-            AttributeValue::create($dataAttribute);
-            $index ++;
+        if (isset($data['attribute_id']) && $data['attribute_id']) {
+            $index = 0;
+            foreach ($data['attribute_id'] as $key => $value) {
+                $dataAttribute = [
+                    'product_id' => $product->id,
+                    'attribute_id' => $value,
+                    'value' => $data['attribute_value'][$index]
+                ];
+                AttributeValue::create($dataAttribute);
+                $index ++;
+            }
         }
     
         return redirect()->route('products.index')->with('success', 'Thêm sản phẩm thành công');
