@@ -20,12 +20,24 @@
     <meta name="theme-color" content="#ffffff" />
 
 
+
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
     <!-- Font  -->
     <link rel="stylesheet" href="../../site/assets/fonts/stylesheet.css" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="../../site/assets/css/main.css" />
-
+    <!-- JavaScript -->
+    
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     @vite(['resources/js/cart.js']) 
     @vite(['resources/js/script.js']) 

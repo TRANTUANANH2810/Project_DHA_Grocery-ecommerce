@@ -4661,7 +4661,13 @@
                             <div class="top-act__btn-wrap">
                                 <button class="top-act__btn">
                                     <img src="../../site/assets/icons/cart.svg" alt="" class="icon top-act__icon" />
-                                    <span class="top-act__title">$65.42</span>
+                                    <span class="top-act__title">
+                                            @if(Session::get("Cart") != null)
+                                           <span id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span>
+                                            @else
+                                            <span id="total-quanty-show"></span>
+                                            @endif
+                                    </span>
                                 </button>
                                 <!-- Dropdown -->
                                 <div class="act-dropdown">
@@ -4669,84 +4675,51 @@
                                         <img src="../../site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
 
                                         <div class="act-dropdown__top">
-                                            <h2 class="act-dropdown__title">You have 3 item(s)</h2>
-                                            <a href="{{route('home.checkout')}}" class="act-dropdown__view-all">See All</a>
+                                            @if(Session::get("Cart") != null)
+                                            <h2 class="act-dropdown__title">You have <span id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span> item(s)</h2>
+                                            @else
+                                            <h2 class="act-dropdown__title">You have <span id="total-quanty-show">0</span> item(s)</h2>
+                                            @endif
+                                          
+                                            <a href="{{route('cart.ViewListCart')}}" class="act-dropdown__view-all">See All</a>
                                         </div>
                                         <div id="change-item-cart">
 
+                                            @if(Session::has("Cart") != null)
+                                            
                                             <div class="row row-cols-3 gx-2 act-dropdown__list">
                                                 <!-- Cart preview item 1 -->
+                                                <!-- ../../site/assets/img/Products/item1.png -->
                                                 <div class="col">
+                                                    @foreach(Session::get("Cart")->products as $item)
                                                     <article class="cart-preview-item">
                                                         <div class="cart-preview-item__img-wrap">
-                                                            <img
-                                                                src="../../site/assets/img/Products/item1.png"
-                                                                alt=""
-                                                                class="cart-preview-item__thumb"
-                                                            />
+                                                            <img src="{{$item['productInfo']->image}}" alt="" class="cart-preview-item__thumb" />
                                                         </div>
-                                                        <h3 class="cart-preview-item__title">Lavazza Coffee Blends</h3>
-                                                        <p class="cart-preview-item__price">$329.00</p>
+                                                        <h3 class="cart-preview-item__title">{{$item['productInfo']->name}}</h3>
+                                                        <p class="cart-preview-item__price">${{$item['productInfo']->price}}</p>
+                                                        <p class="cart-preview-item__quanty">x{{$item['quanty']}}</p>
+                                            
                                                     </article>
-                                                </div>
-
-                                                <!-- Cart preview item 2 -->
-                                                <div class="col">
-                                                    <article class="cart-preview-item">
-                                                        <div class="cart-preview-item__img-wrap">
-                                                            <img
-                                                                src="../../site/assets/img/Products/item2.png"
-                                                                alt=""
-                                                                class="cart-preview-item__thumb"
-                                                            />
-                                                        </div>
-                                                        <h3 class="cart-preview-item__title">Coffee Beans Espresso</h3>
-                                                        <p class="cart-preview-item__price">$39.99</p>
-                                                    </article>
-                                                </div>
-
-                                                <!-- Cart preview item 3 -->
-                                                <div class="col">
-                                                    <article class="cart-preview-item">
-                                                        <div class="cart-preview-item__img-wrap">
-                                                            <img
-                                                                src="../../site/assets/img/Products/item3.png"
-                                                                alt=""
-                                                                class="cart-preview-item__thumb"
-                                                            />
-                                                        </div>
-                                                        <h3 class="cart-preview-item__title">Qualità Oro Mountain</h3>
-                                                        <p class="cart-preview-item__price">$47.00</p>
-                                                    </article>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="act-dropdown__bottom">
-                                                <div class="act-dropdown__row">
-                                                    <span class="act-dropdown__label">Subtotal</span>
-                                                    <span class="act-dropdown__value">$415.99</span>
-                                                </div>
-                                                <div class="act-dropdown__row">
-                                                    <span class="act-dropdown__label">Texes</span>
-                                                    <span class="act-dropdown__value">Free</span>
-                                                </div>
-                                                <div class="act-dropdown__row">
-                                                    <span class="act-dropdown__label">Shipping</span>
-                                                    <span class="act-dropdown__value">$10.00</span>
-                                                </div>
                                                 <div class="act-dropdown__row act-dropdown__row--bold">
                                                     <span class="act-dropdown__label">Total Price</span>
-                                                    <span class="act-dropdown__value">$425.99</span>
+                                                    <span class="act-dropdown__value">${{Session::get("Cart")->totalPrice}}</span>
                                                 </div>
                                             </div>
+                                            @endif
+                                        </div>
                                             <div class="act-dropdown__checkout">
                                                 <a
-                                                    href="{{route('home.checkout')}}"
+                                                    href="{{route('cart.ViewListCart')}}"
                                                     class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
                                                 >
                                                     Check Out All
                                                 </a>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -4778,6 +4751,12 @@
                                         </li>
                                         <li>
                                             <a href="{{route('home.profile')}}" class="user-menu__link">Settings</a>
+                                        </li>
+                                        <li class="user-menu__separate">
+                                            <a href="#!" class="user-menu__link" id="switch-theme-btn">
+                                                <span>Dark mode</span>
+                                                <img src="../../site/assets/icons/sun.svg" alt="" class="icon user-menu__icon" />
+                                            </a>
                                         </li>
                                         <li class="user-menu__separate">
                                             <a href="{{route('home.logout')}}" class="user-menu__link">Logout</a>

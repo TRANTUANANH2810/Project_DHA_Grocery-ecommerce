@@ -14,29 +14,7 @@
             </div>
             <!-- Breadcrumbs -->
             <div class="product-container">
-                <ul class="breadcrumbs">
-                    <li>
-                        <a href="#!" class="breadcrumbs__link">
-                            Departments
-                            <img src="../../site/assets/icons/arrow-right.svg" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!" class="breadcrumbs__link">
-                            Coffee
-                            <img src="../../site/assets/icons/arrow-right.svg" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!" class="breadcrumbs__link">
-                            Coffee Beans
-                            <img src="../../site/assets/icons/arrow-right.svg" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">LavAzza</a>
-                    </li>
-                </ul>
+          
             </div>
 
             <!-- Product info -->
@@ -86,7 +64,7 @@
                                                     <input class="ipqty" type="number" name="quantity" min="1"
                                                         step="1" value="1">
                                                 </div>
-                                                <input type="submit" value="Add to cart">
+                                            
                                             </form>
 
                                         </div>
@@ -643,4 +621,10 @@
         </div>
         </div>
     </main>
+
+    <Script>
+
+        
+    </Script>
+        
 @stop

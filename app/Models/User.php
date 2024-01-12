@@ -22,6 +22,12 @@ class User extends Authenticatable
     protected $guarded = []; 
 
 
+
+    public function seller(){
+
+        return $this->hasOne(Seller::class,'id','seller_id');
+
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -1878,6 +1878,7 @@ html {
 
 .cart-preview-item {
   text-align: left;
+  margin-bottom: 30px;
 }
 .cart-preview-item__img-wrap {
   position: relative;
@@ -1903,6 +1904,7 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
+  float: left;
 }
 
 .user-menu__top {
@@ -4273,6 +4275,10 @@ html {
   font-weight: 500;
   line-height: 146.667%;
 }
+.cart-item__input-text{
+  width: 50px;
+  text-align: center;
+}
 .cart-item__input-btn {
   display: flex;
 }
@@ -4610,3 +4616,19 @@ html {
 		margin-left: 0.3rem;
 	}
 
+  .cart-preview-item__quanty{
+    display: flex;
+    float: right;
+    margin-top: 6px;
+    margin-right: 5px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 146.667%;
+  }
+  .cart-preview-item__close{
+
+    display: block;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }

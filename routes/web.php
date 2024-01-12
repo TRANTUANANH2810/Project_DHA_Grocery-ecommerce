@@ -30,6 +30,11 @@ Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('hom
 // Route::get('/detail/{slug}','App\Http\Controllers\homeController@detail')-> name('home.detail');
 
 Route::get('/Add-Cart/{id}',[CartController::class, 'AddCart'])-> name('cart.AddCart');
+Route::get('/Delete-Item-Cart/{id}',[CartController::class, 'DeleteItemCart'])-> name('cart.DeleteItemCart');
+Route::get('/List-Carts',[CartController::class, 'ViewListCart'])-> name('cart.ViewListCart');
+Route::get('/Delete-Item-List-Cart/{id}',[CartController::class, 'DeleteListItemCart'])-> name('cart.DeleteListItemCart');
+Route::get('/Save-Item-List-Cart/{id}/{quanty}',[CartController::class, 'SaveListItemCart'])-> name('cart.SaveListItemCart');
+
 
 // Route::get('/reset-password-emailed',function(){
 //     return view('reset-password-emailed');

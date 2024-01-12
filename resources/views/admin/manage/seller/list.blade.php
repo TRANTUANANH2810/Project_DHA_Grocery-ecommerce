@@ -44,7 +44,7 @@
                                         <td class="text-center">
                                             <img src="{{$item->image ? $item->image : asset('backend/images/default.jpg') }}" width="50px">
                                         </td>
-                                        <td>{{$item->seller->shop_name}}</td>
+                                        <td>{{$item->shop_name}}</td>
                                         <td>{{$item->last_name}} {{$item->first_name}}</td>
                                         <td>{{$item->email}}</td>
                                         <td><span class="badge badge-danger">seller</span></td>
