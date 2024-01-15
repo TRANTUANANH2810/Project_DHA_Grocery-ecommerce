@@ -4,6 +4,7 @@ use App\Http\Controllers\Frontend\AccountController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\SinglePageController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('hom
 Route::get('/Add-Cart/{id}',[CartController::class, 'AddCart'])-> name('cart.AddCart');
 Route::get('/Delete-Item-Cart/{id}',[CartController::class, 'DeleteItemCart'])-> name('cart.DeleteItemCart');
 Route::get('/List-Carts',[CartController::class, 'ViewListCart'])-> name('cart.ViewListCart');
+Route::post('/Continue-To-Checkout',[CheckotController::class, 'ContinueToCheckout'])-> name('cart.ContinueToCheckout');
+Route::get('/Result-Checkout',[CheckotController::class, 'ResultCheckout'])-> name('cart.ResultToCheckout');
 Route::get('/Delete-Item-List-Cart/{id}',[CartController::class, 'DeleteListItemCart'])-> name('cart.DeleteListItemCart');
 Route::get('/Save-Item-List-Cart/{id}/{quanty}',[CartController::class, 'SaveListItemCart'])-> name('cart.SaveListItemCart');
 

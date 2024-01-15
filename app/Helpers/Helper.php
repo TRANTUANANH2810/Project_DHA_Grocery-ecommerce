@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailInit;
 use App\Mail\MailRegister;
+use Illuminate\Support\Facades\Session;
 
 if (!function_exists('sendMail')) {
     /**
@@ -43,5 +44,41 @@ if (!function_exists('sendMailRegister')) {
         ];
         
         Mail::to($emailTo)->send(new MailRegister($mailData));
+    }
+}
+
+if (!function_exists('checkCartSession')) {
+    /**
+     * Check session cart
+     *
+     * @return bool
+     */
+    function checkCartSession()
+    {
+        return Session::has('Cart');
+    }
+}
+
+if (!function_exists('getCartSession')) {
+    /**
+     * Check session cart
+     *
+     * @return mixed
+     */
+    function getCartSession()
+    {
+        return Session::get('Cart');
+    }
+}
+
+if (!function_exists('clearCartSession')) {
+    /**
+     * Check session cart
+     *
+     * @return void
+     */
+    function clearCartSession()
+    {
+        Session::forget('Cart');
     }
 }

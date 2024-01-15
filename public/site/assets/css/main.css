@@ -4632,3 +4632,36 @@ html {
     font-size: 1.4rem;
     line-height: 142.857%;
   }
+
+  /* Style for the outer container */
+.form-container {
+  margin: 0 auto;
+}
+
+/* Style for each form group */
+.form-container .form-group {
+  margin-bottom: 20px;
+}
+
+/* Style for labels */
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style for text input and textarea */
+.form-container input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for textarea */
+.form-container textarea {
+  height: 100px;
+  resize: vertical; /* Allow vertical resizing of textarea */
+}

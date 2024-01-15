@@ -26,7 +26,7 @@
                                 </tr>
                                 <tr>
                                     <td class="w-50 fw-600">Địa chỉ:</td>
-                                    <td></td>
+                                    <td>{!!@$order->address !!}</td>
                                 </tr>
                         
                             </tbody>
@@ -69,7 +69,13 @@
                             <tr>
                                 <td class="w-50 fw-600">Hình thức thanh toán:</td>
                                 <td>
-                                  
+                                  Thanh Toán Online
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-50 fw-600">Trạng thái thanh toán:</td>
+                                <td>
+                                    {{ @$order->is_payment ? 'Đã thanh toán' : 'Chưa thanh toán' }}
                                 </td>
                             </tr>
                         </tbody>

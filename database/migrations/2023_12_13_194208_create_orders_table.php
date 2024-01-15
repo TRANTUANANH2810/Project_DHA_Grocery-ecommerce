@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->float('total_price', 10, 0)->nullable();
             $table->integer('qty')->nullable();
+            $table->text('address')->nullable();
+            $table->boolean('is_payment')->nullable()->default(false);
         });
     }
 

@@ -4662,7 +4662,9 @@
                                 <button class="top-act__btn">
                                     <img src="../../site/assets/icons/cart.svg" alt="" class="icon top-act__icon" />
                                     <span class="top-act__title">
-                                            @if(Session::get("Cart") != null)
+                                            @if ($cart != null && $listCartDetail != null) 
+                                            <span id="total-quanty-show">{{$cart->qty}}</span>
+                                            @elseif(Session::get("Cart") != null)
                                            <span id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span>
                                             @else
                                             <span id="total-quanty-show"></span>
@@ -4675,7 +4677,9 @@
                                         <img src="../../site/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
 
                                         <div class="act-dropdown__top">
-                                            @if(Session::get("Cart") != null)
+                                            @if ($cart != null && $listCartDetail != null)
+                                            <h2 class="act-dropdown__title">You have <span id="total-quanty-show">{{$cart->qty}}</span> item(s)</h2>
+                                            @elseif(Session::get("Cart") != null)
                                             <h2 class="act-dropdown__title">You have <span id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span> item(s)</h2>
                                             @else
                                             <h2 class="act-dropdown__title">You have <span id="total-quanty-show">0</span> item(s)</h2>
@@ -4684,8 +4688,29 @@
                                             <a href="{{route('cart.ViewListCart')}}" class="act-dropdown__view-all">See All</a>
                                         </div>
                                         <div id="change-item-cart">
-
-                                            @if(Session::has("Cart") != null)
+                                            @if ($cart != null && $listCartDetail != null)
+                                            <div class="row row-cols-3 gx-2 act-dropdown__list">
+                                                <div class="col">
+                                                    @foreach($listCartDetail as $item)
+                                                    <article class="cart-preview-item">
+                                                        <div class="cart-preview-item__img-wrap">
+                                                            <img src="{{$item->product->image}}" alt="" class="cart-preview-item__thumb" />
+                                                        </div>
+                                                        <h3 class="cart-preview-item__title">{{$item->product->name}}</h3>
+                                                        <p class="cart-preview-item__price">${{$item->price}}</p>
+                                                        <p class="cart-preview-item__quanty">x{{$item->qty}}</p>
+                                            
+                                                    </article>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            <div class="act-dropdown__bottom">
+                                                <div class="act-dropdown__row act-dropdown__row--bold">
+                                                    <span class="act-dropdown__label">Total Price</span>
+                                                    <span class="act-dropdown__value">${{$cart->total_price}}</span>
+                                                </div>
+                                            </div>
+                                            @elseif(Session::has("Cart") != null)
                                             
                                             <div class="row row-cols-3 gx-2 act-dropdown__list">
                                                 <!-- Cart preview item 1 -->

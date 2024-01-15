@@ -9,12 +9,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Cart as CartModel;
+use App\Models\CartDetail;
 use Illuminate\Support\Str;
 
 class DashboardController extends Controller
 {
     public function getDashboard(){
         $user = Auth::user();
+        if (Auth::user() != null) {
+            $cart = CartModel::where('user_id', Auth::user()->id)->where('is_active', 1)->first();
+            if ($cart != null) {
+                $listCartDetail = CartDetail::where('cart_id', $cart->id)->get();
+            } else {
+                $listCartDetail = null;
+            }
+            return view('frontend.pages.dashboard.dashboard_user', compact('user','cart','listCartDetail'));
+        }
         return view('frontend.pages.dashboard.dashboard_user', compact('user'));
     }
 
