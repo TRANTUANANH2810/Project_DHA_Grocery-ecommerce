@@ -47,8 +47,12 @@ class AccountController extends Controller
     public function logout()
     {
         Auth::logout();
-        $ShowProducts = product::orderBy('created_at', 'DESC')->take(20)->get();
-        return view('frontend.pages.home', compact('ShowProducts'));
+        $ShowProducts = product::orderBy('created_at','DESC')->take(20)->get();
+        $selectedMinPrice = product::min('price');
+        $selectedMaxPrice   = product::max('price');
+        $minPrice  = product::min('price');
+        $maxPrice  = product::max('price');
+        return view('frontend.pages.home', compact('ShowProducts','selectedMinPrice','selectedMaxPrice','minPrice','maxPrice'));
     }
 
     public function postLogin(Request $request)

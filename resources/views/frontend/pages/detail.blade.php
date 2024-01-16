@@ -8,7 +8,7 @@
                     <input type="text" name="" id="" placeholder="Search for item"
                         class="search-bar__input" />
                     <button class="search-bar__submit">
-                        <img src="site/assets/icons/search.svg" alt="" class="search-bar__icon icon" />
+                        <img src="../../site/assets/icons/search.svg" alt="" class="search-bar__icon icon" />
                     </button>
                 </div>
             </div>

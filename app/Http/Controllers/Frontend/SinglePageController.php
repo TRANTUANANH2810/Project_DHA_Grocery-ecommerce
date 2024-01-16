@@ -14,6 +14,10 @@ class SinglePageController extends Controller
 {
     public function getHome(){
         $ShowProducts = product::orderBy('created_at','DESC')->take(20)->get();
+        $minPrice  = product::min('price');
+        $maxPrice  = product::max('price');
+        $selectedMinPrice = product::min('price');
+        $selectedMaxPrice   = product::max('price');
         if (Auth::user() != null) {
             $cart = CartModel::where('user_id', Auth::user()->id)->where('is_active', 1)->first();
             if ($cart != null) {
@@ -21,11 +25,12 @@ class SinglePageController extends Controller
             } else {
                 $listCartDetail = null;
             }
-            return view('frontend.pages.home', compact('ShowProducts','cart','listCartDetail'));
+            return view('frontend.pages.home', compact('ShowProducts','minPrice','maxPrice','selectedMinPrice','selectedMaxPrice','cart','listCartDetail'));
         }
         
-        return view('frontend.pages.home', compact('ShowProducts'));
+        return view('frontend.pages.home', compact('ShowProducts', 'minPrice','maxPrice','selectedMinPrice','selectedMaxPrice'));
     }
+    
     public function getDetail($slug){
         $products = product::where('slug',$slug)->first();
         if (Auth::user() != null) {
@@ -50,5 +55,9 @@ class SinglePageController extends Controller
         ->get();
         return view('frontend.pages.home', compact('product'));
     }
+
+
+
+
 
 }

@@ -45,5 +45,9 @@ class HomeController extends Controller{
         $products = product::where('slug',$slug)->first();
         return view('frontend.pages.detail', compact('products'));
     }
+    public function shipping(){
+        return view('shipping');
+    }
+
 }
 ?>

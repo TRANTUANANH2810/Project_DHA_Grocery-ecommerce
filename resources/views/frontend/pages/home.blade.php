@@ -13,9 +13,9 @@
                                 <picture>
                                     <source
                                         media="(max-width:767.98px)"
-                                        srcset="site/assets/img/slideshow/item-1-md.png" />
+                                        srcset="../../site/assets/img/slideshow/item-1-md.png" />
                                     <img
-                                        src="site/assets/img/slideshow/img-slideshow.png"
+                                        src="../../site/assets/img/slideshow/img-slideshow.png"
                                         alt="Slideshow"
                                         class="slideshow__img"
                                 /></picture>
@@ -40,7 +40,7 @@
                     <div class="col">
                         <a href="#!">
                             <article class="cate-item">
-                                <img src="site/assets/img/category-items/cate-item1.png" alt="" class="cate-item__thumb" />
+                                <img src="../../site/assets/img/category-items/cate-item1.png" alt="" class="cate-item__thumb" />
 
                                 <div class="cate-item__info">
                                     <h3 class="cate-item__title">$24 - $150</h3>
@@ -53,7 +53,7 @@
                     <div class="col">
                         <a href="#!">
                             <article class="cate-item">
-                                <img src="site/assets/img/category-items/cate-item2.png" alt="" class="cate-item__thumb" />
+                                <img src="../../site/assets/img/category-items/cate-item2.png" alt="" class="cate-item__thumb" />
 
                                 <div class="cate-item__info">
                                     <h3 class="cate-item__title">$37 - $160</h3>
@@ -66,7 +66,7 @@
                     <div class="col">
                         <a href="#!"
                             ><article class="cate-item">
-                                <img src="site/assets/img/category-items/cate-item3.png" alt="" class="cate-item__thumb" />
+                                <img src="../../site/assets/img/category-items/cate-item3.png" alt="" class="cate-item__thumb" />
 
                                 <div class="cate-item__info">
                                     <h3 class="cate-item__title">$32 - $160</h3>
@@ -84,13 +84,22 @@
                     <h2 class="home__heading">Total LavAzza 1320</h2>
 
                     <div class="filter-wrap">
-                        <button class="filter-btn js-toggle" toggle-target="#home-filter">
-                            Filter
-                            <img src="site/assets/icons/filter.svg" alt="" class="icon filter-btn__icon" />
-                        </button>
+                            <label for="amount" style="font-weight: 400; font-size:15px; margin-bottom: 25px;">Filter</label>
+                            <br>
+                            <form action="{{ route('products.filter') }}" method="GET">
+                                
+                                <div id="price-slider" style="font-weight: 400; font-size:15px; margin-top: 5px;" ></div>
+                                <input type="hidden" name="min_price" id="min_price" value="{{ $selectedMinPrice }}">
+                                <input type="hidden" name="max_price" id="max_price" value="{{ $selectedMaxPrice }}">
+                                <br>
+                                <span style="font-weight: 400; font-size:15px" id="price-display">Price Range: ${{ $selectedMinPrice }} - ${{ $selectedMaxPrice }}</span>
+
+                                <input type="submit" name="filter_price" value="lọc" class=" btn--primary" style="width:30px;height:30px">
+                            </form>
+                            <img src="../../site/assets/icons/filter.svg" alt="" class="icon filter-btn__icon" />
 
                         <div id="home-filter" class="filter hide">
-                            <img src="site/assets/icons/arrow-up.png" alt="" class="filter__arrow" />
+                            <img src="../../site/assets/icons/arrow-up.png" alt="" class="filter__arrow" />
                             <h3 class="filter__heading">Filter</h3>
                             <form action="" class="filter__form form">
                                 <div class="filter__row filter__content">
@@ -130,7 +139,7 @@
                                                 <div class="form__select" style="--width: 158px">
                                                     500g
                                                     <img
-                                                        src="site/assets/icons/select-arrow.svg"
+                                                        src="../../site/assets/icons/select-arrow.svg"
                                                         alt=""
                                                         class="icon form__select-arown"
                                                     />
@@ -138,7 +147,7 @@
                                                 <div class="form__select">
                                                     Gram
                                                     <img
-                                                        src="site/assets/icons/select-arrow.svg"
+                                                        src="../../site/assets/icons/select-arrow.svg"
                                                         alt=""
                                                         class="icon form__select-arown"
                                                     />
@@ -168,7 +177,7 @@
                                                     class="filter__form-input"
                                                 />
                                                 <img
-                                                    src="site/assets/icons/search.svg"
+                                                    src="../../site/assets/icons/search.svg"
                                                     alt=""
                                                     class="icon filter__form-input-icon"
                                                 />
@@ -206,15 +215,15 @@
 
                 <div class="row row-cols-4 row-cols-lg-2 row-cols-sm-1 g-3">
                     <!-- Product card  1 -->
-                    <div class="col">
+                    <!-- <div class="col">
                         <article class="product-card">
                             <div class="product-card__img-wrap">
                                 <a href="">
-                                    <img class="product-card__thumb" src="site/assets/img/products/item1.png" alt="" />
+                                    <img class="product-card__thumb" src="../../site/assets/img/products/item1.png" alt="" />
                                 </a>
                                 <button class="like-btn like-btn--liked product-card__like-btn">
-                                    <img src="site/assets/icons/love.svg" alt="" class="icon like-btn__icon" />
-                                    <img src="site/assets/icons/love-red.svg" alt="" class="like-btn__icon--liked" />
+                                    <img src="../../site/assets/icons/love.svg" alt="" class="icon like-btn__icon" />
+                                    <img src="../../site/assets/icons/love-red.svg" alt="" class="like-btn__icon--liked" />
                                 </button>
                             </div>
                             <h3 class="product-card__title">
@@ -223,11 +232,11 @@
                             <p class="product-card__brand">Lavazza</p>
                             <div class="product-card__row">
                                 <span class="product-card__price">$47.00</span>
-                                <img src="site/assets/icons/star.svg" alt="" class="product-card__star" />
+                                <img src="../../site/assets/icons/star.svg" alt="" class="product-card__star" />
                                 <span class="product-card__score">4.3</span>
                             </div>
                         </article>
-                    </div>
+                    </div> -->
 
                     <!-- Product card  2 -->
                     @foreach($ShowProducts as $item)
@@ -238,8 +247,8 @@
                                     <img class="product-card__thumb" src="{{$item->image}}" alt="" />
                                 </a>
                                 <button class="like-btn product-card__like-btn">
-                                    <img src="site/assets/icons/love.svg" alt="" class="like-btn__icon" />
-                                    <img src="site/assets/icons/love-red.svg" alt="" class="like-btn__icon--liked" />
+                                    <img src="../../site/assets/icons/love.svg" alt="" class="like-btn__icon" />
+                                    <img src="../../site/assets/icons/love-red.svg" alt="" class="like-btn__icon--liked" />
                                 </button>
                             </div>
                             <h3 class="product-card__title">
@@ -247,8 +256,8 @@
                             </h3>
                             <p class="product-card__brand">{{$item->seller->shop_name}}</p>
                             <div class="product-card__row">
-                                <span class="product-card__price">{{$item->price}}</span>
-                                <img src="site/assets/icons/star.svg" alt="" class="product-card__star" />
+                                <span class="product-card__price">${{$item->price}}</span>
+                                <img src="../../site/assets/icons/star.svg" alt="" class="product-card__star" />
                                 <span class="product-card__score">3.4</span>
                             </div>
                         </article>
@@ -259,4 +268,39 @@
                 </div>
             </section>
         </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            // $(document).ready(function(){
+            //     $( "#slider-range" ).slider({
+            //     orientation: "horizontal",
+            //     range: true,
+            //     min: {{$minPrice}},
+            //     max: {{$maxPrice}},
+            //     steps: 5,
+            //     values: [ {{$minPrice}}, {{$maxPrice}} ],
+            //     slide: function( event, ui ) {
+            //         $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            //         $( "#start_price" ).val(ui.values[ 0 ]);
+            //         $( "#end_price" ).val(ui.values[ 1 ]);
+            //     }
+            //     });
+            //     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+            //     " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+            // });
+            $( function() {
+            $( "#price-slider" ).slider({
+                range: true,
+                min: 1,
+                max: 5000,
+                values: [ {{ $minPrice }}, {{ $maxPrice }} ],
+                slide: function( event, ui ) {
+                    $( "#min_price" ).val( ui.values[0] );
+                    $( "#max_price" ).val( ui.values[1] );
+                    $( "#price-display" ).html("Price Range: $" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $( "#min_price" ).val( $( "#price-slider" ).slider( "values", 0 ) );
+            $( "#max_price" ).val( $( "#price-slider" ).slider( "values", 1 ) );
+        } );
+        </script>
 @stop();

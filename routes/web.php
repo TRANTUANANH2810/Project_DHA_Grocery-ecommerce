@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\SinglePageController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckotController;
+use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,7 @@ Route::get('/add-new-card','App\Http\Controllers\homeController@addNewcard')-> n
 Route::get('/checkout','App\Http\Controllers\homeController@checkout')-> name('home.checkout');
 Route::get('/edit-personal-info','App\Http\Controllers\homeController@EditPersonalInfo')-> name('home.EditPersonalInfo');
 Route::get('/forget-password','App\Http\Controllers\homeController@resetPassword')-> name('home.resetPassword');
+Route::get('/ship','App\Http\Controllers\homeController@shipping')-> name('home.shipping');
 Route::get('/payment','App\Http\Controllers\homeController@payment')-> name('home.payment');
 // Route::get('/detail/{slug}','App\Http\Controllers\homeController@detail')-> name('home.detail');
 
@@ -38,6 +40,14 @@ Route::get('/Result-Checkout',[CheckotController::class, 'ResultCheckout'])-> na
 Route::get('/Delete-Item-List-Cart/{id}',[CartController::class, 'DeleteListItemCart'])-> name('cart.DeleteListItemCart');
 Route::get('/Save-Item-List-Cart/{id}/{quanty}',[CartController::class, 'SaveListItemCart'])-> name('cart.SaveListItemCart');
 
+
+Route::get('/products/filter', [ProductController::class, 'filterByPrice'])->name('products.filter');
+
+
+// routes/web.php
+Route::get('/products/filter', [ProductController::class, 'filterByPrice'])->name('products.filter');
+// Route::get('/cart', [CartController::class, 'indexCart'])->name('cart.indexCart');
+// Route::get('/cart/add/{productId}', [CartController::class, 'addCart'])->name('cart.addCart');
 
 // Route::get('/reset-password-emailed',function(){
 //     return view('reset-password-emailed');
