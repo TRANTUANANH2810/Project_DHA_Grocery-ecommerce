@@ -50,7 +50,7 @@ class SellerController extends Controller
      */
     public function edit(string $id)
     {
-        $seller = User::where('id',$id)->with('seller')->first();
+        $seller = Seller::where('user_id', $id)->first();
         return view('admin.manage.seller.edit',compact('seller'));
     }
 
@@ -65,8 +65,15 @@ class SellerController extends Controller
             File::delete(public_path($user->image));
         }
 
+        $dataUpdate = [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'user_name' => $request->user_name
+        ];
+
         if(empty($request->image_default)){
-            $image_seller = null;
         }
         else if($request->file('image')){
        
@@ -76,16 +83,10 @@ class SellerController extends Controller
             $image->move($destinationPath,$seller_image);
 
             $image_seller = '/backend/images/sellers/'.$seller_image;
+            $dataUpdate['image'] = $image_seller;
         }
 
-        $user->update([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'user_name' => $request->user_name,
-            'image' => $image_seller,
-        ]);
+        $user->update($dataUpdate);
         $seller = Seller::where('user_id', $id)->first();
         if ($seller) {
             $seller->update([
