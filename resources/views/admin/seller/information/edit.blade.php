@@ -17,7 +17,7 @@
 		</div>
 
         <div class="container-fluid">
-            <form action="{!! route('information.update', $seller->id) !!}" method="POST"  enctype="multipart/form-data">
+            <form action="{!! route('information.update', $seller->user_id) !!}" method="POST"  enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="row">
@@ -29,34 +29,34 @@
                                 <div class="text-center">
                                     <div class="image">
                                             <div class="image__thumbnail" style="outline: 0 !important;">
-                                                <img src="{{ old('image',@$seller->image) ? old('image',@$seller->image) :  asset('backend/images/default.jpg') }}"
+                                                <img src="{{ old('image',@$seller->user->image) ? old('image',@$seller->user->image) :  asset('backend/images/default.jpg') }}"
                                                     data-init="{{ asset('backend/images/default.jpg') }}" style="border-radius: 50%;" class="profile-user-img" id="imageUpload">
                                                 <a href="javascript:void(0)" class="image__delete"
                                                     onclick="urlFileDelete(this)">
                                                     <i class="fa fa-times"></i></a>
-                                                <input type="hidden" value="{{@$seller->image}}" name="image_default" id="image_default" />
+                                                <input type="hidden" value="{{@$seller->user->image}}" name="image_default" id="image_default" />
                                                 <input type="file" id="upload" name="image" onchange="onFileSelected(event)" class="image__button" style="border-radius: 50%; opacity: 0;">
                                             </div>
                                     </div>
                                 </div>
-                                <h3 class="profile-username text-center">{{ @$seller->first_name}} {{ @$seller->last_name}}</h3>
-                                <p class="text-center">{{@$seller->created_at->format('d-m-Y')}}</p>
+                                <h3 class="profile-username text-center">{{ @$seller->user->first_name}} {{ @$seller->user->last_name}}</h3>
+                                <p class="text-center">{{@$seller->user->created_at->format('d-m-Y')}}</p>
                                 <ul class="list-group list-group-unbordered mb-3">
-                                    @if (@$seller->phone)
+                                    @if (@$seller->user->phone)
                                         <li class="list-group-item">
-                                            <b>SĐT</b> <a class="float-right">{{ @$seller->phone }}</a>
+                                            <b>SĐT</b> <a class="float-right">{{ @$seller->user->phone }}</a>
                                         </li> 
                                     @endif
                                  
-                                    @if (@$seller->email)
+                                    @if (@$seller->user->email)
                                         <li class="list-group-item">
-                                            <b>Email</b> <a class="float-right">{{ @$seller->email }}</a>
+                                            <b>Email</b> <a class="float-right">{{ @$seller->user->email }}</a>
                                         </li>
                                     @endif
                                     <li class="list-group-item">
                                         <b>Trạng thái</b> 
     
-                                        @if ($seller->is_active == 1 )
+                                        @if ($seller->user->is_active == 1 )
                                         <a class="float-right">
                                             <span class="badge badge-success">Đang hoạt động</span>
                                             </a>
@@ -71,8 +71,8 @@
     
                                 </ul>
                                 <div class="text-right">
-                                    <input type="text" class="d-none" name="seller_id" value="{{$seller->id}}">
-                                    <input type="text" class="d-none" name="seller_detail_id" value="{{$seller->seller->id}}">
+                                    <input type="text" class="d-none" name="seller_id" value="{{$seller->user_id}}">
+                                    <input type="text" class="d-none" name="seller_detail_id" value="{{$seller->id}}">
                                     <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-save"></i> Lưu lại</button>
                                 </div>
                             </div>
@@ -134,17 +134,17 @@
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label>First name</label>
-                                        <input type="text" class="form-control" name="first_name" value="{{$seller->first_name}}">
+                                        <input type="text" class="form-control" name="first_name" value="{{$seller->user->first_name}}">
                                     </div> 
                                     <div class="form-group col-6">
                                         <label>Last name</label>
-                                        <input type="text" class="form-control" name="last_name" value="{{$seller->last_name}}">
+                                        <input type="text" class="form-control" name="last_name" value="{{$seller->user->last_name}}">
                                     </div> 
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label>Shop_name</label>
-                                        <input type="text" class="form-control" name="shop_name" value="{{old('shop_name',$seller->seller->shop_name)}}">
+                                        <input type="text" class="form-control" name="shop_name" value="{{old('shop_name',$seller->shop_name)}}">
                                         @if ($errors->has('shop_name'))
                                         <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('shop_name')}}</span>    
                                         @endif
@@ -152,7 +152,7 @@
                                 
                                     <div class="form-group col-6">
                                         <label>user_name</label>
-                                        <input type="text" class="form-control" name="user_name" value="{{$seller->user_name}}">
+                                        <input type="text" class="form-control" name="user_name" value="{{$seller->user->user_name}}">
                                         @if ($errors->has('user_name'))
                                         <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('user_name')}}</span>    
                                         @endif
@@ -161,14 +161,14 @@
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label>Email</label>
-                                        <input type="text" class="form-control" name="email" value="{{old('email',$seller->email)}}" readonly>
+                                        <input type="text" class="form-control" name="email" value="{{old('email',$seller->user->email)}}" readonly>
                                         @if ($errors->has('email'))
                                         <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('email')}}</span>    
                                         @endif
                                     </div>
                                     <div class="form-group col-6">
                                         <label>Phone</label>
-                                        <input type="text" class="form-control" name="phone" value="{{old('phone',$seller->phone)}}">
+                                        <input type="text" class="form-control" name="phone" value="{{old('phone',$seller->user->phone)}}">
                                         @if ($errors->has('phone'))
                                         <span class="fr-error d-block mt-2" style="color: red"><i class="fas fa-exclamation-circle"></i> {{$errors->first('phone')}}</span>    
                                         @endif
@@ -176,7 +176,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control" name="shop_address" value="{{$seller->seller->shop_address}}">
+                                    <input type="text" class="form-control" name="shop_address" value="{{$seller->shop_address}}">
                                 </div> 
                             </div>
                         </div>

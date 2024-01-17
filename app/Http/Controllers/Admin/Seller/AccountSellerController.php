@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
+use App\Models\Seller;
 
 class AccountSellerController extends Controller
 {
@@ -52,7 +53,7 @@ class AccountSellerController extends Controller
      */
     public function edit(string $id)
     {
-        $seller = User::find(Auth::user()->id);
+        $seller = Seller::where('user_id', Auth::user()->id)->first();
         return view('admin.seller.information.edit',compact('seller'));
     }
 
@@ -61,10 +62,10 @@ class AccountSellerController extends Controller
      */
     public function update(PostUpdateSellerRequest $request, string $id)
     {
-        $seller = User::find($id);
+        $user = User::find($id);
 
-        if(!empty($seller->image)){
-            File::delete(public_path($seller->image));
+        if(!empty($user->image)){
+            File::delete(public_path($user->image));
         }
 
         if(empty($request->image_default)){
@@ -80,7 +81,7 @@ class AccountSellerController extends Controller
             $image_seller = '/backend/images/sellers/'.$seller_image;
         }
   
-        $seller->update([
+        $user->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
@@ -88,10 +89,13 @@ class AccountSellerController extends Controller
             'user_name' => $request->user_name,
             'image' => $image_seller,
         ]);
-        $seller->seller->update([
-            'shop_name' => $request->shop_name,
-            'shop_address' => $request->shop_address,
-        ]);
+        $seller = Seller::where('user_id', $id)->first();
+        if ($seller) {
+            $seller->update([
+                'shop_name' => $request->shop_name,
+                'shop_address' => $request->shop_address,
+            ]);
+        }
         return redirect()->route('information.edit',$id)->with('success', 'Cập nhật thành công');
     }
 
