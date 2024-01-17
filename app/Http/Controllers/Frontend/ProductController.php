@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\product;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Cart as CartModel;
+use App\Models\CartDetail;
 
 class ProductController extends Controller
 {
@@ -24,8 +27,19 @@ class ProductController extends Controller
             return $query->where('price', '<=', $maxPrice);
         })
         ->get();
+        if (Auth::user() != null) {
+            $cart = CartModel::where('user_id', Auth::user()->id)->where('is_active', 1)->first();
+            if ($cart != null) {
+                $listCartDetail = CartDetail::where('cart_id', $cart->id)->get();
+            } else {
+                $listCartDetail = null;
+            }
+        } else {
+            $cart = null;
+            $listCartDetail = null;
+        }
 
-    return view('frontend.pages.home', compact('ShowProducts','minPrice','maxPrice','selectedMinPrice','selectedMaxPrice' ));
+        return view('frontend.pages.home', compact('ShowProducts','minPrice','maxPrice','selectedMinPrice','selectedMaxPrice','cart','listCartDetail'));
 }
 
 }

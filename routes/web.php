@@ -41,8 +41,6 @@ Route::get('/Delete-Item-List-Cart/{id}',[CartController::class, 'DeleteListItem
 Route::get('/Save-Item-List-Cart/{id}/{quanty}',[CartController::class, 'SaveListItemCart'])-> name('cart.SaveListItemCart');
 
 
-Route::get('/products/filter', [ProductController::class, 'filterByPrice'])->name('products.filter');
-
 
 // routes/web.php
 Route::get('/products/filter', [ProductController::class, 'filterByPrice'])->name('products.filter');
