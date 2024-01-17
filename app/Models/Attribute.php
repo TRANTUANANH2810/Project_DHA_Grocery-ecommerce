@@ -27,7 +27,7 @@ class Attribute extends Model
 
     public function seller(){
 
-        return $this->hasMany(Seller::class,'id','seller_id');
+        return $this->hasOne(Seller::class,'id','seller_id');
 
     }
 }

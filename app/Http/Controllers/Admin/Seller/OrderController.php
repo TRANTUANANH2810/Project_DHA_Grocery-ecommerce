@@ -8,6 +8,7 @@ use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
+use App\Models\Seller;
 
 class OrderController extends Controller
 {
@@ -16,7 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order = Order::where('seller_id',Auth::user()->id)->with('user')->get();
+        $seller = Seller::where('user_id', Auth::user()->id)->first();
+        $order = Order::where('seller_id',$seller->id)->with('user')->get();
         return view('admin.seller.order.list',compact('order'));
     }
 

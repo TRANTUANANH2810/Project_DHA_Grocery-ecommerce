@@ -8,6 +8,8 @@ use App\Models\AttributeValue;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Models\Seller;
+use Illuminate\Support\Facades\Auth;
 
 class AttributeController extends Controller
 {
@@ -16,7 +18,8 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        $attr = Attribute::get();
+        $seller = Seller::where('user_id', Auth::user()->id)->first();
+        $attr = Attribute::where('seller_id', $seller->id)->orWhere('seller_id', null)->get();
         return view('admin.seller.attribute.list',compact('attr'));
 
     }
@@ -36,6 +39,8 @@ class AttributeController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $seller = Seller::where('user_id', Auth::user()->id)->first();
+        $data['seller_id'] = $seller->id;
 
         Attribute::create($data); 
         return redirect()->route('attribute.index')->with('success', 'Thêm mới thành công');;
