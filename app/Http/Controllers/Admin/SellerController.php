@@ -59,10 +59,10 @@ class SellerController extends Controller
      */
     public function update(PostUpdateSellerRequest $request, $id)
     {
-        $seller = User::find($id);
+        $user = User::find($id);
 
-        if(!empty($seller->image)){
-            File::delete(public_path($seller->image));
+        if(!empty($user->image)){
+            File::delete(public_path($user->image));
         }
 
         if(empty($request->image_default)){
@@ -78,7 +78,7 @@ class SellerController extends Controller
             $image_seller = '/backend/images/sellers/'.$seller_image;
         }
 
-        $seller->update([
+        $user->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
@@ -86,10 +86,13 @@ class SellerController extends Controller
             'user_name' => $request->user_name,
             'image' => $image_seller,
         ]);
-        $seller->seller->update([
-            'shop_name' => $request->shop_name,
-            'shop_address' => $request->shop_address,
-        ]);
+        $seller = Seller::where('user_id', $id)->first();
+        if ($seller) {
+            $seller->update([
+                'shop_name' => $request->shop_name,
+                'shop_address' => $request->shop_address,
+            ]);
+        }
         return redirect()->route('seller.edit',$id)->with('success', 'Cập nhật thành công');
 
     }
