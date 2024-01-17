@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\AttributeValue;
 use App\Models\Attribute;
 use Illuminate\Http\Request;
+use App\Models\Seller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -52,6 +53,8 @@ class ProductSellerController extends Controller
 
             $data['image'] = '/backend/images/products/'.$seller_image;
         }
+        $seller = Seller::where('user_id', Auth::user()->id)->first();
+        $data['seller_id'] = $seller->id;
 
         $product = Product::create($data);
 
