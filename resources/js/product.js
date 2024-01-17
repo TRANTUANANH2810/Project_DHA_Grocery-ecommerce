@@ -16,6 +16,7 @@ function fetchDataAttribute() {
         type: 'GET',
         url: urlFetchDataAttribute,
         success: function(response) {
+            $('#fetchDataAttributeResult').remove();
             elHtmlAttribute.append(response);
         },
         error: function(error) {
